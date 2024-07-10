@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 const SingleResult = ({mockData}) => {
 
@@ -14,6 +14,7 @@ const SingleResult = ({mockData}) => {
           <h3>Address: {mockName.Address}</h3><br></br>
           <h3>Voter Status: {mockName.VoterStatus}</h3><br></br>
           <h3>Registration Date: {mockName.RegistrationDate}</h3><br></br>
+          <button><Link to="/">Back</Link></button>
           </>
         )
       }

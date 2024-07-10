@@ -2,7 +2,6 @@ const Search = ({setFirstName, setLastName, firstName, lastName}) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Submitted")
   }
 
   return (
