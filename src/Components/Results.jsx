@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Results = ({mockData}) => {
-
+const Results = () => {
+  const currentSearch = useSelector(state => state.voterData.voterData);
   return (
 <>
 <ul>
-{mockData.map((mockName)=>{
+{currentSearch.map((voter)=>{
   return (
-    <li key={mockName.Id}><Link to={`/${mockName.Id}`}>{mockName.Name}</Link></li>
+    <li key={voter.SOS_VOTERID}><Link to={`/${voter.SOS_VOTERID}`}>{voter.NAME}</Link></li>
   )
 })}
 </ul>

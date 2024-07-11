@@ -1,7 +1,16 @@
-const Search = ({setFirstName, setLastName, firstName, lastName}) => {
+import Results from "./Results";
+import { useSelector, useDispatch } from "react-redux";
+import {setVoterData} from "../../Redux/slice.cjs";
 
-  const submitHandler = (e) => {
+const Search = ({firstName, setFirstName, lastName, setLastName, data, setData}) => {
+  const dispatch = useDispatch();
+
+  const submitHandler = async (e) => {
     e.preventDefault();
+    const response = await fetch(`/db/get/?firstName=${firstName}&lastName=${lastName}`);
+    const result = await response.json();
+    setData(result);
+    dispatch(setVoterData(result));
   }
 
   return (
@@ -20,6 +29,7 @@ const Search = ({setFirstName, setLastName, firstName, lastName}) => {
     <p> </p>
     <input type="submit" value="Search"></input>
   </form>
+  <Results data={data} setData={setData}/>
   </>
   )
 }
