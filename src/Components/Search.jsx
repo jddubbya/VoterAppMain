@@ -1,5 +1,5 @@
 import Results from "./Results";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {setVoterData} from "../../Redux/slice.cjs";
 
 const Search = ({firstName, setFirstName, lastName, setLastName, data, setData}) => {

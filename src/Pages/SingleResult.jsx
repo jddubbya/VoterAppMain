@@ -4,7 +4,7 @@ import '../App.css'
 
 const SingleResult = ({data}) => {
 const voterList = useSelector(state => state.voterData.voterData)
-  const {id: voterId } = useParams();
+const {id: voterId } = useParams();
 
   return(
     <>
@@ -19,7 +19,7 @@ const voterList = useSelector(state => state.voterData.voterData)
           <h3>Voter Status: {voter.VOTER_STATUS}</h3>
           <h3>Registration Date: {voter.REG_DATE}</h3>
           <h3>Precinct: {voter.PRECINCT}</h3>
-          <h3>Party: {voter.PARTY_CALC}</h3>
+          <h3>Calculated Party: {voter.PARTY_CALC}</h3>
           </section>
           <br></br>
           <Link to="/"><button className="backButton">Home</button></Link>
