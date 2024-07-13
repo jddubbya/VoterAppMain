@@ -28,7 +28,7 @@ db.connect((err) => {
 app.use(express.static(__dirname + '/dist'));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/dist/index.html');
+  res.sendFile('/dist/index.html');
 })
 
 app.get("/db/get", (req, res) => {
