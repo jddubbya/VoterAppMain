@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(__dirname + '/dist'));
 
 const db = mysql.createConnection({
   host: "104.8.112.148",
