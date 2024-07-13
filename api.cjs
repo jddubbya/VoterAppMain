@@ -25,10 +25,10 @@ db.connect((err) => {
   console.log("Connected to MySQL as ID " + db.threadId);
 });
 
-app.use(express.static(__dirname + '../dist'));
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '../dist/index.html');
+  res.sendFile(__dirname + '/dist/index.html');
 })
 
 app.get("/db/get", (req, res) => {
