@@ -26,7 +26,7 @@ db.connect((err) => {
 
 app.get("/db/get", (req, res) => {
   const { firstName, lastName } = req.query;
-  let sql = 'SELECT * FROM voterlookup WHERE name like "' + firstName + '%' + lastName + '"';
+  let sql = 'SELECT * FROM voterlookup2 WHERE name like "' + firstName + '%' + lastName + '"';
   db.query(sql, (err, results) => {
     if (err) {
       console.error("Error executing query: " + err.stack);

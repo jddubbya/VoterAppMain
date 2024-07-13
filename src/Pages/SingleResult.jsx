@@ -20,6 +20,9 @@ const {id: voterId } = useParams();
           <h3>Registration Date: {voter.REG_DATE}</h3>
           <h3>Precinct: {voter.PRECINCT}</h3>
           <h3>Calculated Party: {voter.PARTY_CALC}</h3>
+          <h3>New Voter: {voter.NEW_VOTER}</h3>
+          <h3>Presidential Propensity: {voter.PRESIDENTIAL_PROPENSITY}</h3>
+          <h3>Other Propensity: {voter.OTHER_PROPENSITY}</h3>
           </section>
           <br></br>
           <Link to="/"><button className="backButton">Home</button></Link>
