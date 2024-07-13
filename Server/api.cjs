@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const path = require('path');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -24,7 +25,7 @@ db.connect((err) => {
   console.log("Connected to MySQL as ID " + db.threadId);
 });
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(path.join(__dirname + '/dist')));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/dist/index.html');
