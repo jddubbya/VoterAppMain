@@ -26,6 +26,10 @@ db.connect((err) => {
 
 app.use(express.static(__dirname + '/dist'));
 
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html');
+})
+
 app.get("/db/get", (req, res) => {
   const { firstName, lastName } = req.query;
   let sql = 'SELECT * FROM voterlookup2 WHERE name like "' + firstName + '%' + lastName + '"';
