@@ -7,5 +7,6 @@ export default defineConfig({
   server: { 
     proxy: { 
       "/db" : "http://localhost:3000",
+      secure: false,   // added by JDW
     }}
 })
