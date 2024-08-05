@@ -2,7 +2,6 @@ import Results from "./Results";
 import { useDispatch } from "react-redux";
 import {setVoterData} from "../../Redux/slice.cjs";
 
-
 const Search = ({firstName, setFirstName, lastName, setLastName, data, setData}) => {
   const dispatch = useDispatch();
 
@@ -13,7 +12,6 @@ const Search = ({firstName, setFirstName, lastName, setLastName, data, setData})
     setData(result);
     dispatch(setVoterData(result));
   }
-
   return (
   <>
   <form onSubmit={submitHandler}>
