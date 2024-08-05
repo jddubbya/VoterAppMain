@@ -1,3 +1,11 @@
+/*
+*  dbQueryHandler.cjs
+*
+*  Purpose: 1. To execute queries against the database
+*           2. To listen on port 3000
+*  
+*/
+
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
@@ -5,8 +13,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
 const pool = require('./dbConnectionPool.cjs');  // JDW
-
-console.log("ConnectionManager.cjs loaded..........");
 
 // __dirname is an environment variable that tells you the absolute path 
 // of the directory containing the currently executing file.

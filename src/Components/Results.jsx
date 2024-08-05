@@ -1,3 +1,11 @@
+/*  Results.jsx
+*
+*  Purpose: Links the voter name to the voterID (unique key)
+*           
+*  Exports: Results - ??
+*  HTML:    ??
+*/
+
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 

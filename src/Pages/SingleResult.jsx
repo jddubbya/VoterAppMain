@@ -1,3 +1,12 @@
+
+/*
+*  SingleResult.jsx
+*
+*  Purpose: Displays the detailed voter information 
+*  Exports: SingleResult - ??.
+*  HTML:    Builds the page used to display the detailed voter information
+*           with a "Home" button that takes you back to the Home page.
+*/
 import { useParams, Link } from "react-router-dom"
 import { useSelector } from "react-redux";
 import '../App.css'

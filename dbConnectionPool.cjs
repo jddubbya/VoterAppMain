@@ -1,5 +1,14 @@
+/*
+*  dbConnectionPool.cjs
+*
+*  Purpose: To ceate a pool of database connections
+*  Exports: pool - an object used to connect to the database using one of 
+*                  the pooled database connections. 
+*/
 
 var mysql = require('mysql')
+
+// Database connection parameters
 
 var pool = mysql.createPool({
     connectionLimit: 10,
@@ -8,6 +17,10 @@ var pool = mysql.createPool({
     password: 'Days206Heat&',
     database: 'rockwall'
 })
+
+// Create a pool of connections - number specified above by
+// "connectionLimit"
+
 pool.getConnection((err, connection) => {
     if (err) {
         if (err.code === 'PROTOCOL_CONNECTION_LOST') {
