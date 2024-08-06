@@ -28,8 +28,11 @@ app.get('/', (req, res) => {
 // Method to get voter data based on voter's first and last name.
 
 app.get("/db/get", (req, res) => {
+  const vstate = "texas";
+  const county = "rockwall";
   const { firstName, lastName } = req.query;
   let sql = 'SELECT * FROM voterlookup2 WHERE name like "' + firstName + '%' + lastName + '"';
+  //let sql = 'SELECT * FROM ' + vstate + '_' + county +  'WHERE name like "' + firstName + '%' + lastName + '"';
   console.log("SQL = " . sql)
   pool.query(sql, (err, results) => {
     if (err) {

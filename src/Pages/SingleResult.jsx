@@ -31,6 +31,7 @@ const {id: voterId } = useParams();
           <h3>Calculated Party: {voter.PARTY_CALC}</h3>
           <h3>New Voter: {voter.NEW_VOTER}</h3>
           <h3>Presidential Propensity: {voter.PRESIDENTIAL_PROPENSITY}</h3>
+          <h3>Primary Propensity: {voter.PRIMARY_PROPENSITY}</h3>
           <h3>Other Propensity: {voter.OTHER_PROPENSITY}</h3>
           </section>
           <br></br>
