@@ -24,7 +24,7 @@ const Home = () => {
          </div>
        </header>
        <h1>
-        <img src="./Content/vocheck.jpeg"
+        <img src="../../Content/vocheck.jpeg"
         width="60"
         height="60" />  VoCheck</h1>
        <h2>Voter Lookup</h2>
