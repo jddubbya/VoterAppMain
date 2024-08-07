@@ -9,7 +9,9 @@ const Header = () => {
         </div>
       </header>
       <h1>
-        <Link to="/"><img src="../../Content/vocheck.jpeg" width="60" height="60" /></Link> VoCheck
+        <Link to="/">
+          <img src="../../Content/vocheck.jpeg" width="60" height="60">
+        </Link> VoCheck
       </h1>
       <h2>Voter Lookup</h2>
       <p>
