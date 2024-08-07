@@ -24,7 +24,7 @@ const Home = () => {
          </div>
        </header>
        <h1>
-        <img src="Content/vocheck.jpeg"
+        <img src="./Content/vocheck.jpeg"
         width="60"
         height="60" />  VoCheck</h1>
        <h2>Voter Lookup</h2>
@@ -40,7 +40,7 @@ const Home = () => {
         <p>
           Copyright 2024 VoCheck. All rights reserved.
         </p>
-        <h4><a className="footerLink" href="./TermsOfService">Terms of Service</a></h4>
+        <h4><a className="footerLink" href="https://www.vocheck.net">Terms of Service</a></h4>
         <h4><a className="footerLink" href="https://www.vocheck.net">Privacy Policy</a></h4>
         </div>
       </footer>
