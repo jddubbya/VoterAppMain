@@ -4,6 +4,7 @@
   padding: 2rem;
 }
 
+/*Single Results page data section */
 .singleDataSec {
   flex-direction: column;
   justify-content: left;
@@ -17,6 +18,7 @@
   color: #888;
 }
 
+/* ALL ul's*/
 ul {
   list-style: none;
   display: flex;
@@ -59,4 +61,11 @@ footer .vocheck-footer {
 footer h4 {
   display: inline;
   margin-right: 2em;
+}
+
+.searchForm {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }

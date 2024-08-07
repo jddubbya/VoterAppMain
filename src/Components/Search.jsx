@@ -27,7 +27,7 @@ const Search = ({firstName, setFirstName, lastName, setLastName, data, setData})
 
   return (
   <>
-  <form onSubmit={submitHandler}>
+  <form className="searchForm" onSubmit={submitHandler}>
     <input 
     placeholder="First Name:"
     onChange={(e) => {setFirstName(e.target.value)}}

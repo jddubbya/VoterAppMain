@@ -1,11 +1,11 @@
+/*CSS the base document, will affect everything */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #143857;
+  color:white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,19 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ALL LINK Font */
-a {
+/* result item links*/
+.resultItem > a {
   font-weight: 500;
-  color: #143857;
+  color: black;
   text-decoration: inherit;
 }
 
-/* Not sure what this does - no green on the UI*/
-a:hover {
-  color: green;
+/* Colors names in search results when hovering */
+.resultItem > a:hover {
+  color: aqua;
 }
 
-/* Positions the items in the center of the page */
+/* Positions ALL items in the center of the page */
 body {
   margin: 0;
   display: flex;
@@ -54,7 +54,7 @@ p {
   color: ghostwhite;
 }
 
-
+/*ALL buttons*/
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -75,13 +75,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/*Search button */
 .searchButton:hover {
   cursor: pointer;
 }
 
 /* The list of voter names*/
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #143857;
     background-color: #ffffff;
@@ -92,4 +93,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
