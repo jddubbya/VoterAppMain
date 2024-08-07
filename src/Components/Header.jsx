@@ -8,10 +8,10 @@ const Header = () => {
           <p> VoCheck Voter Lookup</p>
         </div>
       </header>
-      <Link to="/">
-          <img src="../../Content/vocheck.jpeg" width="60" height="60">
-        </Link>
       <h1>
+        <Link to="/">
+          <img src="../../Content/vocheck.jpeg" width="60" height="60"/>
+        </Link>
        VoCheck
       </h1>
       <h2>Voter Lookup</h2>
