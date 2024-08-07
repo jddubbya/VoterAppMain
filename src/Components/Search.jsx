@@ -47,6 +47,3 @@ const Search = ({firstName, setFirstName, lastName, setLastName, data, setData})
 }
 
 export default Search;
-}
-
-export default Search;
