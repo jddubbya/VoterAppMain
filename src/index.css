@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #143857;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,15 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ALL LINK Font */
 a {
   font-weight: 500;
-  color: aquamarine;
+  color: #143857;
   text-decoration: inherit;
 }
+
+/* Not sure what this does - no green on the UI*/
 a:hover {
   color: green;
 }
 
+/* Positions the items in the center of the page */
 body {
   margin: 0;
   display: flex;
@@ -32,10 +36,24 @@ body {
   min-height: 100vh;
 }
 
+/* ALL Heading 1 Font size*/
 h1 {
-  font-size: 3.2em;
+  font-size: 2.2em;
   line-height: 1.1;
 }
+
+/* ALL Paragraph Font size*/
+p {
+  font-size: 0.75em;
+ /* line-height: 1.1; */
+}
+
+/* Links in footer */
+
+.footerLink {
+  color: ghostwhite;
+}
+
 
 button {
   border-radius: 8px;
@@ -44,25 +62,32 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: black;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: darkgray;
+  cursor:pointer;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.searchButton:hover {
+  cursor: pointer;
+}
+
+/* The list of voter names*/
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #143857;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #0a0a0a;
   }
   button {
     background-color: #f9f9f9;
