@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../../Content/vocheck.jpeg'
 
 const Header = () => {
   return (
@@ -8,10 +9,10 @@ const Header = () => {
           <p> VoCheck Voter Lookup</p>
         </div>
       </header>
-      <h1>
-        <Link to="/">
-          <img src="../../Content/vocheck.jpeg" width="60" height="60"/>
+      <Link to="/">
+          <img src={logo} width={60} height={60}/>
         </Link>
+      <h1>
        VoCheck
       </h1>
       <h2>Voter Lookup</h2>
@@ -25,5 +26,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
