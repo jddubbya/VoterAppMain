@@ -34,7 +34,7 @@ app.get("/db/getVoters", (req, res) => {
   const { firstName, lastName, voterTable} = req.query;
   let sql = 'SELECT * FROM ' + voterTable +  
   ' WHERE FIRST_NAME = "' + firstName + '" AND LAST_NAME = "' + lastName + 
-  '" ORDER BY LAST_NAME, FIRST_NAME';
+  '" ORDER BY MIDDLE_NAME ASC';
   console.log(sql);
   console.log(sql);
   pool.query(sql, (err, results) => {
