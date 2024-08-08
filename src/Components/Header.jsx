@@ -5,15 +5,19 @@ const Header = () => {
     return (
       <>
         <header>
-          <div className="vocheck-header container">
+          <div className="vocheckHeaderContainer">
             <p> VoCheck Voter Lookup</p>
           </div>
         </header>
+        <section className="logoSection">
         <Link to="/">
-            <h1><img src={logo} width={60} height={60}/> VoCheck</h1>
+            <img src={logo} width={60} height={60}/>
         </Link>
+        <h1 className="titleH1">VoCheck</h1>
+        </section>
         
       </>
     );
   };
+
 export default Header
