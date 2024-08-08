@@ -31,10 +31,11 @@ app.get('/', (req, res) => {
 app.get("/db/getVoters", (req, res) => {
   const vstate = "texas";
   const county = "rockwall";
-  const { firstName, lastName } = req.query;
-  let sql = 'SELECT * FROM ' + vstate + '_' + county +  
+  const { firstName, lastName, voterTable} = req.query;
+  let sql = 'SELECT * FROM ' + voterTable +  
   ' WHERE FIRST_NAME = "' + firstName + '" AND LAST_NAME = "' + lastName + 
   '" ORDER BY LAST_NAME, FIRST_NAME';
+  console.log(sql);
   console.log(sql);
   pool.query(sql, (err, results) => {
     if (err) {

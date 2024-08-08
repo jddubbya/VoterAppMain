@@ -47,8 +47,8 @@ ul {
 footer .vocheck-footer {
   background-color:rgb(9, 56, 75);
   color:ghostwhite;
-  position: fixed;
-  bottom: 0px;
+  /* position: fixed;
+  bottom: 0px; */
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
@@ -62,12 +62,15 @@ footer h4 {
 
 .searchForm {
   display:flex;
-justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 10%;
 }
 
 .backButton {
-  color: white;
+  color: black;
+  margin-left:50%;
 }
 
 #root {
@@ -161,4 +164,8 @@ button:focus-visible {
 .vocheckHeaderContainer {
   background-color: rgb(9, 56, 75);
   color: white;
+}
+
+.singleDataSec {
+  margin-left: 10%;
 }

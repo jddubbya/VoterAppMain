@@ -20,11 +20,11 @@ const {id: voterId } = useParams();
       if(voterId == voter.SOS_VOTERID){
         return (
           <>
+          <section className="singleDataSec">
           <h2>{voter.NAME}</h2><br></br>
           <h3>Registration Date: {voter.REG_DATE}</h3>
           <h3>Voter Status: {voter.VOTER_STATUS}</h3>
           <h3>Address: {voter.ADDRESS}</h3>
-          <section className="singleDataSec">
           <h3>Precinct: {voter.PRECINCT}</h3>
           <h3>Age: {voter.AGE}</h3>
           <h3>Calculated Party: {voter.PARTY_CALC}</h3>
@@ -33,7 +33,7 @@ const {id: voterId } = useParams();
           <h3>Other Propensity: {voter.OTHER_PROPENSITY}</h3>
           </section>
           <br></br>
-          <Link to="/"><button className="backButton">Home</button></Link>
+          <Link to="/"><input className="backButton" type="submit" value="Back"></input></Link>
           </>
         )
       }
