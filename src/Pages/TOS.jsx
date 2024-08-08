@@ -1,3 +1,5 @@
+import TOSDoc from '../../Content/VoCheckTOS.pdf'
+
 const TOS = () => {
     return(
       <>
@@ -6,7 +8,7 @@ const TOS = () => {
       </h2>
         <body>
             <object class="pdf" 
-                data="../../Content/VoCheckTOS.pdf"
+                data={TOSDoc}
                 width="800"
                 height="800">
             </object>
