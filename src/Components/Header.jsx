@@ -6,7 +6,7 @@ const Header = () => {
       <>
         <header>
           <div className="vocheckHeaderContainer">
-            <p> VoCheck Voter Lookup</p>
+            <p id="topHeader"> VoCheck Voter Lookup</p>
           </div>
         </header>
         <section className="logoSection">
