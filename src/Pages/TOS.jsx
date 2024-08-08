@@ -6,13 +6,9 @@ const TOS = () => {
       <h2>
         Terms of Service
       </h2>
-        <body>
-            <object class="pdf" 
-                data={TOSDoc}
-                width="800"
-                height="800">
-            </object>
-        </body>
+        <section>
+            <p>TOS GOES HERE</p>
+        </section>
       </>
     )
 }
