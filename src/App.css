@@ -60,6 +60,10 @@ footer h4 {
   margin-right: 2em;
 }
 
+#countyDrop {
+  margin-bottom:20px;
+}
+
 .searchForm {
   display:flex;
   flex-direction: column;
