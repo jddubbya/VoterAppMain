@@ -11,12 +11,16 @@ import { useDispatch } from "react-redux";
 import {setVoterData} from "../../Redux/slice.cjs";
 
 const Search = ({firstName, setFirstName, lastName, setLastName, data, setData}) => {
+  
   const dispatch = useDispatch();
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch(`/db/get/?firstName=${firstName}&lastName=${lastName}`);
+    const response = await fetch(`/db/getVoters/?firstName=${firstName}&lastName=${lastName}`);
     const result = await response.json();
+    if(!result) {
+      return;
+    }
     setData(result);
     dispatch(setVoterData(result));
   }
@@ -35,7 +39,7 @@ const Search = ({firstName, setFirstName, lastName, setLastName, data, setData})
     value={lastName}>
     </input>
     <p> </p>
-    <input type="submit" value="Search"></input>
+    <input className="searchButton" type="submit" value="Search"></input>
   </form>
   <Results data={data} setData={setData}/>
   </>

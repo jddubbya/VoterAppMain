@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -27,4 +26,58 @@ ul {
   border-color: white;
   border-width: 1px;
   border-style: solid;
+}
+
+.vocheckHeaderContainer {
+  background-color:rgb(9, 56, 75);
+  color:ghostwhite;
+  position: relative;
+  width: 100%;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+  min-width: 100%;
+}
+
+/* added by jdw to put logo on same line as header */
+header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+footer .vocheck-footer {
+  background-color:rgb(9, 56, 75);
+  color:ghostwhite;
+  position: relative;
+  width: 100%;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+footer h4 {
+  display: inline;
+  margin-right: 2em;
+}
+
+.searchForm {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.backButton {
+  color: white;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.titleH1 {
+  padding-left: 20px;
 }
