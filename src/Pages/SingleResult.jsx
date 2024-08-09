@@ -27,7 +27,7 @@ const {id: voterId } = useParams();
           <h3>Address: {voter.ADDRESS}</h3>
           <h3>Precinct: {voter.PRECINCT}</h3>
           <h3>Age: {voter.AGE}</h3>
-          <h3>Calculated Party: {voter.PARTY_CALC}</h3>
+          <h3>Party: {voter.PARTY}</h3>
           </section>
           <br></br>
           <Link to="/"><input className="backButton" type="submit" value="Back"></input></Link>
