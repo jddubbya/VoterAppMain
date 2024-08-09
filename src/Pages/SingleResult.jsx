@@ -28,9 +28,6 @@ const {id: voterId } = useParams();
           <h3>Precinct: {voter.PRECINCT}</h3>
           <h3>Age: {voter.AGE}</h3>
           <h3>Calculated Party: {voter.PARTY_CALC}</h3>
-          <h3>Presidential Propensity: {voter.PRESIDENTIAL_PROPENSITY}</h3>
-          <h3>Primary Propensity: {voter.PRIMARY_PROPENSITY}</h3>
-          <h3>Other Propensity: {voter.OTHER_PROPENSITY}</h3>
           </section>
           <br></br>
           <Link to="/"><input className="backButton" type="submit" value="Back"></input></Link>
