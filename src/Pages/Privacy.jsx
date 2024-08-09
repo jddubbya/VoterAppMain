@@ -4,6 +4,10 @@
 const Privacy = () => {
 return(
   <>
+  <section className="TermsContainer">
+  <h2>
+    Privacy Policy
+  </h2>
   <h3>
     INTRODUCTION
   </h3>
@@ -121,7 +125,7 @@ return(
       </ol>
       <h3>How We Share and Disclose Information</h3>
       Except as otherwise expressly noted herein or within the Services, VoCheck.net may share information collected 
-      with entities affiliated with the Voter Reference Foundation, but those entities will explicitly abide by all 
+      with entities affiliated with the VoCheck, but those entities will explicitly abide by all 
       use restrictions and will use said information only for administration and operation of VoCheck.net itself. 
       Here are some of the circumstances in which VoCheck.net may share information about our users:
       <h4>Service Providers</h4>
@@ -198,6 +202,7 @@ return(
         date on which it was updated. Please check the Privacy Policy periodically for changes. Your continued use of 
         the Services following the posting of changes to this Privacy Policy will mean you accept those changes.
     </p>
+  </section>
   </>
 )
 }
