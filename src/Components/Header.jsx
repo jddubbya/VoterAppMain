@@ -6,11 +6,11 @@ const Header = () => {
     <>
       <header>
         <div className="vocheckHeaderContainer">
-          <p id="topHeader"> VoCheck Voter Lookup</p>
+          <h4 id="topHeader"> VoCheck Voter Lookup<h4>
         </div>
         <section className="logoSection">
           <Link to="/">
-            <img src={logo} width={60} height={60} />
+            <img class="logoImage"src={logo} width={60} height={60} />
           </Link>
           <Link to="/"><h1 className="titleH1">VoCheck</h1></Link>
         </section>
