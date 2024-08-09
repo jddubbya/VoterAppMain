@@ -49,6 +49,9 @@ header {
   display: flex;
   align-items: center;
   margin-left: 20px;
+  border-bottom-color:rgb(245, 242, 242);
+  border-bottom-width: 2px;
+  border-bottom-style:ridge;
 }
 
 .logoSection > a, .logoSection > a:visited, .logoSection > a:active {
