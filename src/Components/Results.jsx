@@ -12,6 +12,7 @@ const Results = () => {
   const currentSearch = useSelector((state) => state.voterData.voterData);
   return (
     <>
+    <section className="resultsSection">
       {!currentSearch.length ? null : (
         <ul>
           {currentSearch.map((voter) => {
@@ -23,6 +24,7 @@ const Results = () => {
           })}
         </ul>
       )}
+      </section>
     </>
   );
 };

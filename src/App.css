@@ -16,40 +16,39 @@
 
 /*************** Begin HEADER Section *****************/
 .titleH1 {
-  padding-left: 2%;
+  padding-left: 20px;
+}
+
+header {
+  top: 0%;
+  width: 100%;
+  position: fixed;
+  background-color: white;
 }
 
 #topHeader {
  margin-top: 0px;
  margin-bottom: 0px;
  text-align: center;
+ height: 25px;
 }
 
 .vocheckHeaderContainer {
   background-color: rgb(9, 56, 75);
   color: white;
-  padding: 5px 0;
 }
 
-.logoImage {
-  display: flex;
-  padding-left: 75px;
-}
 /* The VoCheck logo and Text at the top of the page*/
 .logoSection {
   color:rgb(9, 56, 75);
   position: relative;
-  height: 90px;
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
   display: flex;
   align-items: center;
-  border-bottom: solid;
-  border-bottom-color:rgb(245, 242, 242);
-  border-bottom-width: 2px;
-  border-bottom-style:ridge;
+  margin-left: 20px;
 }
 /*************** End HEADER Section *****************/
 
@@ -74,8 +73,6 @@ body {
 footer .vocheck-footer {
   background-color:rgb(9, 56, 75);
   color:ghostwhite;
-  /* position: fixed;
-  bottom: 0px; */
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
@@ -116,7 +113,7 @@ ul {
 
 /* The State/County DROP DOWN. */
 #countyDrop {
-  margin-bottom:100px;
+  margin-bottom:70px;
 }
 
 .searchForm {
@@ -124,7 +121,23 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 150px;
+}
+
+.tosSection {
+  margin-top: 150px;
+}
+
+.privacySection {
+  margin-top: 150px;
+}
+
+.singleResultSection {
+  margin-top: 150px;
+}
+
+.logoSection > a {
+  text-decoration: none;
 }
 
 /* result item links */
@@ -136,7 +149,20 @@ ul {
 
 /* Colors names in search results when hovering */
 .resultItem > a:hover {
-  color: aqua;
+  color:rgb(21, 136, 182);
+}
+
+.resultsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
 }
 
 
@@ -185,22 +211,18 @@ button:focus-visible {
 .backButton {
   color: black;
   margin-left:50%;
-}
-
-.TermsContainer {
-  margin-left: 20px;
-  margin-right: 20px;
+  cursor: pointer;
 }
 /****************** End Button Section ****************/
 
+/* pushes the data on single results page over from edge of page*/
 .singleDataSec {
   margin-left: 10%;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-.card {
-  padding: 2em;
+/* makes the search form a container and centers search button*/
+.inputCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

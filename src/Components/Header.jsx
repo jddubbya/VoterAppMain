@@ -6,13 +6,13 @@ const Header = () => {
     <>
       <header>
         <div className="vocheckHeaderContainer">
-          <h4 id="topHeader"> VoCheck Voter Lookup</h4>
+          <p id="topHeader"> VoCheck Voter Lookup</p>
         </div>
         <section className="logoSection">
           <Link to="/">
             <img src={logo} width={60} height={60} />
           </Link>
-          <h1 className="titleH1">VoCheck</h1>
+          <Link to="/"><h1 className="titleH1">VoCheck</h1></Link>
         </section>
       </header>
     </>
