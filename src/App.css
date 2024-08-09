@@ -50,6 +50,11 @@ header {
   align-items: center;
   margin-left: 20px;
 }
+
+.logoSection > a, .logoSection > a:visited, .logoSection > a:active {
+  text-decoration: none;
+  color: inherit;
+}
 /*************** End HEADER Section *****************/
 
 /*************** Begin PAGE Section *****************/
@@ -134,10 +139,6 @@ ul {
 
 .singleResultSection {
   margin-top: 150px;
-}
-
-.logoSection > a {
-  text-decoration: none;
 }
 
 /* result item links */
