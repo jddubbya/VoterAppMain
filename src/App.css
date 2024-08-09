@@ -1,16 +1,90 @@
+/*
+* CSS the BASE DOCUMENT, will affect everything */
+*/
+/*************** Begin ROOT Section *********************/
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-width: 100%;
+}
+/*************** End ROOT Section *********************/
+
+/*************** Begin HEADER Section *****************/
+.titleH1 {
+  padding-left: 20px;
+}
+
+#topHeader {
+ margin-top: 0px;
+ margin-bottom: 0px;
+ text-align: center;
+ height: 25px;
+}
+
+.vocheckHeaderContainer {
+  background-color: rgb(9, 56, 75);
+  color: white;
+}
+
+/* The VoCheck logo and Text at the top of the page*/
+.logoSection {
+  color:rgb(9, 56, 75);
+  position: relative;
+  width: 100%;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+/*************** End HEADER Section *****************/
+
+/*************** Begin PAGE Section *****************/
+/* Positions ALL items in the center of the page */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
 /*Single Results page data section */
 .singleDataSec {
   flex-direction: column;
   justify-content: left;
 }
+/*************** End PAGE Section *****************/
 
-.card {
-  padding: 2em;
+/********** Begin FOOTER section. ****************/
+footer .vocheck-footer {
+  background-color:rgb(9, 56, 75);
+  color:ghostwhite;
+  /* position: fixed;
+  bottom: 0px; */
+  width: 100%;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
 }
 
-.read-the-docs {
-  color: #888;
+footer h4 {
+  display: inline;
+  margin-right: 2em;
 }
+
+/* Links in footer */
+.footerLink {
+  color: ghostwhite;
+}
+
+/********** End FOOTER section. ****************/
 
 /* ALL ul's*/
 ul {
@@ -32,36 +106,9 @@ ul {
   overflow-x: hidden;
 }
 
-.logoSection {
-  color:rgb(9, 56, 75);
-  position: relative;
-  width: 100%;
-  white-space: normal;
-  line-height: 1.5em;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-footer .vocheck-footer {
-  background-color:rgb(9, 56, 75);
-  color:ghostwhite;
-  /* position: fixed;
-  bottom: 0px; */
-  width: 100%;
-  white-space: normal;
-  line-height: 1.5em;
-  text-align: center;
-}
-
-footer h4 {
-  display: inline;
-  margin-right: 2em;
-}
-
+/* The State/County DROP DOWN. */
 #countyDrop {
-  margin-bottom:20px;
+  margin-bottom:100px;
 }
 
 .searchForm {
@@ -72,35 +119,7 @@ footer h4 {
   margin-top: 10%;
 }
 
-.backButton {
-  color: black;
-  margin-left:50%;
-}
-
-#root {
-  min-width: 100%;
-}
-
-.titleH1 {
-  padding-left: 20px;
-}
-
-#topHeader {
- margin-top: 0px;
- margin-bottom: 0px;
- text-align: center;
- height: 25px;
-}
-
-/*CSS the base document, will affect everything */
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-}
-
-/* result item links*/
+/* result item links */
 .resultItem > a {
   font-weight: 500;
   color: black;
@@ -112,15 +131,8 @@ footer h4 {
   color: aqua;
 }
 
-/* Positions ALL items in the center of the page */
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-}
 
+/****************** Begin Font Section ****************/
 /* ALL Heading 1 Font size*/
 h1 {
   font-size: 2.2em;
@@ -132,13 +144,9 @@ p {
   font-size: 0.75em;
  /* line-height: 1.1; */
 }
+/****************** End Font Section ****************/
 
-/* Links in footer */
-
-.footerLink {
-  color: ghostwhite;
-}
-
+/****************** Begin Button Section ****************/
 /*ALL buttons*/
 button {
   border-radius: 8px;
@@ -165,11 +173,21 @@ button:focus-visible {
   cursor: pointer;
 }
 
-.vocheckHeaderContainer {
-  background-color: rgb(9, 56, 75);
-  color: white;
+/* Back button */
+.backButton {
+  color: black;
+  margin-left:50%;
 }
+/****************** End Button Section ****************/
 
 .singleDataSec {
   margin-left: 10%;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.card {
+  padding: 2em;
 }
