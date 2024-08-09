@@ -1,10 +1,10 @@
-/**
+/*
  * Terms of Service Page
  */
 const TOS = () => {
     return(
       <>
-      <section>
+      <section className="TermsContainer">
       <h3>
         TERMS OF SERVICE
       </h3>
