@@ -19,6 +19,11 @@
   padding-left: 20px;
 }
 
+header {
+  top: 0%;
+  width: 100%;
+}
+
 #topHeader {
  margin-top: 0px;
  margin-bottom: 0px;
@@ -108,7 +113,7 @@ ul {
 
 /* The State/County DROP DOWN. */
 #countyDrop {
-  margin-bottom:100px;
+  margin-bottom:70px;
 }
 
 .searchForm {
@@ -180,14 +185,14 @@ button:focus-visible {
 }
 /****************** End Button Section ****************/
 
+/* pushes the data on single results page over from edge of page*/
 .singleDataSec {
   margin-left: 10%;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-.card {
-  padding: 2em;
+/* makes the search form a container and centers search button*/
+.inputCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
