@@ -30,25 +30,30 @@ header {
  margin-top: 0px;
  margin-bottom: 0px;
  text-align: center;
- height: 25px;
 }
 
 .vocheckHeaderContainer {
   background-color: rgb(9, 56, 75);
   color: white;
+  padding: 5px 0;
+}
+.logoImage {
+  display: flex;
+  padding-left: 75px;
 }
 
 /* The VoCheck logo and Text at the top of the page*/
 .logoSection {
   color:rgb(9, 56, 75);
   position: relative;
+  height: 90px;
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  border-bottom: solid;
   border-bottom-color:rgb(245, 242, 242);
   border-bottom-width: 2px;
   border-bottom-style:ridge;
