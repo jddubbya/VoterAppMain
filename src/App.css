@@ -16,7 +16,7 @@
 
 /*************** Begin HEADER Section *****************/
 .titleH1 {
-  padding-left: 20px;
+  padding-left: 2%;
 }
 
 #topHeader {
@@ -31,17 +31,25 @@
   padding: 5px 0;
 }
 
+.logoImage {
+  display: flex;
+  padding-left: 75px;
+}
 /* The VoCheck logo and Text at the top of the page*/
 .logoSection {
   color:rgb(9, 56, 75);
   position: relative;
+  height: 90px;
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  border-bottom: solid;
+  border-bottom-color:rgb(245, 242, 242);
+  border-bottom-width: 2px;
+  border-bottom-style:ridge;
 }
 /*************** End HEADER Section *****************/
 
