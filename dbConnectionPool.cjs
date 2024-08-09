@@ -15,7 +15,7 @@ var pool = mysql.createPool({
     host: '107.180.114.231',
     user: 'vuser',
     password: 'Days206Heat&',
-    database: 'rockwall'
+    database: 'voterdata'
 })
 
 // Create a pool of connections - number specified above by
