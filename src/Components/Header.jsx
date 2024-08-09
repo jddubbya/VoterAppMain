@@ -10,7 +10,7 @@ const Header = () => {
         </div>
         <section className="logoSection">
           <Link to="/">
-            <img class="logoImage"src={logo} width={60} height={60} />
+            <img className="logoImage"src={logo} width={60} height={60} />
           </Link>
           <Link to="/"><h1 className="titleH1">VoCheck</h1></Link>
         </section>
