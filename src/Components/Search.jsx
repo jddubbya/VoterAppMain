@@ -8,56 +8,70 @@
 */
 import Results from "./Results";
 import { useDispatch } from "react-redux";
-import {setVoterData} from "../../Redux/slice.cjs";
+import { setVoterData } from "../../Redux/slice.cjs";
 
-const Search = ({firstName, setFirstName, lastName, setLastName, data, setData}) => {
+const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAddress, data, setData }) => {
   const dispatch = useDispatch();
+
+  /*Clean up the address string - remove double spaces*/
+  address = address.replace(/\s+/g, ' ');
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const voterTable = document.getElementById("countyDrop").value;
-    const response = await fetch(`/db/getVotersByName/?firstName=${firstName}&lastName=${lastName}&voterTable=${voterTable}`);
-    const result = await response.json();
-    if(!result) {
-      return;
-    }
-    setData(result);
-    dispatch(setVoterData(result));
-    console.log(voterTable);
-  }
-  // const tableSubmit = (e) => {
-  //   e.preventDefault();
-  //   const voterTable = document.getElementById("countyDrop").value;
-  // }
-  
-  return (
-  <>
 
-  <form className="searchForm" onSubmit={submitHandler}>
-  <section className="selectCont">
-  <select id="countyDrop">
-    <option value="">Select County:</option>
-    <option value="colorado_larimer">Larimer County, CO</option>
-    <option value="texas_rockwall">Rockwall County, TX</option>
-  </select>
-  </section>
-  <section className="inputCont">
-    <input 
-    placeholder="First Name:"
-    onChange={(e) => {setFirstName(e.target.value)}}
-    value={firstName}>
-    </input>
-    <p> </p>
-    <input placeholder="Last Name:"
-    onChange={(e) => {setLastName(e.target.value)}}
-    value={lastName}>
-    </input>
-    <p> </p>
-    <input className="searchButton" type="submit" value="Search"></input>
-    </section>
-  </form>
-  <Results data={data} setData={setData}/>
-  </>
+    if (address) {
+      const response = await fetch(`/db/getVoterByAddress/?address=${address}&voterTable=${voterTable}`);
+      const result = await response.json();
+      if (!result) {
+        return;
+      }
+      setData(result);
+      dispatch(setVoterData(result));
+    } else {
+      const response = await fetch(`/db/getVotersByName/?firstName=${firstName}&lastName=${lastName}&voterTable=${voterTable}`);
+      const result = await response.json();
+      if (!result) {
+        return;
+      }
+      setData(result);
+      dispatch(setVoterData(result));
+    }
+  } 
+
+  return (
+    <>
+
+      <form className="searchForm" onSubmit={submitHandler}>
+        <section className="selectCont">
+          <select id="countyDrop">
+            <option value="">Select County:</option>
+            <option value="colorado_larimer">Larimer County, CO</option>
+            <option value="texas_rockwall">Rockwall County, TX</option>
+          </select>
+        </section>
+        <section className="inputCont">
+          <input
+            placeholder="First Name:"
+            onChange={(e) => { setFirstName(e.target.value) }}
+            value={firstName}>
+          </input>
+          <p> </p>
+          <input placeholder="Last Name:"
+            onChange={(e) => { setLastName(e.target.value) }}
+            value={lastName}>
+          </input>
+          <h4>--- OR ---</h4>
+          <input placeholder="Address (St. # and name):"
+            onChange={(e) => { setAddress(e.target.value) }}
+            value={address}>
+          </input>
+          <p> </p>
+          <input className="searchButton" type="submit" value="Search"></input>
+        </section>
+      </form>
+      <Results data={data} setData={setData} />
+    </>
   )
 }
 
