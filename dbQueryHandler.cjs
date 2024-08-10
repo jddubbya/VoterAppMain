@@ -29,13 +29,28 @@ app.get('/', (req, res) => {
 // Method to get voter data based on voter's first and last name.
 
 app.get("/db/getVotersByName", (req, res) => {
-  const vstate = "texas";
-  const county = "rockwall";
   const { firstName, lastName, voterTable} = req.query;
   let sql = 'SELECT * FROM ' + voterTable +  
   ' WHERE FIRST_NAME = "' + firstName + '" AND LAST_NAME = "' + lastName + 
   '" ORDER BY MIDDLE_NAME ASC';
-  console.log(sql);
+  //console.log(sql);
+  pool.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error executing query: " + err.stack);
+      res.status(500).send("Error fetching users");
+      return;
+    }
+    res.json(results);
+  });
+});
+
+//**************************************************************
+// Method to get voter data based on address.
+
+app.get("/db/getVoterByAddress", (req, res) => {
+  const { address, voterTable} = req.query;
+  let sql = 'SELECT * FROM ' + voterTable +  
+  ' WHERE ADDRESS LIKE "' + address + '%" ORDER BY LAST_NAME, FIRST_NAME, MIDDLE_NAME ASC';
   console.log(sql);
   pool.query(sql, (err, results) => {
     if (err) {
