@@ -16,7 +16,7 @@ const Search = ({firstName, setFirstName, lastName, setLastName, data, setData})
   const submitHandler = async (e) => {
     e.preventDefault();
     const voterTable = document.getElementById("countyDrop").value;
-    const response = await fetch(`/db/getVoters/?firstName=${firstName}&lastName=${lastName}&voterTable=${voterTable}`);
+    const response = await fetch(`/db/getVotersByName/?firstName=${firstName}&lastName=${lastName}&voterTable=${voterTable}`);
     const result = await response.json();
     if(!result) {
       return;
