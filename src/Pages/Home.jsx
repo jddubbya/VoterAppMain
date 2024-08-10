@@ -14,11 +14,15 @@ const Home = () => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
   const [data, setData] = useState([]);
 
   return (
     <>
-      <Search firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName} data={data} setData={setData}/>
+      <Search firstName={firstName} setFirstName={setFirstName}
+              lastName={lastName} setLastName={setLastName}
+              address={address} setAddress={setAddress}
+              data={data} setData={setData}/>
       <SingleResult data={data} setData={setData}/>
     </>
   )
