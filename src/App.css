@@ -1,5 +1,5 @@
 /*
-* CSS the BASE DOCUMENT, will affect everything */
+* CSS the BASE DOCUMENT, will affect everything
 */
 /*************** Begin ROOT Section *********************/
 :root {
@@ -30,6 +30,7 @@ header {
  margin-top: 0px;
  margin-bottom: 0px;
  text-align: center;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .vocheckHeaderContainer {
@@ -122,6 +123,7 @@ ul {
   overflow: scroll;
   overflow-y: auto;
   overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* The State/County DROP DOWN. */
@@ -180,11 +182,27 @@ ul {
 h1 {
   font-size: 2.2em;
   line-height: 1.1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 
 /* ALL Paragraph Font size*/
 p {
   font-size: 0.75em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
  /* line-height: 1.1; */
 }
 /****************** End Font Section ****************/
