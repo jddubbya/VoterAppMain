@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 //**************************************************************
 // Method to get voter data based on voter's first and last name.
 
-app.get("/db/getVoters", (req, res) => {
+app.get("/db/getVotersByName", (req, res) => {
   const vstate = "texas";
   const county = "rockwall";
   const { firstName, lastName, voterTable} = req.query;
