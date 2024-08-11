@@ -44,7 +44,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
 
       <form className="searchForm" onSubmit={submitHandler}>
         <section className="selectCont">
-          <select id="countyDrop">
+          <select id="countyDrop" required>
             <option value="">Select County:</option>
             <option value="colorado_larimer">Larimer County, CO</option>
             <option value="texas_rockwall">Rockwall County, TX</option>
