@@ -52,17 +52,17 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
         </section>
         <section className="inputCont">
           <input
-            placeholder="First Name:"
+            placeholder="First Name"
             onChange={(e) => { setFirstName(e.target.value) }}
             value={firstName}>
           </input>
           <p> </p>
-          <input placeholder="Last Name:"
+          <input placeholder="Last Name"
             onChange={(e) => { setLastName(e.target.value) }}
             value={lastName}>
           </input>
-          <h4>--- OR ---</h4>
-          <input placeholder="Address (St. # and name):"
+          <h4>--- OR Address ---</h4>
+          <input placeholder="1234 Main St"
             onChange={(e) => { setAddress(e.target.value) }}
             value={address}>
           </input>
