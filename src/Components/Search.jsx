@@ -48,6 +48,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             <option value="">Select County:</option>
             <option value="colorado_larimer">Larimer County, CO</option>
             <option value="texas_rockwall">Rockwall County, TX</option>
+            <option value="texas_collin">Collin County, TX</option>
           </select>
         </section>
         <section className="inputCont">
