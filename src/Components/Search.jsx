@@ -9,12 +9,22 @@
 import Results from "./Results";
 import { useDispatch } from "react-redux";
 import { setVoterData } from "../../Redux/slice.cjs";
+import { useState } from "react";
 
-const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAddress, data, setData }) => {
+const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAddress, data, setData, dropCounty, setDropCounty }) => {
+  const [selectedOption, setSelectedOption] = useState(
+    localStorage.getItem('selectedOption') || '');
+
+    const handleOptionChange = (event) => {
+      const newValue = event.target.value;
+      setSelectedOption(newValue);
+      localStorage.setItem('selectedOption', newValue);
+    };
+  
   const dispatch = useDispatch();
-
   /*Clean up the address string - remove double spaces*/
   address = address.replace(/\s+/g, ' ');
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -37,18 +47,17 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       setData(result);
       dispatch(setVoterData(result));
     }
-  } 
+  }
 
   return (
     <>
 
       <form className="searchForm" onSubmit={submitHandler}>
         <section className="selectCont">
-          <select id="countyDrop" required>
+          <select value={selectedOption} onChange={handleOptionChange} id="countyDrop" required>
             <option value="">Select County:</option>
             <option value="colorado_larimer">Larimer County, CO</option>
             <option value="texas_rockwall">Rockwall County, TX</option>
-            <option value="texas_collin">Collin County, TX</option>
           </select>
         </section>
         <section className="inputCont">
