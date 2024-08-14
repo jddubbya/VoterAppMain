@@ -42,7 +42,6 @@ const Statistics = ({ selectedOption }) => {
     const getVoterPartyCnt = async () => {
         const response = await fetch(`/db/getVoterParty/?stateCounty=${stateCounty}`);
         const result = await response.json();
-        console.log('Non-Larimer party: ',result);
         setVoterPartyCnt(result);
     }
 
