@@ -23,6 +23,8 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
     };
   
   const dispatch = useDispatch();
+  /*Clean up the address string - remove double spaces*/
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
