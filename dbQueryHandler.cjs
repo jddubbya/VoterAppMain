@@ -55,6 +55,8 @@ app.get("/db/getVoterByAddress", (req, res) => {
       res.status(500).send("Error fetching users");
       return;
     }
+   /* str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
+    console.log(str); */
     res.json(results);
   });
 });
