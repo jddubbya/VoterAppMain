@@ -6,17 +6,17 @@ const Header = () => {
     <>
       <header>
         <div className="vocheckHeaderContainer">
-          <h4 id="topHeader">VoCheck Voter Lookup</h4>
+          <h4 id="topHeader"> VoCheck Voter Lookup</h4>
         </div>
         <section className="logoSection">
           <Link to="/">
-            <img className="logoImage"src={logo} width={60} height={60} />
+            <img className="logoImage" src={logo} width={60} height={60} />
           </Link>
-          <Link to="/"><h1 className="titleH1">VoCheck</h1></Link>
+          <h1 className="titleH1">VoCheck</h1>
         </section>
       </header>
     </>
   );
 };
 
-export default Header;
+export default Header

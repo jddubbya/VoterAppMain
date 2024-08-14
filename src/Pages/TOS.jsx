@@ -8,7 +8,7 @@ const TOS = () => {
   return (
     <>
       <section className="tosSection">
-        <h3>TERMS OF SERVICE</h3>
+        <h2>TERMS OF SERVICE</h2>
         <p>
           These Terms of Service (the “Terms”) govern your access to and use of
           the VoCheck website owned and operated by VoCheck. By accessing or
@@ -60,17 +60,17 @@ const TOS = () => {
           acting on behalf of a foreign government or of such a federal entity,
           for the purpose of (a) registration of a voter based on his or her
           information maintained in the checklist, (b) publicly disclosing a
-          voter's information maintained in the checklist, or (c) comparing a
-          voter's information maintained in the checklist to personally
+          voter&aposs information maintained in the checklist, or (c) comparing a
+          voter&aposs information maintained in the checklist to personally
           identifying information contained in other federal or state databases.
           You may not use VoCheck to take any action that could harm VoCheck or
           any third party, interfere with the operation of VoCheck, or use
           VoCheck to violate any law. By way of example but not limitation, you
-          may not: (a) act in a manner that negatively affects other users’
+          may not: (a) act in a manner that negatively affects other users&apos
           ability to engage in real time exchanges; (b) alter, edit, or delete
           the materials on VoCheck, including the deletion of any trademark or
           copyright notices on VoCheck; (c) interfere with or disrupt VoCheck,
-          VOCHECK’s servers, or networks (e.g., “flooding” or the sending of
+          VOCHECK&aposs servers, or networks (e.g., “flooding” or the sending of
           mass unsolicited messages) or otherwise harm VoCheck or other users;
           (d) intentionally or unintentionally violate any applicable local,
           state, national, or international law or any regulations having the
@@ -82,7 +82,7 @@ const TOS = () => {
           herein; (h) reproduce, duplicate, copy, sell, trade, resell, or
           exploit for any commercial purposes, any portion of VoCheck; (i)
           attempt to override or circumvent any security measures of VoCheck or
-          VOCHECK’s third party providers or access parts of VoCheck you are not
+          VOCHECK&aposs third party providers or access parts of VoCheck you are not
           authorized to visit; (j) engage in any unauthorized screen scraping,
           database scraping, or spidering, or collection of personally
           identifiable information, or use any other automated means to collect
@@ -151,13 +151,13 @@ const TOS = () => {
           shall defend, indemnify, and hold harmless VoCheck, its parents,
           subsidiaries, and affiliates, and all of their directors, officers,
           agents, shareholders, and employees against all third party claims,
-          damages, costs, and expenses (including reasonable attorneys’ fees and
+          damages, costs, and expenses (including reasonable attorneys&apos fees and
           litigation expenses) arising out of or in connection with: (a) your
           breach or alleged breach of the representations and warranties set
           forth herein; (b) your use of VoCheck; and/or (c) your violation of
           these Terms or any law or regulation. VoCheck reserves the right, at
           its own expense, to take over the defense of any claim subject to
-          indemnification by you, and, if so, you shall cooperate with VOCHECK’s
+          indemnification by you, and, if so, you shall cooperate with VOCHECK&aposs
           defense as reasonably requested in defense of the claim.
         </p>
         <h3>DISCLAIMER OF WARRANTIES</h3>
@@ -189,7 +189,7 @@ const TOS = () => {
           LIMITATIONS, DELAYS, AND OTHER PROBLEMS INHERENT IN THE USE OF
           WIRELESS APPLICATIONS AND ELECTRONIC COMMUNICATIONS, AND VOCHECK IS
           NOT RESPONSIBLE FOR ANY SUCH DELAYS, DELIVERY FAILURES, OR ANY OTHER
-          DAMAGE RESULTING FROM EVENTS BEYOND VOCHECK’S REASONABLE CONTROL.
+          DAMAGE RESULTING FROM EVENTS BEYOND VOCHECK&aposS REASONABLE CONTROL.
           FURTHER, VOCHECK MAKES NO REPRESENTATION, WARRANTY, OR GUARANTEE IN
           REGARD TO ANY INFORMATION DOWNLOADED, OR OTHERWISE OBTAINED BY YOU
           THROUGH VOCHECK FROM A THIRD PARTY. THIS INCLUDES ANY APPLICATION,
@@ -207,7 +207,7 @@ const TOS = () => {
           GOODWILL, DATA, BREACH OF USER SECURITY, TERMINATION OF USER ACCESS,
           OR OTHER PECUNIARY LOSS) ARISING OUT OF THESE TERMS OR THE USE OF OR
           INABILITY TO USE VOCHECK, EVEN IF VOCHECK HAS BEEN ADVISED OF THE
-          POSSIBILITY OF SUCH DAMAGES. YOUR EXCLUSIVE REMEDY AND VOCHECK’S TOTAL
+          POSSIBILITY OF SUCH DAMAGES. YOUR EXCLUSIVE REMEDY AND VOCHECK&aposS TOTAL
           AGGREGATE LIABILITY RELATING TO, ARISING OUT OF, IN CONNECTION WITH,
           OR INCIDENTAL TO THESE TERMS FOR ANY REASON WILL BE LIMITED TO THE
           ACTUAL DIRECT DAMAGES INCURRED BY YOU, UP TO ONE HUNDRED U.S. DOLLARS

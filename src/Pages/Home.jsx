@@ -10,7 +10,7 @@ import { useState } from "react";
 import SingleResult from "./SingleResult";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({selectedOption, setSelectedOption}) => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,7 +22,8 @@ const Home = () => {
       <Search firstName={firstName} setFirstName={setFirstName}
               lastName={lastName} setLastName={setLastName}
               address={address} setAddress={setAddress}
-              data={data} setData={setData}/>
+              data={data} setData={setData}
+              selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>
       <SingleResult data={data} setData={setData}/>
     </>
   )

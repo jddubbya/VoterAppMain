@@ -8,7 +8,7 @@ const Privacy = () => {
   return (
     <>
       <section className="privacySection">
-        <h3>INTRODUCTION</h3>
+      <h2>PRIVACY POLICY</h2>
         <p>
           The purpose of VoCheck.net is to provide public access to official
           government data pertaining to elections, including voter registration
@@ -329,7 +329,7 @@ const Privacy = () => {
           VoCheck.net reserves the right to change this Privacy Policy at any
           time to reflect changes in the law, our data collection and use
           practices, the features of our Services, or advances in technology. If
-          we decide to change our Privacy Policy, we’ll post the changes here
+          we decide to change our Privacy Policy, we&aposll post the changes here
           and indicate at the top of the Privacy Policy the last date on which
           it was updated. Please check the Privacy Policy periodically for
           changes. Your continued use of the Services following the posting of

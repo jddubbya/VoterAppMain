@@ -141,10 +141,17 @@ ul {
 
 .tosSection {
   margin-top: 150px;
+  margin-left: 5%;
 }
 
 .privacySection {
   margin-top: 150px;
+  margin-left: 5%;
+}
+
+.statisticsSection {
+  margin-top: 150px;
+  margin-left: 5%;
 }
 
 .singleResultSection {
@@ -197,8 +204,6 @@ h4 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
 /* ALL Paragraph Font size*/
 p {
   font-size: 0.75em;
@@ -234,6 +239,11 @@ button:focus-visible {
   cursor: pointer;
 }
 
+/*Statistics button */
+.statsButton:hover {
+  cursor: pointer;
+}
+
 /* Back button */
 .backButton {
   color: black;
@@ -246,6 +256,12 @@ button:focus-visible {
 .singleDataSec {
   margin-left: 10%;
 }
+
+/* Tabs a section over*/
+.tabSec {
+  margin-left: 3%;
+}
+
 
 /* makes the search form a container and centers search button*/
 .inputCont {

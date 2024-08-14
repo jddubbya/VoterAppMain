@@ -8,7 +8,6 @@
 
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
@@ -26,14 +25,13 @@ app.get('/', (req, res) => {
 })
 
 //**************************************************************
-// Method to get voter data based on voter's first and last name.
+// Method to get voter data based on voter's FIRST and LAST NAME.
 
 app.get("/db/getVotersByName", (req, res) => {
   const { firstName, lastName, voterTable} = req.query;
   let sql = 'SELECT * FROM ' + voterTable +  
   ' WHERE FIRST_NAME = "' + firstName + '" AND LAST_NAME = "' + lastName + 
   '" ORDER BY MIDDLE_NAME ASC';
-  //console.log(sql);
   pool.query(sql, (err, results) => {
     if (err) {
       console.error("Error executing query: " + err.stack);
@@ -45,13 +43,12 @@ app.get("/db/getVotersByName", (req, res) => {
 });
 
 //**************************************************************
-// Method to get voter data based on address.
+// Method to get voter data based on ADDRESS.
 
 app.get("/db/getVoterByAddress", (req, res) => {
-  const { address, voterTable} = req.query;
+  const { address, voterTable } = req.query;
   let sql = 'SELECT * FROM ' + voterTable +  
   ' WHERE ADDRESS LIKE "' + address + '%" ORDER BY LAST_NAME, FIRST_NAME, MIDDLE_NAME ASC';
-  console.log(sql);
   pool.query(sql, (err, results) => {
     if (err) {
       console.error("Error executing query: " + err.stack);
@@ -63,12 +60,16 @@ app.get("/db/getVoterByAddress", (req, res) => {
 });
 
 //**************************************************************
-// Method to get list of states.
+// Method to get counts of voters by VOTER STATUS.
 
-app.get("/db/getStates", (req, res) => {
-  let sql = 'SELECT DISTINCT STATE FROM STATE_COUNTY ORDER BY STATE ASC';
+app.get("/db/getVoterStatus", (req, res) => {
+  const { stateCounty } = req.query;
+  
+  let sql = 'SELECT count(*) AS "COUNT", voter_status FROM ' + 
+            stateCounty + ' GROUP BY VOTER_STATUS ORDER BY VOTER_STATUS ASC';
   pool.query(sql, (err, results) => {
     if (err) {
+      console.error("Error executing query: " + err.stack);
       res.status(500).send("Error fetching users");
       return;
     }
@@ -77,20 +78,58 @@ app.get("/db/getStates", (req, res) => {
 });
 
 //**************************************************************
-// Method to get list of counties based on the State selected.
+// Method to get counts of voters by GENDER.
 
-app.get("/db/getCounties", (req, res) => {
-   const { stateName } = req.query;
-   let sql = 'SELECT COUNTY FROM STATE_COUNTY WHERE STATE = "' + stateName + '"';
+app.get("/db/getVoterGender", (req, res) => {
+  const { stateCounty } = req.query;
+  
+  let sql = 'SELECT count(*) AS "COUNT", GENDER FROM ' + 
+  stateCounty + ' GROUP BY GENDER ORDER BY GENDER ASC';
+  pool.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error executing query: " + err.stack);
+      res.status(500).send("Error fetching users");
+      return;
+    }
+    res.json(results);
+  });
+});
+
+//**************************************************************
+// Method to get count of voters by PARTY.
+
+app.get("/db/getVoterParty", (req, res) => {
+  const { stateCounty} = req.query;
+  let sql = 'SELECT count(*) AS "COUNT", PARTY FROM ' 
+            + stateCounty + ' WHERE PARTY IN ("DEM","REP","UAF","LBR","XX") GROUP BY PARTY ORDER BY PARTY ASC';
+            pool.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error executing query: " + err.stack);
+      res.status(500).send("Error fetching users");
+      return;
+    }
+    res.json(results);
+  });
+});
+
+//**************************************************************
+// Method to get count of PRECINCTS.
+
+app.get("/db/getPrecinct", (req, res) => {
+   const { stateCounty } = req.query;
+   let sql = 'SELECT COUNT(DISTINCT PRECINCT) as PCT_COUNT FROM ' + stateCounty;
    pool.query(sql, (err, results) => {
      if (err) {
-       res.status(500).send("Error fetching users");
+      console.error("Error executing query: " + err.stack); 
+      res.status(500).send("Error fetching Precinct Count");
        return;
      }
+   /*  str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output. */
      res.json(results);
    });
  });
 
+ //**************************************************************
 // Listen on Server Port 3000
 
 app.listen(PORT, () => {

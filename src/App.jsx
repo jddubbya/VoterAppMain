@@ -6,16 +6,21 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import TOS from './Pages/TOS'
 import Privacy from './Pages/Privacy'
+import Statistics from './Pages/Statistics'
+import { useState } from 'react'
 
 function App() {
+  const [selectedOption, setSelectedOption] = useState(
+    localStorage.getItem('selectedOption') || '');
   return (
     <>
     <Header/>
     <Routes>
-      <Route path="/" element={<Home/>}></Route>
+      <Route path="/" element={<Home selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>}></Route>
       <Route path="/:id" element={<SingleResult/>}></Route>
       <Route path="/tos" element={<TOS/>}></Route>
       <Route path="/privacy" element={<Privacy/>}></Route>
+      <Route path="/statistics" element={<Statistics selectedOption={selectedOption} />}></Route>
     </Routes>
     <Footer/>
     </>
