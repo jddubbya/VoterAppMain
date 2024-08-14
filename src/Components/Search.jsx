@@ -23,14 +23,14 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
     };
   
   const dispatch = useDispatch();
-  /*Clean up the address string - remove double spaces*/
-  address = address.replace(/\s+/g, ' ');
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const voterTable = document.getElementById("countyDrop").value;
 
     if (address) {
+      /*Clean up the address string - replace spaces with % wildcard*/
+      address = address.replace(/\s+/g, '%');
       const response = await fetch(`/db/getVoterByAddress/?address=${address}&voterTable=${voterTable}`);
       const result = await response.json();
       if (!result) {
