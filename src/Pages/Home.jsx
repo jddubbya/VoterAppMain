@@ -20,7 +20,7 @@ const Home = ({ selectedOption, setSelectedOption }) => {
   const disclaimer = "Maintaining accurate voter rolls is a challenging task. In order for rolls to be accurate, voters " +
     "should contact their county election officials when they move or if a family member passes away. VoCheck " +
     "is a free and easy way to check your voter information. VoCheck is not for commercial use, and is for use by U.S. citizens only. " + 
-    "By clicking “I Agree”, that before you use VoCheck, you have read  the Terms of Service below and agree to abide by them.";
+    "By clicking “I Agree”, you are affirming that before you use VoCheck, you have read  the Terms of Service below and agree to abide by them.";
 
   const agreeClicked = sessionStorage.getItem('agreed');
   if (!agreeClicked) {
