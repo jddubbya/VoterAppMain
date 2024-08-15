@@ -17,12 +17,15 @@ const Statistics = ({ selectedOption }) => {
     usState = usState.toUpperCase();
     let county = split[1];
     county = county.toUpperCase();
+    let formattedDate = '';
 
     /* Create state variables for each function*/
     const [voterStatusCnt, setVoterStatusCnt] = useState([]);
     const [voterPartyCnt, setVoterPartyCnt] = useState([]);
     const [voterGenderCnt, setVoterGenderCnt] = useState([]);
-    const [precinctCnt, setPrecinctCnt] = useState({}); 
+    const [precinctCnt, setPrecinctCnt] = useState([]);
+    const [dataDate, setDataDate] = useState([]);
+
 
     /* Get the Voter Status*/
     const getVoterStatusCnt = async () => {
@@ -52,12 +55,20 @@ const Statistics = ({ selectedOption }) => {
         setPrecinctCnt(result); 
     }
 
+    /* Get the date for the data source */
+    const getDataDate = async () => {
+        const response = await fetch(`/db/getDataDate/?stateCounty=${stateCounty}`);
+        const result = await response.json();
+        setDataDate(result);
+    }
+
     /* Runs the queries when the page loads */
     useEffect(() => {
         const allQueries = async () => {
            await getVoterStatusCnt();
            await getVoterGenderCnt();
            await getVoterPartyCnt();
+           await getDataDate();
            await getPrecinctCnt();
         }
         allQueries();
@@ -69,18 +80,22 @@ const Statistics = ({ selectedOption }) => {
         return parseInt([voterStatusCnt[0].COUNT]) + parseInt([voterStatusCnt[1].COUNT]);
     }
 
-    /* Calculate the count of the smaller Parties. Add DEM, REP, UAF, LBR and subtract from total voters*/
+    /* Get the total number of voters by adding the Active and Suspended Voters*/
+    /* parseInt is needed because the values are returned as strings */
+    const getSuspendedPct = () => {
+        return (parseInt([voterStatusCnt[1].COUNT]) / getTotalVoters()) * 100;
+    }
+
+    /* Calculate the count() of the smaller Parties. Add DEM, REP, UAF, LBR and subtract from total voters*/
     /* and handle the case where no Party info is available*/
-    const getOtherPartyCount  = () => {
+    const getOtherPartyCount = () => {
         const totalVoters = getTotalVoters();
         return totalVoters - (parseInt([voterPartyCnt[0].COUNT]) + 
                             parseInt([voterPartyCnt[1].COUNT]) + 
                             parseInt([voterPartyCnt[2].COUNT]) + 
                             parseInt([voterPartyCnt[3].COUNT]));   
     }
-
     
-
     /* Builds the Statistics page*/
     return (
         (!voterStatusCnt.length || 
@@ -90,6 +105,7 @@ const Statistics = ({ selectedOption }) => {
             <>
                 <section className="statisticsSection">
                     <h2>Statistics for {county} County, {usState}, </h2>
+                    <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0,10)}</p>
                     <h3>Number of Precincts: {[precinctCnt[0].PCT_COUNT]}</h3>
                     <h3>Total Registered Voters: {getTotalVoters().toLocaleString('en-US')}</h3>
                 <h4>By Voter Status:</h4>
@@ -102,6 +118,7 @@ const Statistics = ({ selectedOption }) => {
                         <tr>
                             <td>Suspended:</td>
                             <td align="right">{[voterStatusCnt[1].COUNT].toLocaleString('en-US')}</td>
+                            <td>( {getSuspendedPct().toFixed(1)}% )</td>
                         </tr>
                         </tbody>
                     </table>
