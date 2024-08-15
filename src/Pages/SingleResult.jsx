@@ -22,12 +22,12 @@ const SingleResult = ({ data }) => {
               <>
                 <section className="singleDataSec">
                   <h3>{voter.NAME}</h3>
+                  <h4><span className="tab"></span>Voter Status: {voter.VOTER_STATUS}</h4>
                   <h4><span className="tab"></span>Age: {voter.AGE}</h4>
                   <h4><span className="tab"></span>Party: {voter.PARTY}</h4>
                   <h4><span className="tab"></span>Address: {voter.ADDRESS}</h4>
                   <h4><span className="tab"></span>Municipality: {voter.MUNICIPALITY}</h4>
                   <h4><span className="tab"></span>Registration Date: {voter.REG_DATE}</h4>
-                  <h4><span className="tab"></span>Voter Status: {voter.VOTER_STATUS}</h4>
                   <br></br>
                   <h3>Political Districts:</h3>
                   <h4><span className="tab"></span>Precinct: {voter.PRECINCT}</h4>  
