@@ -7,6 +7,7 @@ import Footer from './Components/Footer'
 import TOS from './Pages/TOS'
 import Privacy from './Pages/Privacy'
 import Statistics from './Pages/Statistics'
+import Maps from './Pages/Maps'
 import { useState } from 'react'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/tos" element={<TOS/>}></Route>
       <Route path="/privacy" element={<Privacy/>}></Route>
       <Route path="/statistics" element={<Statistics selectedOption={selectedOption} />}></Route>
+      <Route path="/maps" element={<Maps selectedOption={selectedOption} />}></Route>
     </Routes>
     <Footer/>
     </>
