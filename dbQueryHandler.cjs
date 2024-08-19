@@ -20,10 +20,13 @@ app.use(express.static(__dirname + '/dist'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/dist/index.html');
 })
 
+app.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html');
+})
 //**************************************************************
 // Method to get voter data based on voter's FIRST and LAST NAME.
 
