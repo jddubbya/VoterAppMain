@@ -12,6 +12,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
 const pool = require('./dbConnectionPool.cjs');  // JDW
+const path = require('path');
 
 // __dirname is an environment variable that tells you the absolute path 
 // of the directory containing the currently executing file.
@@ -148,6 +149,11 @@ app.get("/db/getDataDate", (req, res) => {
     res.json(results);
   });
 });
+
+/* Refresh code */
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+})
 
  //**************************************************************
 // Listen on Server Port 3000
