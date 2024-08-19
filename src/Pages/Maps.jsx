@@ -18,19 +18,19 @@ const Maps = ({ selectedOption }) => {
     county = county.toUpperCase();
     let mapURL = '';
 
-    switch(county) {
+    switch (county) {
         case "ROCKWALL":
-            mapURL = "https://www.google.com/maps/d/embed?mid=1RTnQRNjJON8TIIQ20ULpTCrmUBQK5X8&ehbc=2E312F&noprof=1&zoom=9&ll=32.90466391304642%2C-96.40261324716798&z=11";
+            mapURL = "https://www.google.com/maps/d/embed?mid=19vf57BJvT256gDFOPxm4udW3XtDdHvo&ehbc=2E312F&noprof=1&zoom=9&ll=32.90466391304642%2C-96.40261324716798&z=11";
             break;
         case "LARIMER":
-            mapURL = "https://www.google.com/maps/d/embed?mid=1diBfuLelXeljLv6dHBnkGUg0E6o&ehbc=2E312FF&noprof=1&zoom=9&ll=40.64524800318158%2C-105.5532511533203&z=9";
+            mapURL = "https://www.google.com/maps/d/embed?mid=1wER0QBICIAjYHJ94rArRMJ_ptTzhOfU&ehbc=2E312F&noprof=1&zoom=9&ll=40.64524800318158%2C-105.5532511533203&z=9";
             break;
         case "COLLIN":
-            mapURL = "https://www.google.com/maps/d/u/0/embed?mid=1RTnQRNjJON8TIIQ20ULpTCrmUBQK5X8&ehbc=2E312F&noprof=1&zoom=9&ll=33.202878837648285%2C-96.63653854260464&z=10";
+            mapURL = "https://www.google.com/maps/d/embed?mid=1c6RQuw-VtphI0vLa1hzNYLn90ehB4mE&ehbc=2E312FF&noprof=1&zoom=9&ll=33.202878837648285%2C-96.63653854260464&z=10";
             break;
         default:
-           mapURL = "https://www.google.com/maps/d/embed?mid=1RTnQRNjJON8TIIQ20ULpTCrmUBQK5X8&ehbc=2E312F&noprof=1&zoom=9&ll=30.965265042544072%2C-99.96208002204622&z=6.5"
-        }
+            mapURL = "https://www.google.com/maps/d/embed?mid=1RTnQRNjJON8TIIQ20ULpTCrmUBQK5X8&ehbc=2E312F&noprof=1&zoom=9&ll=30.965265042544072%2C-99.96208002204622&z=6.5"
+    }
            
     /* Builds the Maps page*/
     return (
