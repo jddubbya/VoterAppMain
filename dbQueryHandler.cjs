@@ -24,9 +24,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/dist/index.html');
 })
 
-app.get('/*', (req, res) => {
-  res.sendFile(__dirname + '/dist/index.html');
-})
 //**************************************************************
 // Method to get voter data based on voter's FIRST and LAST NAME.
 
