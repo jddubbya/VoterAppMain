@@ -154,6 +154,12 @@ ul {
   margin-left: 5%;
 }
 
+.mapsSection {
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
 .singleResultSection {
   margin-top: 150px;
 }
