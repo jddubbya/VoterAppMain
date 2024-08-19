@@ -60,6 +60,15 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       navigate("/statistics")
     }
   }
+  /* Make sure a state and county are selected before going to Maps page*/
+  const mapsClickHandler = (e) => {
+    e.preventDefault();
+    if(!document.getElementById("countyDrop").value) {
+      alert("You must select a state and county.")
+    } else {
+      navigate("/maps")
+    }
+  }
 
   return (
     <>
@@ -72,6 +81,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             <option value="texas_collin">Collin County, TX</option>
           </select>
         <Link to={"/statistics"}><input type="button" value="Stats" onClick={clickHandler} /></Link>
+        <Link to={"/maps"}><input type="button" value="Maps" onClick={mapsClickHandler} /></Link>
         </section>
         <section className="inputCont">
           <input
