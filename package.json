@@ -12,6 +12,10 @@
     "start": "concurrently \"node dbQueryHandler.cjs\" \"npm run dev\""
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.7",
+    "@mui/x-charts": "^7.13.0",
     "@reduxjs/toolkit": "^2.2.6",
     "body-parser": "^1.20.2",
     "chart.js": "^4.4.3",
