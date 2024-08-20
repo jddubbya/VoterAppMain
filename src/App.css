@@ -7,11 +7,16 @@
   line-height: 1.5;
   font-weight: 400;
   text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
 }
 
 #root {
   min-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
 /*************** End ROOT Section *********************/
 
 /*************** Begin HEADER Section *****************/
@@ -73,6 +78,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+
 }
 
 /*Single Results page data section */
@@ -87,6 +93,7 @@ footer .vocheck-footer {
   background-color:rgb(9, 56, 75);
   color:ghostwhite;
   width: 100%;
+  min-width: 100%;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
@@ -100,6 +107,10 @@ footer h4 {
 /* Links in footer */
 .footerLink {
   color: ghostwhite;
+}
+
+.vocheck-footer {
+  width: 100%;
 }
 
 /********** End FOOTER section. ****************/
@@ -151,6 +162,8 @@ ul {
 .statisticsSection {
   margin-top: 150px;
   margin-left: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 .mapsSection {
@@ -280,4 +293,8 @@ button:focus-visible {
 .tab {
   display: inline-block;
   margin-left: 30px;
+}
+
+.chartCont {
+  display: flex;
 }
