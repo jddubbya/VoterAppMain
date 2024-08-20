@@ -288,9 +288,9 @@ button:focus-visible {
 
 @media (width <= 1250px) {
   body {
-    max-width: 100%vw;
+    width: 100%vw;
   }
   root {
-    max-width: 100%vw;
+    width: 100%vw;
   }
 }
