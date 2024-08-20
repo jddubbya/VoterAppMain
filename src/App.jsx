@@ -24,6 +24,7 @@ function App() {
       <Route path="/privacy" element={<Privacy/>}></Route>
       <Route path="/statistics" element={<Statistics selectedOption={selectedOption} />}></Route>
       <Route path="/maps" element={<Maps selectedOption={selectedOption} />}></Route>
+      <Route path="/charts" element={<Charts selectedOption={selectedOption} />}></Route>
     </Routes>
     <Footer/>
     </>
