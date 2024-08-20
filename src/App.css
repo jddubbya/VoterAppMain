@@ -10,8 +10,7 @@
 }
 
 #root {
-  min-width: 100%;
-  max-width: 100%vw;
+  width: 100%vw;
 }
 /*************** End ROOT Section *********************/
 
