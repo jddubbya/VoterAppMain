@@ -108,7 +108,6 @@ const Charts = ({ selectedOption }) => {
             <>
                 <section className="statisticsSection">
                     <h2>Statistics for {county} County, {usState} </h2>
-                    <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0, 10)}</p>
                     <h3>Number of Precincts: {[precinctCnt[0].PCT_COUNT]}</h3>
                     <h3>Total Registered Voters: {getTotalVoters().toLocaleString('en-US')}</h3>
                     <h4>By Voter Status:</h4>
@@ -171,6 +170,9 @@ const Charts = ({ selectedOption }) => {
                     }
                     </section>
                  
+                </section>
+                <section className="dataDisc">
+                    <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0, 10)}</p>
                 </section>
                 <Link to="/">
                     <input
