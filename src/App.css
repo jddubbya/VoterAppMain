@@ -153,6 +153,7 @@ ul {
 .statisticsSection {
   margin-top: 150px;
   margin-left: 5%;
+  min-width: 100%vw;
 }
 
 .mapsSection {
