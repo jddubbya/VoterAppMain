@@ -21,6 +21,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       setSelectedOption(newValue);
       localStorage.setItem('selectedOption', newValue);
     };
+    
   
   const dispatch = useDispatch();
   /*Clean up the address string - remove double spaces*/
@@ -51,15 +52,6 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
     }
   }
 
-  /* Make sure a state and county are selected before going to Stats page*/
-  const clickHandler = (e) => {
-    e.preventDefault();
-    if(!document.getElementById("countyDrop").value) {
-      alert("You must select a state and county.")
-    } else {
-      navigate("/statistics")
-    }
-  }
   /* Make sure a state and county are selected before going to Maps page*/
   const mapsClickHandler = (e) => {
     e.preventDefault();
@@ -67,6 +59,15 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       alert("You must select a state and county.")
     } else {
       navigate("/maps")
+    }
+  }
+  /* Make sure a state and county are selected before going to Charts page*/
+  const chartsClickHandler = (e) => {
+    e.preventDefault();
+    if(!document.getElementById("countyDrop").value) {
+      alert("You must select a state and county.")
+    } else {
+      navigate("/charts")
     }
   }
 
@@ -80,7 +81,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             <option value="texas_rockwall">Rockwall County, TX</option>
             <option value="texas_collin">Collin County, TX</option>
           </select>
-        <Link to={"/statistics"}><input type="button" value="Stats" onClick={clickHandler} /></Link>
+        <Link to={"/charts"}><input type="button" value="Stats" onClick={chartsClickHandler} /></Link>
         <Link to={"/maps"}><input type="button" value="Maps" onClick={mapsClickHandler} /></Link>
         </section>
         <section className="inputCont">
