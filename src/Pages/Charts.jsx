@@ -19,6 +19,7 @@ const Charts = ({ selectedOption }) => {
     let county = split[1];
     county = county.toUpperCase();
     let formattedDate = '';
+    let hasParty = false;
 
     /* Create state variables for each function*/
     const [voterStatusCnt, setVoterStatusCnt] = useState([]);
@@ -142,6 +143,7 @@ const Charts = ({ selectedOption }) => {
                         height={200}
                     />
                     <h4>By Party:</h4>
+                    { voterPartyCnt.length > 1 ? 
                     <BarChart
                         width={575}
                         height={300}
@@ -158,8 +160,10 @@ const Charts = ({ selectedOption }) => {
                             voterPartyCnt[2].PARTY, voterPartyCnt[1].PARTY, 'OTHER'],
                             scaleType: 'band'
                         }]}
-
                     />
+                    : <p>No party data available</p>
+                    }
+                 
                 </section>
                 <Link to="/">
                     <input
