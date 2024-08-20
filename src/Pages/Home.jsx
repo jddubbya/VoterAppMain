@@ -23,6 +23,7 @@ const Home = ({ selectedOption, setSelectedOption }) => {
     "By clicking “I Agree”, you are affirming that before you use VoCheck, you have read  the Terms of Service below and agree to abide by them.";
 
   const agreeClicked = sessionStorage.getItem('agreed');
+  
   if (!agreeClicked) {
     swal({
       title: "Before you start...",
