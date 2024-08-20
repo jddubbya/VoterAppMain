@@ -6,6 +6,7 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import TOS from './Pages/TOS'
 import Privacy from './Pages/Privacy'
+import Statistics from './Pages/Statistics'
 import Maps from './Pages/Maps'
 import Charts from './Pages/Charts'
 /* <Route path="/charts" element={<Charts selectedOption={selectedOption} />}></Route> */
