@@ -35,7 +35,6 @@ const Maps = ({ selectedOption }) => {
     /* Builds the Maps page*/
     return (
             <>
-            <title>Add a Map using HTML</title>
                 <section className="mapsSection">
                 <iframe src={mapURL} width="640" height="480">
                 </iframe>
