@@ -6,8 +6,8 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import TOS from './Pages/TOS'
 import Privacy from './Pages/Privacy'
-import Statistics from './Pages/Statistics'
 import Maps from './Pages/Maps'
+<Route path="/charts" element={<Charts selectedOption={selectedOption} />}></Route>
 import { useState } from 'react'
 
 function App() {
