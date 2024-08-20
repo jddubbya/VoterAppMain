@@ -298,3 +298,7 @@ button:focus-visible {
   display: flex;
 }
 
+.dataDisc {
+text-align: center;
+}
+
