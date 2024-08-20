@@ -97,9 +97,6 @@ const Charts = ({ selectedOption }) => {
             parseInt([voterPartyCnt[2].COUNT]) +
             parseInt([voterPartyCnt[3].COUNT]));
     }
-    const xLabels = [];
-    xLabels.push('DEM', 'LBR', 'REP', 'UAF', 'OTHER');
-    console.log(xLabels);
 
     /* Builds the Statistics page*/
     return (
