@@ -1,0 +1,293 @@
+/*
+* CSS the BASE DOCUMENT, will affect everything
+*/
+/*************** Begin ROOT Section *********************/
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-width: 100%;
+}
+/*************** End ROOT Section *********************/
+
+/*************** Begin HEADER Section *****************/
+.titleH1 {
+  padding-left: 20px;
+}
+
+header {
+  top: 0%;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 1000;
+}
+
+#topHeader {
+ margin-top: 0px;
+ margin-bottom: 0px;
+ text-align: center;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.vocheckHeaderContainer {
+  background-color: rgb(9, 56, 75);
+  color: white;
+  padding: 5px 0; 
+}
+.logoImage {
+  display: flex;
+  padding-left: 75px;
+}
+
+/* The VoCheck logo and Text at the top of the page*/
+.logoSection {
+  color:rgb(9, 56, 75);
+  position: relative;
+  height: 90px;
+  width: 100%;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-bottom: solid;
+  border-bottom-color:rgb(245, 242, 242);
+  border-bottom-width: 2px;
+  border-bottom-style:ridge;
+}
+
+.logoSection > a, .logoSection > a:visited, .logoSection > a:active {
+  text-decoration: none;
+  color: inherit;
+}
+/*************** End HEADER Section *****************/
+
+/*************** Begin PAGE Section *****************/
+/* Positions ALL items in the center of the page */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+/*Single Results page data section */
+.singleDataSec {
+  display: flex;flex-direction: column;
+  justify-content: left;
+}
+
+/*Single Results page data section */
+.editUserInfo {
+  display: flex;
+  text-align: right;
+}
+
+/*************** End PAGE Section *****************/
+
+/********** Begin FOOTER section. ****************/
+footer .vocheck-footer {
+  background-color:rgb(9, 56, 75);
+  color:ghostwhite;
+  width: 100%;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+footer h4 {
+  display: inline;
+  margin-right: 2em;
+}
+
+/* Links in footer */
+.footerLink {
+  color: ghostwhite;
+}
+
+/********** End FOOTER section. ****************/
+
+/* ALL ul's*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  background-color: rgb(256, 256, 256);
+  border-radius: 5px;
+  border-color: #888;
+  border-width: 1px;
+  border-style: solid; /* jdw adds below here */
+  margin: 10;
+  padding: 10px;
+  max-height: 150px;
+  min-width: 250px;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* The State/County DROP DOWN. */
+#countyDrop {
+  margin-bottom:70px;
+}
+
+.searchForm {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.tosSection {
+  margin-top: 150px;
+  margin-left: 5%;
+}
+
+.privacySection {
+  margin-top: 150px;
+  margin-left: 5%;
+}
+
+.statisticsSection {
+  margin-top: 150px;
+  margin-left: 5%;
+}
+
+.mapsSection {
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.singleResultSection {
+  margin-top: 150px;
+}
+
+/* result item links */
+.resultItem > a {
+  font-weight: 500;
+  color: black;
+  text-decoration: inherit;
+}
+
+/* Colors names in search results when hovering */
+.resultItem > a:hover {
+  color:rgb(21, 136, 182);
+}
+
+.resultsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+
+/****************** Begin Font Section ****************/
+/* ALL Heading 1 Font size*/
+h1 {
+  font-size: 2.2em;
+  line-height: 1.1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ALL Paragraph Font size*/
+p {
+  font-size: 0.75em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ /* line-height: 1.1; */
+}
+/****************** End Font Section ****************/
+
+/****************** Begin Button Section ****************/
+/*ALL buttons*/
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: black;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: darkgray;
+  cursor:pointer;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/*Search button */
+.searchButton:hover {
+  cursor: pointer;
+}
+
+/*Statistics button */
+.statsButton:hover {
+  cursor: pointer;
+}
+
+/* Back button */
+.backButton {
+  color: black;
+  margin-left:50%;
+  cursor: pointer;
+  background-color: lightgray;
+}
+/****************** End Button Section ****************/
+
+/* pushes the data on single results page over from edge of page*/
+.singleDataSec {
+  margin-left: 10%;
+}
+
+/* Tabs a section over*/
+.tabSec {
+  margin-left: 3%;
+}
+
+
+/* makes the search form a container and centers search button*/
+.inputCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* tab over */
+.tab {
+  display: inline-block;
+  margin-left: 30px;
+}
