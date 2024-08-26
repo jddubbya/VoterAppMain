@@ -84,6 +84,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
         <Link to={"/charts"}><input type="button" value="Stats" onClick={chartsClickHandler} /></Link>
         <Link to={"/maps"}><input type="button" value="Maps" onClick={mapsClickHandler} /></Link>
         </section>
+        <h4>--- Search by Voter Name ---</h4>
         <section className="inputCont">
           <input
             placeholder="First Name"
