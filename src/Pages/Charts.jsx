@@ -108,10 +108,10 @@ const Charts = ({ selectedOption }) => {
             <>
                 <section className="statisticsSection">
                     <h2>Statistics for {county} County, {usState} </h2>
-                    <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0, 10)}</p>
                     <h3>Number of Precincts: {[precinctCnt[0].PCT_COUNT]}</h3>
                     <h3>Total Registered Voters: {getTotalVoters().toLocaleString('en-US')}</h3>
                     <h4>By Voter Status:</h4>
+                    <section className="chartCont">
                     <PieChart
                         series={[
                             {
@@ -126,7 +126,9 @@ const Charts = ({ selectedOption }) => {
                         width={575}
                         height={200}
                     />
+                    </section>
                     <h4>By Gender:</h4>
+                    <section className="chartCont">
                     <PieChart
                         series={[
                             {
@@ -142,7 +144,9 @@ const Charts = ({ selectedOption }) => {
                         width={575}
                         height={200}
                     />
+                    </section>
                     <h4>By Party:</h4>
+                    <section className="chartCont">
                     { voterPartyCnt.length > 1 ? 
                     <BarChart
                         width={575}
@@ -161,18 +165,22 @@ const Charts = ({ selectedOption }) => {
                             scaleType: 'band'
                         }]}
                     />
+                    
                     : <p>No party data available</p>
-                    }       
+                    }
+                    </section>
+                 
                 </section>
-                <div className="centeredButtonCont">
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <section className="dataDisc">
+                    <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0, 10)}</p>
+                </section>
+                <Link to="/">
                     <input
                         className="backButton"
                         type="submit"
                         value="Back"
                     ></input>
                 </Link>
-                </div>
             </>
     )
 }

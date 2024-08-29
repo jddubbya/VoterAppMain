@@ -15,8 +15,6 @@ var pool = mysql.createPool({
     host: '107.180.114.231',
     user: 'vuser',
     password: 'Days206Heat&',
-    //user: 'vadmin',
-    //password: 'Jabra159Fund$',
     database: 'voterdata'
 })
 

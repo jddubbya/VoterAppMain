@@ -12,7 +12,7 @@ import "../App.css";
 const SingleResult = ({ data }) => {
   const voterList = useSelector((state) => state.voterData.voterData);
   const { id: voterId } = useParams();
-  
+
   return (
     <>
       <section className="singleResultSection">
@@ -24,7 +24,7 @@ const SingleResult = ({ data }) => {
                   <h3>{voter.NAME}</h3>
                   <h4><span className="tab"></span>Voter Status: {voter.VOTER_STATUS}</h4>
                   <h4><span className="tab"></span>Age: {voter.AGE}</h4>
-                  <h4><span className="tab"></span>Party:{voter.PARTY} </h4>
+                  <h4><span className="tab"></span>Party: {voter.PARTY}</h4>
                   <h4><span className="tab"></span>Address: {voter.ADDRESS}</h4>
                   <h4><span className="tab"></span>Municipality: {voter.MUNICIPALITY}</h4>
                   <h4><span className="tab"></span>Registration Date: {voter.REG_DATE}</h4>
@@ -40,15 +40,13 @@ const SingleResult = ({ data }) => {
                   <h3>Voting History:</h3>
                 </section>
                 <br></br>
-                <div className="centeredButtonCont">
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/">
                   <input
                     className="backButton"
                     type="submit"
                     value="Back"
                   ></input>
                 </Link>
-                </div>
               </>
             );
           }

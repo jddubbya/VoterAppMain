@@ -9,6 +9,7 @@ import Search from "../Components/Search";
 import { useState } from "react";
 import SingleResult from "./SingleResult";
 import swal from 'sweetalert';
+import LoginForm from "../Components/LoginForm";
 
 const Home = ({ selectedOption, setSelectedOption }) => {
 
@@ -42,12 +43,7 @@ const Home = ({ selectedOption, setSelectedOption }) => {
         address={address} setAddress={setAddress}
         data={data} setData={setData}
         selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-      
-      {data.length? 
       <SingleResult data={data} setData={setData} />
-      :
-      null
-      }
     </>
   )
 

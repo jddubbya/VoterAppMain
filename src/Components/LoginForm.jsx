@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import {setToken} from "../../Redux/authSlice.cjs";
 import { useNavigate } from "react-router-dom";
 
+
 const LoginForm = () => {
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
@@ -21,16 +22,15 @@ const submitHandler = async (e) => {
     }
     else{
       dispatch(setToken(result.token));
-      navigate("/userManager");
+      navigate("/me");
     }
   };
 
   return (
     <>
-    <section className="loginSection">
+    <section classname="loginSection">
     <h1 className="loginHeader">Log In</h1>
       <form onSubmit={submitHandler} className="loginForm">
-        <div>
         <label>
           Username:{" "}
           <input
@@ -43,9 +43,6 @@ const submitHandler = async (e) => {
             value={username}
           ></input>
         </label>
-        </div>
-
-        <div>
         <label>
           Password:{" "}
           <input
@@ -58,7 +55,6 @@ const submitHandler = async (e) => {
             value={password}
           ></input>
         </label>
-        </div>
         <input type="submit"></input>
       </form>
       </section>
