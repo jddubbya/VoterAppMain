@@ -31,22 +31,24 @@ const Maps = ({ selectedOption }) => {
         default:
             mapURL = "https://www.google.com/maps/d/embed?mid=1RTnQRNjJON8TIIQ20ULpTCrmUBQK5X8&ehbc=2E312F&noprof=1&zoom=9&ll=30.965265042544072%2C-99.96208002204622&z=6.5"
     }
-           
+
     /* Builds the Maps page*/
     return (
-            <>
-                <section className="mapsSection">
+        <>
+            <section className="mapsSection">
                 <iframe src={mapURL} width="640" height="480">
                 </iframe>
-                </section>
-                <Link to="/">
-                    <input
-                        className="backButton"
-                        type="submit"
-                        value="Back"
-                    ></input>
-                </Link>
-            </>
+            </section>
+            <div className="centeredButtonCont">
+            <Link to="/" style={{ textDecoration: 'none' }}>
+                <input
+                    className="backButton"
+                    type="submit"
+                    value="Back"
+                ></input>
+            </Link>
+            </div>
+        </>
     )
 }
 export default Maps

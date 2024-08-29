@@ -104,7 +104,11 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
           <input className="searchButton" type="submit" value="Search"></input>
         </section>
       </form>
+      {data.length? 
       <Results data={data} setData={setData} />
+      :
+      null}
+
     </>
   )
 }
