@@ -1,8 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
-import voterDataSlice from './slice.cjs'
+import voterDataSlice from './slice.cjs';
+import authSlice from './authSlice.cjs';
 
 export default configureStore ({
   reducer: {
-    voterData: voterDataSlice
+    voterData: voterDataSlice,
+    authorization: authSlice
   }
 });

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+
+  const token = useSelector(state => state.authorization.token);
+
   return (
     <>
       <footer>
@@ -12,14 +16,20 @@ const Footer = () => {
             </Link>
           </h4>
           <h4>
-            <Link to={'/privacy'}className="footerLink">
+            <Link to={'/privacy'} className="footerLink">
               Privacy Policy
             </Link>
           </h4>
-          <h4><Link to={'/userManager'}className="footerLink">
-              Users
-            </Link>
-          </h4>
+          {token ?
+            <h4>
+              <Link to={'/userManager'} className="footerLink">
+               Users
+              </Link>
+             </h4>
+             :
+            null
+          }
+
         </div>
       </footer>
     </>

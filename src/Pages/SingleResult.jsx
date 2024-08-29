@@ -40,13 +40,15 @@ const SingleResult = ({ data }) => {
                   <h3>Voting History:</h3>
                 </section>
                 <br></br>
-                <Link to="/">
+                <div className="centeredButtonCont">
+                <Link to="/" style={{ textDecoration: 'none' }}>
                   <input
                     className="backButton"
                     type="submit"
                     value="Back"
                   ></input>
                 </Link>
+                </div>
               </>
             );
           }

@@ -39,13 +39,15 @@ const Maps = ({ selectedOption }) => {
                 <iframe src={mapURL} width="640" height="480">
                 </iframe>
             </section>
-            <Link to="/">
+            <div className="centeredButtonCont">
+            <Link to="/" style={{ textDecoration: 'none' }}>
                 <input
                     className="backButton"
                     type="submit"
                     value="Back"
                 ></input>
             </Link>
+            </div>
         </>
     )
 }

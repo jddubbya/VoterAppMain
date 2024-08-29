@@ -37,8 +37,17 @@ header {
 .vocheckHeaderContainer {
   background-color: rgb(9, 56, 75);
   color: white;
-  padding: 5px 0; 
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
 }
+
+.loginButtonCont {
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+} 
+
 .logoImage {
   display: flex;
   padding-left: 75px;
@@ -113,7 +122,9 @@ footer h4 {
 
 /********** End FOOTER section. ****************/
 
-/* ALL ul's*/
+/* ALL ul's
+* Will include a scroll bar and limits displayed items to 5
+*/
 ul {
   list-style: none;
   display: flex;
@@ -134,6 +145,16 @@ ul {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* All <input> fields */
+input {
+    height: 28px;
+    margin:2px;
+  }
+
+select {
+    height: 28px;
+  }
+
 /* The State/County DROP DOWN. */
 #countyDrop {
   margin-bottom:70px;
@@ -144,7 +165,31 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 200px;
+}
+
+/* Form to edit user info*/
+.editFormContainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form button container*/
+.formButtonContainer {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userEditForm {
+  text-align: right;
+}
+
+.userEditFormField {
+  height: 28px;
+  margin:2px;
 }
 
 .tosSection {
@@ -189,13 +234,16 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
-
+/* Unordered lists */
 ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: fit-content;
+  cursor:pointer;
 }
 
 
@@ -230,28 +278,35 @@ p {
 /****************** Begin Button Section ****************/
 /*ALL buttons*/
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: black;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: darkgray;
   cursor:pointer;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
 /*Search button */
-.searchButton:hover {
+.searchButton {
+  color: black;
   cursor: pointer;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  height: 40px;
+  padding: 10px;
+}
+
+.searchButton:hover {
+   cursor: pointer; 
 }
 
 /*Statistics button */
@@ -259,13 +314,39 @@ button:focus-visible {
   cursor: pointer;
 }
 
+/* Container for Back buttons - so they are centered on the page */
+.centeredButtonCont {
+  display: flex;
+  justify-content: center;
+}
+
 /* Back button */
 .backButton {
   color: black;
-  margin-left:50%;
   cursor: pointer;
   background-color: lightgray;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  height: 40px;
+  padding: 10px;
 }
+
+/* User Edit Form Buttons*/
+.userEditButtons {
+  font-weight: bolder;
+  font-family: inherit;
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/*  User Edit Form Buttons */
+.userEditButtons:hover {
+  cursor: pointer;
+}
+
+
 /****************** End Button Section ****************/
 
 /* pushes the data on single results page over from edge of page*/
@@ -290,4 +371,13 @@ button:focus-visible {
 .tab {
   display: inline-block;
   margin-left: 30px;
+}
+
+.loginSection {
+  margin-top: 160px;
+  text-align: center;
+}
+
+.accountCont {
+  margin-top:160px;
 }

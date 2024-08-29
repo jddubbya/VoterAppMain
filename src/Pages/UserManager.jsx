@@ -7,117 +7,282 @@
 */
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import UserForm from "../Components/UserForm";
+import Swal from 'sweetalert2';
 
 const UserManager = () => {
 
-    let username = '';
-
-    /* Create state variables for each function*/
+    /* Create state variables for each function */
     const [authUsers, setAuthUsers] = useState([]);
-    const [selectedUser, setSelectedUser] = useState("");
+    let selectedUser = '';
 
-    /* Get the Users */
+    /* Initialize the formData object */
+    const [formData, setFormData] = useState({
+        USERNAME: '',
+        PASSWORD: '',
+        FIRST_NAME: '',
+        LAST_NAME: '',
+        ROLE_NAME: '',
+        EMAIL: '',
+        PHONE: '',
+    });
+
+    /* tests user data for completeness */
+    const userDataIsValid = () => {
+        let validated = true;
+        if (formData.USERNAME === '' || formData.PASSWORD === '' ||
+            formData.FIRST_NAME === '' || formData.LAST_NAME === '' ||
+            formData.ROLE_NAME === '') {
+            validated = false;
+        }
+        return validated;
+    }
+
+    /* Get the Users from the AUTH_USERS table */
     const getAuthUsers = async () => {
         const response = await fetch(`/db/getAuthUsers`);
         const result = await response.json();
         setAuthUsers(result);
     }
 
-    /* Update a user's information */
-    /*     const updateAuthUser = async () => {
-             const response = await fetch(`/db/updateAuthUser`);
-         } */
-
-    /* Runs the queries when the page loads */
-        useEffect(() => {
-            const AllQueries = async () => {
-                await getAuthUsers();
-            }
-            AllQueries();
-        }, []);
-
-        const clickHandler = (e) => {
-            e.preventDefault();
-            setSelectedUser(e.target.innerHTML);
+    /* Runs the db query to get all the users when the page loads */
+    useEffect(() => {
+        const AllQueries = async () => {
+            await getAuthUsers();
         }
+        AllQueries();
+    }, []);
 
-    return (
-       (!authUsers.length) ? 
-                <><section className="mapsSection"><p>Loading...</p></section></>  : 
-        <>
-            <section className="mapsSection">
-                <section>
-                    <ul>
+
+    /* Reloads the page */
+    const reloadPage = () => {
+        window.location.reload(true);
+    }
+
+    /* Create a new user with test to make sure all the required fields are populated */
+    const createNewUser = async () => {
+        const valid = userDataIsValid();
+        if (!valid) {
+            return;
+        }
+        let addedUser = JSON.stringify(formData);
+        const response = await fetch(`/db/addAuthUser/?formData=${addedUser}`);
+        const result = await response.json();
+        if (result.includes("ER_DUP_ENTRY")) {
+            Swal.fire({
+                title: "Warning",
+                text: "That username already exists",
+                icon: "warning"
+            })
+        }
+        return;
+    }
+
+    /* Runs createNewUser and reloads the page to update the user list*/
+    const createNewUserHandler = async () => {
+        await createNewUser();
+        reloadPage();
+    }
+
+    /* Set and populate the formData based on the user chosen in the user list */
+    const editUserHandler = (e) => {
+        selectedUser = e.target.innerHTML; if (selectedUser) {
+            authUsers.map((user) => {
+                if (user.FIRST_NAME + " " + user.LAST_NAME === selectedUser) {
+                    setFormData(
                         {
-                            authUsers.map((user) => {
-                                return (
-                                    <li onClick={clickHandler} key={user.USERNAME}>{user.FIRST_NAME} {user.LAST_NAME}</li>
-                                );
-                            })
+                            "USERNAME": `${user.USERNAME}`,
+                            "PASSWORD": `${user.PASSWORD}`,
+                            "FIRST_NAME": `${user.FIRST_NAME}`,
+                            "LAST_NAME": `${user.LAST_NAME}`,
+                            "ROLE_NAME": `${user.ROLE_NAME}`,
+                            "EMAIL": `${user.EMAIL}`,
+                            "PHONE": `${user.PHONE}`,
                         }
-                    </ul>
+                    );
+                }
+            })
+        }
+    }
+
+    /* Update the formData object when any field on the form is edited */
+    const updateValues = (e) => {
+        e.preventDefault();
+        switch (e.target.name) {
+            case "USERNAME":
+                setFormData({ ...formData, USERNAME: e.target.value });
+                break;
+            case "PASSWORD":
+                setFormData({ ...formData, PASSWORD: e.target.value });
+                break;
+            case "FIRST_NAME":
+                setFormData({ ...formData, FIRST_NAME: e.target.value });
+                break;
+            case "LAST_NAME":
+                setFormData({ ...formData, LAST_NAME: e.target.value });
+                break;
+            case "ROLE_NAME":
+                setFormData({ ...formData, ROLE_NAME: e.target.value });
+                break;
+            case "EMAIL":
+                setFormData({ ...formData, EMAIL: e.target.value });
+                break;
+            case "PHONE":
+                setFormData({ ...formData, PHONE: e.target.value });
+                break;
+        }
+    }
+
+    /* Clears the form */
+    const clearForm = (e) => {
+        e.preventDefault();
+        formData.USERNAME = '';
+        formData.PASSWORD = '';
+        formData.FIRST_NAME = '';
+        formData.LAST_NAME = '';
+        formData.ROLE_NAME = '';
+        formData.EMAIL = '';
+        formData.PHONE = '';
+        reloadPage();
+    }
+
+    /* Delete a user */
+    const deleteUser = async () => {
+        const response = await fetch(`/db/deleteAuthUser/?USERNAME=${formData.USERNAME}`);
+    }
+
+    /* Calls the deleteUser function, then the reloadPage function (don't ask) */
+    const deleteAndReload = async () => {
+        await deleteUser();
+        reloadPage();
+    }
+
+    /* Safety check if a user is being deleted */
+    const deleteHandler = (e) => {
+        e.preventDefault();
+        Swal.fire({
+            title: "Delete this user?",
+            showCancelButton: true,
+            confirmButtonText: "Delete",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteAndReload();
+            } else if (result.isDenied) {
+                /* do nothing */
+            }
+        });
+    }
+
+    /* Update a user's information */
+    const updateUser = async () => {
+        const valid = userDataIsValid();
+        if (!valid) {
+            return;
+        }
+        let changedUser = JSON.stringify(formData);
+        /*   console.log(changedUser) */
+        const response = await fetch(`/db/updateAuthUser/?formData=${changedUser}`);
+        const result = await response.json();
+        if (result.includes("ER_DUP_ENTRY")) {
+            Swal.fire({
+                title: "Warning",
+                text: "That username already exists",
+                icon: "warning"
+            })
+        }
+        return;
+    }
+
+    /* Updates the user and reloads the page */
+    const updateAndReload = async () => {
+        await updateUser();
+        reloadPage();
+    }
+
+    /* Update handler */
+    const updateHandler = async () => {
+        await updateUser();
+        updateAndReload();
+    }
+
+
+    /* Build the form and display it */
+    return (
+        (!authUsers.length) ?
+            <><section className="resultsSection"><p>Loading...</p></section></> :
+            <>
+                <section className="resultsSection">
+                    <section>
+                        <h2>Manage Users</h2>
+                        <ul>
+                            {
+                                authUsers.map((user) => {
+                                    return (
+                                        <li className="resultItem" onClick={editUserHandler} key={user.USERNAME}>{user.FIRST_NAME} {user.LAST_NAME}</li>
+                                    );
+                                })
+                            }
+                        </ul>
+                    </section>
                 </section>
-                <div className="editUserInfo">
-                    {/* <form action="/editUser" method="post" id="editUser">
-                            <h4> Edit User Profile</h4>
-                            <div>
-                                <label>username:  </label>
-                                <input type="text" id="userName" value={[authUsers[0].USERNAME]} name="userName" placeholder="username" />
-                                <small></small>
-                            </div>
-                            <div>
-                                <label>password:  </label>
-                                <input type="text" id="passWord" value={[authUsers[0].PASSWORD]} name="passWord" placeholder="password" />
-                                <small></small>
-                            </div>
-                            <div>
-                                <label>First Name:  </label>
-                                <input type="text" id="firstName" value={[authUsers[0].FIRST_NAME]} name="firstName" placeholder="First Name" />
-                                <small></small>
-                            </div>
-                            <div>
-                                <label>Last Name:  </label>
-                                <input type="text" id="lastName" value={[authUsers[0].LAST_NAME]} name="lastName" placeholder="Last Name" />
-                                <small></small>
-                            </div>
-                            <div>
-                                <label>Role:  </label>
-                                <input type="text" id="roleName" value={[authUsers[0].ROLE_NAME]} name="roleName" placeholder="Role Name:" />
-                                <small></small>
-                            </div>
-                            <div>
-                                <label>Email:  </label>
-                                <input type="email" id="eMail" value={[authUsers[0].EMAIL]} name="eMail" placeholder="Email:" />
-                                <small></small>
-                            </div>
-                            <div>
-                                <label>Phone:  </label>
-                                <input type="tel" id="phone" value={[authUsers[0].PHONE]} name="phone" placeholder="Phone:" />
-                                <small></small>
-                            </div>
-
-                            <Link to="/">
-                                <input
-                                    type="submit"
-                                    value="Save"
-                                ></input>
-                            </Link>
-                        </form> */}
+                <div className="editFormContainer">
+                    <form className="userEditForm">
+                        <div>
+                            <label>Username:  </label>
+                            <input required name="USERNAME" onChange={updateValues} value={formData.USERNAME} ></input>
+                            <small></small>
+                        </div>
+                        <div>
+                            <label>Password:  </label>
+                            <input required name="PASSWORD" onChange={updateValues} value={formData.PASSWORD} ></input>
+                            <small></small>
+                        </div>
+                        <div>
+                            <label>First Name:  </label>
+                            <input required name="FIRST_NAME" onChange={updateValues} value={formData.FIRST_NAME} ></input>
+                            <small></small>
+                        </div>
+                        <div>
+                            <label>Last Name:  </label>
+                            <input required name="LAST_NAME" onChange={updateValues} value={formData.LAST_NAME} ></input>
+                            <small></small>
+                        </div>
+                        <div>
+                            <label>Role:  </label>
+                            <input required name="ROLE_NAME" onChange={updateValues} value={formData.ROLE_NAME} ></input>
+                            <small></small>
+                        </div>
+                        <div>
+                            <label>Email:  </label>
+                            <input name="EMAIL" onChange={updateValues} value={formData.EMAIL} ></input>
+                            <small></small>
+                        </div>
+                        <div>
+                            <label>Phone:  </label>
+                            <input name="PHONE" onChange={updateValues} value={formData.PHONE} ></input>
+                            <small></small>
+                        </div>
+                        <div className="formButtonContainer">
+                            <input className="userEditButtons" type="submit" value="Add New User" onClick={createNewUserHandler}></input>
+                            <button className="userEditButtons" onClick={updateHandler}>Update User</button>
+                        </div>
+                        <div>
+                        <div className="formButtonContainer">
+                            <button className="userEditButtons" onClick={clearForm}>Clear Form</button>
+                            <button className="userEditButtons" onClick={deleteHandler}>Delete User</button>
+                        </div>
+                        </div>
+                    </form>
                 </div>
-            </section>
-            <section>
-                <UserForm authUsers={authUsers} selectedUser={selectedUser}/>
-            </section>
-            <Link to="/">
-                <input
-                    className="backButton"
-                    type="submit"
-                    value="Back"
-                ></input>
-            </Link>
-
-        </>
+                <div className="centeredButtonCont">
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <input
+                            className="backButton"
+                            type="submit"
+                            value="Back"
+                        ></input>
+                    </Link>
+                </div>
+            </>
     )
 }
 
