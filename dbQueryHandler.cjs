@@ -63,6 +63,7 @@ app.get('/db/login', async (req, res) => {
     });
 });
 
+
 //**************************************************************
 // Method to get voter data based on voter's FIRST and LAST NAME.
 

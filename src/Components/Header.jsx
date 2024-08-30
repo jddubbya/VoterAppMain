@@ -7,7 +7,7 @@ import { setToken } from "../../Redux/authSlice.cjs";
 
 const Header = () => {
   const navigate = useNavigate();
-  const token = useSelector(state => state.authorization.token);
+  let token = useSelector(state => state.authorization.token);
   const dispatch = useDispatch();
 
 const reload = () => {
@@ -16,9 +16,13 @@ const reload = () => {
 
   const logoutHandler = () => {
     dispatch(setToken(''));
-    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     navigate('/');
     reload();
+};
+
+if(sessionStorage.getItem('token')){
+  token = sessionStorage.getItem('token')
 };
 
 

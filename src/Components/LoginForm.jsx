@@ -21,6 +21,7 @@ const submitHandler = async (e) => {
     }
     else{
       dispatch(setToken(result.token));
+      sessionStorage.setItem("token", result.token)
       navigate("/userManager");
     }
   };
