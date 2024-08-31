@@ -11,7 +11,7 @@ const navigate = useNavigate();
 
 const submitHandler = async (e) => {
     e.preventDefault();
-      const response = await fetch(`/db/login?username=${username}&password=${password}`);
+      const response = await fetch(`/auth/login?username=${username}&password=${password}`);
       const result = await response.json();
 
     if(!result.token){

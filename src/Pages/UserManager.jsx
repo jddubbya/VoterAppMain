@@ -39,7 +39,7 @@ const UserManager = () => {
 
     /* Get the Users from the AUTH_USERS table */
     const getAuthUsers = async () => {
-        const response = await fetch(`/db/getAuthUsers`);
+        const response = await fetch(`/auth/getAuthUsers`);
         const result = await response.json();
         setAuthUsers(result);
     }
@@ -65,7 +65,7 @@ const UserManager = () => {
             return;
         }
         let addedUser = JSON.stringify(formData);
-        const response = await fetch(`/db/addAuthUser/?formData=${addedUser}`);
+        const response = await fetch(`/auth/addAuthUser/?formData=${addedUser}`);
         const result = await response.json();
         if (result.includes("ER_DUP_ENTRY")) {
             Swal.fire({
@@ -147,7 +147,7 @@ const UserManager = () => {
 
     /* Delete a user */
     const deleteUser = async () => {
-        const response = await fetch(`/db/deleteAuthUser/?USERNAME=${formData.USERNAME}`);
+        const response = await fetch(`/auth/deleteAuthUser/?USERNAME=${formData.USERNAME}`);
     }
 
     /* Calls the deleteUser function, then the reloadPage function (don't ask) */
@@ -180,7 +180,7 @@ const UserManager = () => {
         }
         let changedUser = JSON.stringify(formData);
         /*   console.log(changedUser) */
-        const response = await fetch(`/db/updateAuthUser/?formData=${changedUser}`);
+        const response = await fetch(`/auth/updateAuthUser/?formData=${changedUser}`);
         const result = await response.json();
         if (result.includes("ER_DUP_ENTRY")) {
             Swal.fire({
