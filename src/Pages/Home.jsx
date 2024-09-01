@@ -42,7 +42,12 @@ const Home = ({ selectedOption, setSelectedOption }) => {
         address={address} setAddress={setAddress}
         data={data} setData={setData}
         selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+      
+      {data.length? 
       <SingleResult data={data} setData={setData} />
+      :
+      null
+      }
     </>
   )
 
