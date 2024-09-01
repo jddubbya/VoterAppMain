@@ -12,7 +12,6 @@ import Charts from './Pages/Charts'
 import UserManager from './Pages/UserManager'
 import { useState } from 'react'
 import Login from './Pages/Login'
-import Test from './Pages/Test'
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(
@@ -29,7 +28,6 @@ function App() {
       <Route path="/maps" element={<Maps selectedOption={selectedOption} />}></Route>
       <Route path="/charts" element={<Charts selectedOption={selectedOption} />}></Route>
       <Route path="/login" element={<Login/>}></Route>
-      <Route path="/me" element={<Test/>}></Route>
     </Routes>
     <Footer/>
     </>
