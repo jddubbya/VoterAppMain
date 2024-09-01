@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '../../dist/index.html');
+    res.sendFile(__dirname + '../dist/index.html');
   });
 
 app.use("/auth", authRoute);
@@ -20,7 +20,7 @@ app.use("/db", dataRoute);
 
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../dist/index.html'));
+    res.sendFile(path.join(__dirname + '../dist/index.html'));
   });
 
 app.listen(PORT, () => {
