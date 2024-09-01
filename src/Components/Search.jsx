@@ -15,17 +15,13 @@ import { useNavigate } from "react-router-dom";
 const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAddress, data, setData,selectedOption, setSelectedOption }) => {
   const navigate = useNavigate();
   
-
     const handleOptionChange = (event) => {
       const newValue = event.target.value;
       setSelectedOption(newValue);
       localStorage.setItem('selectedOption', newValue);
     };
     
-  
   const dispatch = useDispatch();
-  /*Clean up the address string - remove double spaces*/
-
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -61,6 +57,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       navigate("/maps")
     }
   }
+  
   /* Make sure a state and county are selected before going to Charts page*/
   const chartsClickHandler = (e) => {
     e.preventDefault();
@@ -77,15 +74,15 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
         <section className="selectCont">
           <select value={selectedOption} onChange={handleOptionChange} id="countyDrop" required>
             <option value="">Select County:</option>
-            <option value="colorado_larimer">Larimer County, CO</option>
-            <option value="texas_rockwall">Rockwall County, TX</option>
-            <option value="texas_collin">Collin County, TX</option>
+            <option value="texas_rockwall">TX - Rockwall</option>
+            <option value="texas_collin">TX - Collin</option>
+            <option value="colorado_larimer">CO - Larimer</option>
           </select>
         <Link to={"/charts"}><input type="button" value="Stats" onClick={chartsClickHandler} /></Link>
         <Link to={"/maps"}><input type="button" value="Maps" onClick={mapsClickHandler} /></Link>
         </section>
-        <h4>--- Search by Voter Name ---</h4>
         <section className="inputCont">
+        <h4>--- Search by Voter Name ---</h4>
           <input
             placeholder="First Name"
             onChange={(e) => { setFirstName(e.target.value) }}
@@ -105,7 +102,11 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
           <input className="searchButton" type="submit" value="Search"></input>
         </section>
       </form>
+      {data.length? 
       <Results data={data} setData={setData} />
+      :
+      null}
+
     </>
   )
 }
