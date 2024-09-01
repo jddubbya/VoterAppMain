@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const authRoute=require("./Auth.cjs");
 const dataRoute=require("./Data.cjs");
+const path = require('path');
 
 const app = express();
 
