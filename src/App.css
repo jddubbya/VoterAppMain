@@ -228,10 +228,10 @@ select {
 .statisticsSection {
   display: flex;
   margin-top: 150px;
-   margin-left: 10%;
+   margin-left:5%;
   flex-direction: column;
-  align-items: center;
-  width: 95vw;
+  align-items: left;
+  width: 90vw;
 }
 
 .mapsSection {
@@ -239,7 +239,7 @@ select {
   margin-top: 150px;
   margin-bottom: 25px;
   justify-content: center;
-  width: 100vw;
+  width: 90vw;
 }
 
 .singleResultSection {
