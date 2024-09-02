@@ -226,8 +226,11 @@ select {
 }
 
 .statisticsSection {
+  display: flex;
   margin-top: 150px;
   margin-left: 5%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mapsSection {
