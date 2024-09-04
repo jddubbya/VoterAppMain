@@ -2,6 +2,7 @@
 * CSS the BASE DOCUMENT, will affect everything
 */
 /*************** Begin ROOT Section *********************/
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +13,7 @@
 #root {
   min-width: 100%;
 }
+
 /*************** End ROOT Section *********************/
 
 /*************** Begin HEADER Section *****************/
@@ -28,10 +30,10 @@ header {
 }
 
 #topHeader {
- margin-top: 0px;
- margin-bottom: 0px;
- text-align: center;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .vocheckHeaderContainer {
@@ -50,7 +52,7 @@ header {
   padding-right: 10px;
   align-items: center;
   align-content: center;
-} 
+}
 
 .logInOutButton {
   display: flex;
@@ -78,7 +80,7 @@ header {
 
 /* The VoCheck logo and Text at the top of the page*/
 .logoSection {
-  color:rgb(9, 56, 75);
+  color: rgb(9, 56, 75);
   position: relative;
   height: 90px;
   width: 100%;
@@ -88,15 +90,18 @@ header {
   display: flex;
   align-items: center;
   border-bottom: solid;
-  border-bottom-color:rgb(245, 242, 242);
+  border-bottom-color: rgb(245, 242, 242);
   border-bottom-width: 5px;
-  border-bottom-style:ridge;
+  border-bottom-style: ridge;
 }
 
-.logoSection > a, .logoSection > a:visited, .logoSection > a:active {
+.logoSection>a,
+.logoSection>a:visited,
+.logoSection>a:active {
   text-decoration: none;
   color: inherit;
 }
+
 /*************** End HEADER Section *****************/
 
 /*************** Begin PAGE Section *****************/
@@ -111,7 +116,8 @@ body {
 
 /*Single Results page data section */
 .singleDataSec {
-  display: flex;flex-direction: column;
+  display: flex;
+  flex-direction: column;
   justify-content: left;
 }
 
@@ -125,8 +131,8 @@ body {
 
 /********** Begin FOOTER section. ****************/
 footer .vocheck-footer {
-  background-color:rgb(9, 56, 75);
-  color:ghostwhite;
+  background-color: rgb(9, 56, 75);
+  color: ghostwhite;
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
@@ -152,12 +158,13 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   background-color: rgb(256, 256, 256);
   border-radius: 5px;
   border-color: #888;
   border-width: 1px;
-  border-style: solid; /* jdw adds below here */
+  border-style: solid;
+  /* jdw adds below here */
   margin: 10;
   padding: 10px;
   max-height: 150px;
@@ -170,21 +177,21 @@ ul {
 
 /* All <input> fields */
 input {
-    height: 28px;
-    margin:2px;
-  }
+  height: 28px;
+  margin: 2px;
+}
 
 select {
-    height: 28px;
-  }
+  height: 28px;
+}
 
 /* The State/County DROP DOWN. */
 #countyDrop {
-  margin-bottom:70px;
+  margin-bottom: 70px;
 }
 
 .searchForm {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -193,7 +200,7 @@ select {
 
 /* Form to edit user info*/
 .editFormContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -201,7 +208,7 @@ select {
 
 /* Form button container*/
 .formButtonContainer {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -212,7 +219,7 @@ select {
 
 .userEditFormField {
   height: 28px;
-  margin:2px;
+  margin: 2px;
 }
 
 .tosSection {
@@ -228,7 +235,7 @@ select {
 .statisticsSection {
   display: flex;
   margin-top: 150px;
-   margin-left:5%;
+  margin-left: 5%;
   flex-direction: column;
   align-items: left;
   width: 90vw;
@@ -252,18 +259,44 @@ select {
   justify-content: center;
 }
 
+/* Countdown component formatting */
+.countDownTable {
+  background-color:black;
+  margin-left: 3%;
+  width: 250px;
+}
+
+.timerTableNumbers {
+  font-size: 25pt;
+  text-align: right;
+  color: red;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.timerTableHeaders {
+  font-size: 10pt;
+  margin-left: 2pt;
+  text-align: center;
+  color: white;
+  font-family:Arial, sans-serif;
+}
+
+.timerHeader {
+  margin-left: 4.5%;
+  margin-bottom: 0;
+}
+
 /* result item links */
-.resultItem > a {
+.resultItem>a {
   font-weight: 500;
   color: black;
   text-decoration: inherit;
 }
 
 
-
 /* Colors names in search results when hovering */
-.resultItem > a:hover {
-  color:rgb(21, 136, 182);
+.resultItem>a:hover {
+  color: rgb(21, 136, 182);
 }
 
 /* Displays the names that matched the search by name or address */
@@ -289,7 +322,7 @@ ul {
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 
@@ -319,8 +352,9 @@ h4 {
 p {
   font-size: 0.75em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
- /* line-height: 1.1; */
+  /* line-height: 1.1; */
 }
+
 /****************** End Font Section ****************/
 
 /****************** Begin Button Section ****************/
@@ -333,7 +367,7 @@ button {
 
 button:hover {
   border-color: darkgray;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 button:focus,
@@ -354,7 +388,7 @@ button:focus-visible {
 }
 
 .searchButton:hover {
-   cursor: pointer; 
+  cursor: pointer;
 }
 
 /*Statistics button */
@@ -427,5 +461,5 @@ button:focus-visible {
 }
 
 .accountCont {
-  margin-top:160px;
+  margin-top: 160px;
 }
