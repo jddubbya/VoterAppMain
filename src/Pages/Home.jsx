@@ -8,7 +8,8 @@
 import Search from "../Components/Search";
 import { useState } from "react";
 import SingleResult from "./SingleResult";
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
+import CountdownTimer from "../Components/CountdownTimer";
 
 const Home = ({ selectedOption, setSelectedOption }) => {
 
@@ -25,16 +26,19 @@ const Home = ({ selectedOption, setSelectedOption }) => {
   const agreeClicked = sessionStorage.getItem('agreed');
   
   if (!agreeClicked) {
-    swal({
+    Swal.fire({
       title: "Before you start...",
       text: disclaimer,
       icon: "info",
-      button: "I Agree",
+      confirmButtonText: "I Agree",
+      allowOutsideClick: false,
+      allowEscapeKey: false,
     })
       .then(() => {
         sessionStorage.setItem('agreed', 'clicked');
       });
   }
+
   return (
     <>
       <Search firstName={firstName} setFirstName={setFirstName}
@@ -48,6 +52,9 @@ const Home = ({ selectedOption, setSelectedOption }) => {
       :
       null
       }
+      <div>
+       <CountdownTimer />
+      </div>
     </>
   )
 
