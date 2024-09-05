@@ -210,78 +210,80 @@ const UserManager = () => {
         (!authUsers.length) ?
             <><section className="userManagerSection"><p>Loading...</p></section></> :
             <>
-                <section className="userManagerSection">
-                    <section>
-                        <h2>Manage Users</h2>
-                        <ul>
-                            {
-                                authUsers.map((user) => {
-                                    return (
-                                        <li className="resultItem" onClick={editUserHandler} key={user.USERNAME}>{user.FIRST_NAME} {user.LAST_NAME}</li>
-                                    );
-                                })
-                            }
-                        </ul>
+                <section className="pageCont">
+                    <section className="userManagerSection">
+                        <section>
+                            <h2>Manage Users</h2>
+                            <ul>
+                                {
+                                    authUsers.map((user) => {
+                                        return (
+                                            <li className="resultItem" onClick={editUserHandler} key={user.USERNAME}>{user.FIRST_NAME} {user.LAST_NAME}</li>
+                                        );
+                                    })
+                                }
+                            </ul>
+                        </section>
                     </section>
+                    <div className="editFormContainer">
+                        <form className="userEditForm">
+                            <div>
+                                <label>Username:  </label>
+                                <input required name="USERNAME" onChange={updateValues} value={formData.USERNAME} ></input>
+                                <small></small>
+                            </div>
+                            <div>
+                                <label>Password:  </label>
+                                <input required name="PASSWORD" onChange={updateValues} value={formData.PASSWORD} ></input>
+                                <small></small>
+                            </div>
+                            <div>
+                                <label>First Name:  </label>
+                                <input required name="FIRST_NAME" onChange={updateValues} value={formData.FIRST_NAME} ></input>
+                                <small></small>
+                            </div>
+                            <div>
+                                <label>Last Name:  </label>
+                                <input required name="LAST_NAME" onChange={updateValues} value={formData.LAST_NAME} ></input>
+                                <small></small>
+                            </div>
+                            <div>
+                                <label>Role:  </label>
+                                <input required name="ROLE_NAME" onChange={updateValues} value={formData.ROLE_NAME} ></input>
+                                <small></small>
+                            </div>
+                            <div>
+                                <label>Email:  </label>
+                                <input name="EMAIL" onChange={updateValues} value={formData.EMAIL} ></input>
+                                <small></small>
+                            </div>
+                            <div>
+                                <label>Phone:  </label>
+                                <input name="PHONE" onChange={updateValues} value={formData.PHONE} ></input>
+                                <small></small>
+                            </div>
+                            <div className="formButtonContainer">
+                                <input className="userEditButtons" type="submit" value="Add New User" onClick={createNewUserHandler}></input>
+                                <button className="userEditButtons" onClick={updateHandler}>Update User</button>
+                            </div>
+                            <div>
+                                <div className="formButtonContainer">
+                                    <button className="userEditButtons" onClick={clearForm}>Clear Form</button>
+                                    <button className="userEditButtons" onClick={deleteHandler}>Delete User</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="centeredButtonCont">
+                        <Link to="/" style={{ textDecoration: 'none' }}>
+                            <input
+                                className="backButton"
+                                type="submit"
+                                value="Home"
+                            ></input>
+                        </Link>
+                    </div>
                 </section>
-                <div className="editFormContainer">
-                    <form className="userEditForm">
-                        <div>
-                            <label>Username:  </label>
-                            <input required name="USERNAME" onChange={updateValues} value={formData.USERNAME} ></input>
-                            <small></small>
-                        </div>
-                        <div>
-                            <label>Password:  </label>
-                            <input required name="PASSWORD" onChange={updateValues} value={formData.PASSWORD} ></input>
-                            <small></small>
-                        </div>
-                        <div>
-                            <label>First Name:  </label>
-                            <input required name="FIRST_NAME" onChange={updateValues} value={formData.FIRST_NAME} ></input>
-                            <small></small>
-                        </div>
-                        <div>
-                            <label>Last Name:  </label>
-                            <input required name="LAST_NAME" onChange={updateValues} value={formData.LAST_NAME} ></input>
-                            <small></small>
-                        </div>
-                        <div>
-                            <label>Role:  </label>
-                            <input required name="ROLE_NAME" onChange={updateValues} value={formData.ROLE_NAME} ></input>
-                            <small></small>
-                        </div>
-                        <div>
-                            <label>Email:  </label>
-                            <input name="EMAIL" onChange={updateValues} value={formData.EMAIL} ></input>
-                            <small></small>
-                        </div>
-                        <div>
-                            <label>Phone:  </label>
-                            <input name="PHONE" onChange={updateValues} value={formData.PHONE} ></input>
-                            <small></small>
-                        </div>
-                        <div className="formButtonContainer">
-                            <input className="userEditButtons" type="submit" value="Add New User" onClick={createNewUserHandler}></input>
-                            <button className="userEditButtons" onClick={updateHandler}>Update User</button>
-                        </div>
-                        <div>
-                        <div className="formButtonContainer">
-                            <button className="userEditButtons" onClick={clearForm}>Clear Form</button>
-                            <button className="userEditButtons" onClick={deleteHandler}>Delete User</button>
-                        </div>
-                        </div>
-                    </form>
-                </div>
-                <div className="centeredButtonCont">
-                    <Link to="/" style={{ textDecoration: 'none' }}>
-                        <input
-                            className="backButton"
-                            type="submit"
-                            value="Home"
-                        ></input>
-                    </Link>
-                </div>
             </>
     )
 }

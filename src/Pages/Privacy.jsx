@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const Privacy = () => {
   return (
     <>
+    <section className="pageCont">
       <section className="privacySection">
       <h2>PRIVACY POLICY</h2>
         <p>
@@ -337,9 +338,12 @@ const Privacy = () => {
         </p>
       </section>
       <section>
+      <div className="centeredButtonCont">
         <Link to="/">
           <input className="backButton" type="submit" value="Home"></input>
         </Link>
+        </div>
+      </section>
       </section>
     </>
   );

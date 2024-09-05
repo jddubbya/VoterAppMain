@@ -130,6 +130,12 @@ body {
 /*************** End PAGE Section *****************/
 
 /********** Begin FOOTER section. ****************/
+footer{
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 footer .vocheck-footer {
   background-color: rgb(9, 56, 75);
   color: ghostwhite;
@@ -137,6 +143,8 @@ footer .vocheck-footer {
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 15px;
 }
 
 footer h4 {
@@ -195,7 +203,7 @@ select {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 170px;
 }
 
 /* Form to edit user info*/
@@ -260,6 +268,12 @@ select {
 }
 
 /* Countdown component formatting */
+
+.countdownCont {
+  display: flex;
+  justify-content: center;
+}
+
 .countDownTable {
   background-color:black;
   margin-left: 3%;
@@ -396,6 +410,10 @@ button:focus-visible {
   cursor: pointer;
 }
 
+input {
+  cursor: pointer;
+}
+
 /* Container for Back buttons - so they are centered on the page */
 .centeredButtonCont {
   display: flex;
@@ -462,4 +480,40 @@ button:focus-visible {
 
 .accountCont {
   margin-top: 160px;
+}
+
+@font-face {
+  font-family: "Clock";
+  src: local('alarmClock'), 
+    url(../Content/alarmClock.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Seven";
+  src: local('sevenSegment'), 
+    url(../Content/sevenSegment.ttf) format("truetype");
+}
+
+.clock {
+  font-family: "Seven";
+  color:rgb(104, 255, 205);
+}
+
+.selectCont {
+  height: 50px;
+}
+
+.countdownCont{
+  margin-top: 7%;
+}
+
+.pageCont {
+  margin-bottom: 100px;
+}
+
+.timerCont {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }

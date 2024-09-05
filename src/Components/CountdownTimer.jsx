@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import '../../Content/sevenSegment.ttf';
 
 const CountdownTimer = () => {
 
@@ -42,31 +42,31 @@ const CountdownTimer = () => {
   let formattedDays = (days.toString().padStart(2, '0'));
 
   return (
-    <div>
-      <h5 className="timerHeader">Countdown To Election Day</h5>
+    <div className="timerCont">
+      <h5 className="timerHeader">Countdown To Election Day:</h5>
       <section>
         <table className="countDownTable">
           <tr className="timerTableNumbers">
-            <td>
+            <td className="clock">
               {`${formattedDays}`}
             </td>
-            <td>
+            <td className="clock">
               :
             </td>
-            <td>
+            <td className="clock">
             {`${formattedHours}`}
             </td>
-            <td>
+            <td className="clock">
               :
             </td>
-            <td>
+            <td className="clock">
             {`${formattedMinutes}`}
             </td>
-            <td>
+            <td className="clock">
               :
             </td>
             
-            <td className="timerCountountSeconds">
+            <td className="timerCountountSeconds, clock">
             {`${formattedSeconds}`}
             </td>
           </tr>

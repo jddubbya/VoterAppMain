@@ -18,6 +18,7 @@ function App() {
     localStorage.getItem('selectedOption') || '');
   return (
     <>
+    <div className="bodyCont">
     <Header/>
     <Routes>
       <Route path="/" element={<Home selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>}></Route>
@@ -30,6 +31,7 @@ function App() {
       <Route path="/login" element={<Login/>}></Route>
     </Routes>
     <Footer/>
+    </div>
     </>
   )
 }
