@@ -24,6 +24,7 @@ const Results = () => {
         {!currentSearch.length ? null : (
           <tbody className="resultsTableBody">
             <th className="resultsTableHeader">VOTER NAME</th>
+            <th className="resultsTableHeader">PARTY</th>
             <th className="resultsTableHeader">AGE</th>
             <th className="resultsTableHeader">VOTER STATUS</th>
             <th className="resultsTableHeader">REG. DATE</th>
@@ -31,6 +32,7 @@ const Results = () => {
               return (
                 <tr className="resultsTableRow"  key={voter.SOS_VOTERID}>
                   <td className="resultsTableLeft">  {voter.NAME}</td>
+                  <td className="resultsTableLeft">  {voter.PARTY}</td>
                   <td className="resultsTableCenter">  {voter.AGE}</td>
                   <td className="resultsTableCenter">{voter.VOTER_STATUS}</td>
                   <td className="resultsTableCenter">{voter.REG_DATE}</td>
