@@ -11,12 +11,12 @@ const Privacy = () => {
       <section className="privacySection">
       <h2>PRIVACY POLICY</h2>
         <p>
-          The purpose of VoCheck.net is to provide public access to official
+          The purpose of VoCheck is to provide public access to official
           government data pertaining to elections, including voter registration
-          rolls. VoCheck.net publishes public voter information as provided by
+          rolls. VoCheck publishes public voter information as provided by
           state and local election officials. This Privacy Policy applies to
           information collected by and through the website and interactive
-          services provided by VoCheck.net (the “Services”). This Privacy Policy
+          services provided by electionsTECH LLC (the “Services”). This Privacy Policy
           does not apply to information provided by public bodies, such as state
           Secretaries of State and local election authorities. By using any of
           our Services and/or by indicating your assent to this Privacy Policy,
@@ -25,7 +25,7 @@ const Privacy = () => {
           read the Privacy Policy before using or registering to access our
           Services.
           <h3>Information Collected About You</h3>
-          The information VoCheck.net gathers through the Services falls into
+          The information electionsTECH LLC gathers through the Services falls into
           two categories:
           <ol type="1">
             <li>
@@ -37,12 +37,12 @@ const Privacy = () => {
             </li>
           </ol>
           <h4>1. Information You Provide to Us</h4>
-          If you opt-in to VoCheck.net email newsletters or other news alerts,
-          VoCheck.net will collect Personal Information about you, such as your
+          If you opt-in to electionsTECH LLC email newsletters or other news alerts,
+          electionsTECH LLC will collect Personal Information about you, such as your
           name, postal address, email address, user name, password, or mobile
           phone number. Depending on the nature of the service, you may be free
           to register for the service without providing this additional
-          information. You may provide information to VoCheck.net when you:
+          information. You may provide information to electionsTECH LLC when you:
           <ol>
             <li>
               Enter registration information for one or more of the Services
@@ -51,17 +51,17 @@ const Privacy = () => {
             <li>Download other information we provide</li>
             <li>Connect with the Services via a social networking site</li>
           </ol>
-          VoCheck.net may also collect contact information about other inpiduals
+          electionsTECH LLC may also collect contact information about other inpiduals
           when you use the sharing and referral tools available within some of
           our Services to forward content to your friends and associates.
-          VoCheck.net uses this information to facilitate the communications you
+          electionsTECH LLC uses this information to facilitate the communications you
           request. If you use any “send-to-a-friend” features of the Services,
           your email address may be included in the communication sent to your
           friend.
           <h4>
             2.Information Collected Automatically When You Use the Services
           </h4>
-          As you use the Services, VoCheck.net and third parties may use
+          As you use the Services, electionsTECH LLC and third parties may use
           automatic data collection technologies to collect data about your
           equipment and browsing, including information about:
           <ol>
@@ -87,13 +87,13 @@ const Privacy = () => {
               on your device;
             </li>
             <li>
-              Your interactions with email messages from VoCheck.net, such as
+              Your interactions with email messages from VoCheck, such as
               the links you click on and whether you open or forward a message,
               the date and time of these interactions and the device you use to
               read emails;
             </li>
             <li>
-              The sites you visited before and after you visited a VoCheck.net
+              The sites you visited before and after you visited an electionsTECH LLC
               website
             </li>
             <li>
@@ -112,7 +112,7 @@ const Privacy = () => {
             </li>
           </ol>
           <h3>Tracking Technologies</h3>
-          VoCheck.net and our service providers or other third parties acting on
+          electionsTECH LLC and our service providers or other third parties acting on
           our behalf or with our permission, may use embedded scripts, cookies,
           web beacons, device identifiers and other tracking technologies to
           operate, analyze, and improve our Services and tailor content to user
@@ -155,10 +155,10 @@ const Privacy = () => {
           and date that you viewed the page embedded with the beacon and a
           description of that page.
           <h4>Mobile Device IDs and Location-Based Information</h4>
-          When you use a mobile device to access the Services, VoCheck.net may
+          When you use a mobile device to access the Services, electionsTECH LLC may
           collect different types of information about your location, including
           general information (e.g., IP address, zip code) and more specific
-          information (e.g., GPS-based location information). VoCheck.net may
+          information (e.g., GPS-based location information). electionsTECH LLC may
           use that information to customize the Services with location-based
           information and features. For example, if your IP address indicates an
           origin in Reno, the Services may be customized with Reno-specific
@@ -171,7 +171,7 @@ const Privacy = () => {
           instructions for further details. We may still ask for a zip code or
           other location information.
           <h4>Social Network Posting Tools and “Share” Features</h4>
-          VoCheck.net may offer social network posting and sharing tools through
+          electionsTECH LLC may offer social network posting and sharing tools through
           the Services, including a “share” button that allows you to post links
           to content and features that you believe will be of interest to others
           on your social network pages. Those tools are operated by third
@@ -180,8 +180,8 @@ const Privacy = () => {
           your browser, device, and online activity through its own tracking
           technologies and subject to its own, separate privacy policy.
           <h3>How We Use the Information We Collect</h3>
-          VoCheck.net will not use information that we collect about you or that
-          you provide to us for commercial purposes. VoCheck.net might use
+          electionsTECH LLC will not use information that we collect about you or that
+          you provide to us for commercial purposes. electionsTECH LLC might use
           information that we collect about you or that you provide to us
           including in the following ways:
           <ol>
@@ -222,14 +222,14 @@ const Privacy = () => {
           </ol>
           <h3>How We Share and Disclose Information</h3>
           Except as otherwise expressly noted herein or within the Services,
-          VoCheck.net may share information collected with entities affiliated
+          electionsTECH LLC may share information collected with entities affiliated
           with the Voter Reference Foundation, but those entities will
           explicitly abide by all use restrictions and will use said information
-          only for administration and operation of VoCheck.net itself. Here are
-          some of the circumstances in which VoCheck.net may share information
+          only for administration and operation of electionsTECH LLC itself. Here are
+          some of the circumstances in which electionsTECH LLC may share information
           about our users:
           <h4>Service Providers</h4>
-          In addition, VoCheck.net may share any information collected through
+          In addition, electionsTECH LLC may share any information collected through
           the Services with our service providers. We may offer some features
           (such as social sharing tools) in conjunction with service providers
           that specialize in operating such services. We share with each of
@@ -239,7 +239,7 @@ const Privacy = () => {
           information are required to protect this information in a manner that
           is consistent with this Privacy Policy, for example, by not using the
           information for any purpose other than to carry out the services they
-          are performing for VoCheck.net.
+          are performing for electionsTECH LLC.
           <h4>Aggregated and Anonymous Information</h4>
           Our service providers may render information anonymous by removing any
           information (such as your name) that makes the information personally
@@ -255,19 +255,19 @@ const Privacy = () => {
           or regulatory request; to enforce or apply our terms of use and other
           agreements, including for billing and collection purposes; or if we
           believe disclosure is necessary or appropriate to protect the rights,
-          property, or safety of VoCheck.net, our users, or others.
+          property, or safety of electionsTECH LLC, our users, or others.
           <h4>Transfers Between Entities</h4>
           We may disclose any information we collect to successor in the event
           of a merger, divestiture, restructuring, reorganization, dissolution
-          or other sale or transfer of some or all of VoCheck.nets assets,
+          or other sale or transfer of some or all of electionsTECH LLCs assets,
           whether as a going concern or as part of bankruptcy, liquidation, or
-          similar proceeding, in which Personal Information held by VoCheck.net
+          similar proceeding, in which Personal Information held by electionsTECH LLC
           about users of our Services is among the assets transferred. We may
           also disclose any information we collect to other companies that are
           affiliated with VoCheck.
           <h3>Your Opt-Out Choices</h3>
           <h4>Email</h4>
-          If you want to opt out from a VoCheck.net email newsletter or other
+          If you want to opt out from an electionsTECH LLC email newsletter or other
           email list, use the unsubscribe link at the bottom of each message or
           send us an email at TBD with the email address at which you no longer
           wish to receive newsletters or other emails.If you want to disable web
@@ -275,7 +275,7 @@ const Privacy = () => {
           (e.g., Outlook or Outlook Express). Check the settings or options menu
           in your email system for more information.
           <h4>Precise Device Location Tracking</h4>
-          If you agreed to allow VoCheck.net and/or our service providers to
+          If you agreed to allow electionsTECH LLC and/or our service providers to
           collect and/or share information about the precise location of your
           device by tracking a mobile application, you can withdraw your
           permission by accessing and changing your device’s location privacy
@@ -299,11 +299,11 @@ const Privacy = () => {
           information that you have provided to us through our Services. To
           update this information, please send us an email at TBD
           <h3>Links to Other Sites</h3>
-          VoCheck.net sites and applications provide links that link to other
+          electionsTECH LLC sites and applications provide links that link to other
           websites. We encourage you to review the privacy statements of all
           sites that you visit, including those whose links are provided, so
           that you can understand how those sites collect, use, and share your
-          information. VoCheck.net is not responsible for the privacy
+          information. electionsTECH LLC is not responsible for the privacy
           statements, content, or data handling practices on other websites.
           <h3>International Data</h3>
           The Services are hosted in the United States. United States law
@@ -316,7 +316,7 @@ const Privacy = () => {
           information in the United States.
           <h3>Children Under 13</h3>
           The Services are not intended for children under 13 years of age, and
-          VoCheck.net does not knowingly collect information from children under
+          electionsTECH LLC does not knowingly collect information from children under
           13. If you are under the age of 13, do not: use, or provide any
           information on, the Services; use any of the interactive or public
           comment features of the Services; or otherwise provide any information
@@ -327,7 +327,7 @@ const Privacy = () => {
           information. If you believe we might have any Personal Information
           from or about a child under 13, please contact us at TBD.
           <h3>Changes to Our Privacy Policy</h3>
-          VoCheck.net reserves the right to change this Privacy Policy at any
+          electionsTECH LLC reserves the right to change this Privacy Policy at any
           time to reflect changes in the law, our data collection and use
           practices, the features of our Services, or advances in technology. If
           we decide to change our Privacy Policy, we&aposll post the changes here
