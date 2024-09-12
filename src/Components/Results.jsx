@@ -5,7 +5,6 @@
 *  Exports: Results - ??
 *  HTML:    ??
 */
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Results = () => {
@@ -18,20 +17,28 @@ const Results = () => {
   return (
     <>
       <section className="searchMatchLabel">
-        <p> {numMatches} {matchText}</p>
+        <p className="searchMatchText"> {numMatches} {matchText}</p>
       </section>
-      <section className="resultsSection">
+      <p>N</p>
+      <section className="resultsTableSection">
         {!currentSearch.length ? null : (
-          <ul>
+          <tbody className="resultsTableBody">
+            <th className="resultsTableHeader">VOTER NAME</th>
+            <th className="resultsTableHeader">AGE</th>
+            <th className="resultsTableHeader">VOTER STATUS</th>
+            <th className="resultsTableHeader">REG. DATE</th>
             {currentSearch.map((voter) => {
               return (
-                <li className="resultItem" key={voter.SOS_VOTERID}>
-                  <Link to={`/${voter.SOS_VOTERID}`}>{voter.NAME}</Link>
-                </li>
-
+                <tr className="resultsTableRow"  key={voter.SOS_VOTERID}>
+                  <td className="resultsTableLeft">  {voter.NAME}</td>
+                  <td className="resultsTableCenter">  {voter.AGE}</td>
+                  <td className="resultsTableCenter">{voter.VOTER_STATUS}</td>
+                  <td className="resultsTableCenter">{voter.REG_DATE}</td>
+                </tr>
               );
             })}
-          </ul>
+
+          </tbody>
         )}
       </section>
     </>
