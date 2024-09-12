@@ -307,18 +307,30 @@ select {
   text-decoration: inherit;
 }
 
-
 /* Colors names in search results when hovering */
 .resultItem>a:hover {
   color: rgb(21, 136, 182);
 }
 
-/* Displays the names that matched the search by name or address */
-.resultsSection {
+/* Displays the Results Tablenames that matched the search by name or address */
+.resultsTableSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
+}
+
+/* The header row of the results table*/
+.resultsTableHeader {
+  text-align: left;
+  padding-right: 15px;
+}
+
+/* The rows of the results table that will be center aligned*/
+.resultsTableCenter {
+  align-items: center;
+  padding: 4px;
+  padding-left: 15px;
 }
 
 /* prints the number of matches to the name entered */
@@ -330,6 +342,11 @@ select {
   height: 20px;
 }
 
+/* formats the tyext of the number of matches to the name entered */
+.searchMatchText {
+  font-size: 13pt;;
+}
+
 /* Unordered lists */
 ul {
   display: flex;
@@ -338,9 +355,6 @@ ul {
   width: fit-content;
   cursor: pointer;
 }
-
-
-
 
 /****************** Begin Font Section ****************/
 /* ALL Heading 1 Font size*/
