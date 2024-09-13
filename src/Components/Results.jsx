@@ -19,7 +19,6 @@ const Results = () => {
       <section className="searchMatchLabel">
         <p className="searchMatchText"> {numMatches} {matchText}</p>
       </section>
-      <p>N</p>
       <section className="resultsTableSection">
         {!currentSearch.length ? null : (
           <tbody className="resultsTableBody">
