@@ -36,11 +36,11 @@ const Header = () => {
         </div>
         <section className="logoSection">
           <Link to="/">
-            <img className="logoImage" src={logo} width={60} height={60} />
+            <img className="logoImage" src={logo} width={90} height={90} />
           </Link>
           <h1 className="titleH1">VoCheck</h1>
           <div className="emptyBox"></div>
-          <div>
+          <div className="timerContainer">
             <CountdownTimer />
           </div>
         </section>
