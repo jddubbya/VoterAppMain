@@ -343,6 +343,7 @@ select {
 .searchMatchLabel {
   display: flex;
   margin-top: 25px;
+  margin-bottom: 50px;
   flex-direction: column;
   align-items: center;
   height: 20px;
