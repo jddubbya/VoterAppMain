@@ -43,9 +43,11 @@ const CountdownTimer = () => {
 
   return (
     <div className="timerCont">
-      <h5 className="timerHeader">Countdown To Election Day:</h5>
       <section>
         <table className="countDownTable">
+          <tr className="timerTitle">
+            <td colspan="7">DAYS TO ELECTION</td>
+          </tr>
           <tr className="timerTableNumbers">
             <td className="clock">
               {`${formattedDays}`}
@@ -54,20 +56,20 @@ const CountdownTimer = () => {
               :
             </td>
             <td className="clock">
-            {`${formattedHours}`}
+              {`${formattedHours}`}
             </td>
             <td className="clock">
               :
             </td>
             <td className="clock">
-            {`${formattedMinutes}`}
+              {`${formattedMinutes}`}
             </td>
             <td className="clock">
               :
             </td>
-            
+
             <td className="timerCountountSeconds, clock">
-            {`${formattedSeconds}`}
+              {`${formattedSeconds}`}
             </td>
           </tr>
           <tr className="timerTableHeaders">
