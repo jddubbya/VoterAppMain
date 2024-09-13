@@ -1,15 +1,15 @@
 /*
 *  Home.jsx
 *
-*  Purpose: Home page? 
-*  Exports: Home - ??.
-*  HTML:    Builds the page used to enter first and last name with a "Search" button
+*  Purpose: Home page - displays the State/County selector, the Stats and Maps buttons
+* and the name and address search options
+*  Exports: Home
+* 
 */
 import Search from "../Components/Search";
 import { useState } from "react";
-import SingleResult from "./SingleResult";
 import Swal from 'sweetalert2';
-import CountdownTimer from "../Components/CountdownTimer";
+//import CountdownTimer from "../Components/CountdownTimer";
 
 const Home = ({ selectedOption, setSelectedOption }) => {
 
@@ -47,16 +47,9 @@ const Home = ({ selectedOption, setSelectedOption }) => {
           address={address} setAddress={setAddress}
           data={data} setData={setData}
           selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-
-        {data.length ?
-          <SingleResult data={data} setData={setData} />
-          :
-          null
-        }
       </section>
     </>
   )
-
 }
 
 export default Home;
