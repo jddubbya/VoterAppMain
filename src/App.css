@@ -299,7 +299,7 @@ select {
 
 .timerTableNumbers {
   font-size: 20pt;
-  text-align: right;
+  text-align: center;
   color: red;
   font-family:'Courier New', Courier, monospace;
 }
