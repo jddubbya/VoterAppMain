@@ -45,7 +45,8 @@ header {
 
 .logoImage {
   display: flex;
-  padding-left: 5px;
+  padding-left: 2%;
+  width: 100px;
 }
 
 /* The VoCheck logo and Text at the top of the page*/
