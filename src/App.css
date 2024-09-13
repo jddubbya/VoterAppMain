@@ -16,6 +16,7 @@
 
 /*************** End ROOT Section *********************/
 
+/******************************************************/
 /*************** Begin HEADER Section *****************/
 .titleH1 {
   padding-left: 20px;
@@ -41,33 +42,6 @@ header {
   color: white;
   padding: 5px 0;
   justify-content: space-between;
-}
-
-.loginButtonCont {
-  display: flex;
-  justify-content: right;
-  padding-right: 10px;
-  align-items: center;
-  align-content: center;
-}
-
-.logInOutButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 35px;
-}
-
-.loginFormButtons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.adminDrop {
-  height: 35px;
 }
 
 .logoImage {
@@ -108,39 +82,36 @@ header {
 
 .emptyBox {
   display: inline-block;
-  width: 2000px;
-  height: 50px;
+  width:fit-content;
+  height: 100px;
   display: flex;
-}
+} 
 
 /*************** End HEADER Section *****************/
+/******************************************************/
 
+/******************************************************/
 /*************** Begin PAGE Section *****************/
 /* Positions ALL items in the center of the page */
 body {
-  margin: 0;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
+  width: 100%;
 }
 
-/*Single Results page data section */
-.singleDataSec {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
+/* Keeps the bottom of the page from going beneath the footer */
+.bodyCont {
+  margin-bottom: 110px;
 }
 
-/*Single Results page data section */
-.editUserInfo {
-  display: flex;
-  text-align: right;
-}
+/******************* End PAGE Section *****************/
+/******************************************************/
 
-/*************** End PAGE Section *****************/
-
-/********** Begin FOOTER section. ****************/
+/******************************************************/
+/********** Begin FOOTER section. *********************/
 footer{
   position:fixed;
   bottom: 0;
@@ -168,31 +139,8 @@ footer h4 {
   color: ghostwhite;
 }
 
-/********** End FOOTER section. ****************/
-
-/* ALL ul's
-* Will include a scroll bar and limits displayed items to 5
-*/
-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: rgb(256, 256, 256);
-  border-radius: 5px;
-  border-color: #888;
-  border-width: 1px;
-  border-style: solid;
-  /* jdw adds below here */
-  margin: 10;
-  padding: 10px;
-  max-height: 150px;
-  min-width: 250px;
-  overflow: scroll;
-  overflow-y: auto;
-  overflow-x: hidden;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+/***************** End FOOTER section. ****************/
+/******************************************************/
 
 /* All <input> fields */
 input {
@@ -217,30 +165,6 @@ select {
   margin-top: 170px;
 }
 
-/* Form to edit user info*/
-.editFormContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Form button container*/
-.formButtonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.userEditForm {
-  text-align: right;
-}
-
-.userEditFormField {
-  height: 28px;
-  margin: 2px;
-}
-
 .tosSection {
   margin-top: 150px;
   margin-left: 5%;
@@ -255,6 +179,7 @@ select {
   display: flex;
   margin-top: 150px;
   margin-left: 5%;
+  margin-right: 0;
   flex-direction: column;
   align-items: left;
   width: 90vw;
@@ -268,17 +193,8 @@ select {
   width: 100vw;
 }
 
-.singleResultSection {
-  margin-top: 150px;
-}
-
-.userManagerSection {
-  margin-top: 150px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Countdown component formatting */
+/******************************************************/
+/********* Countdown component formatting *************/
 
 .countdownCont {
   display: flex;
@@ -294,7 +210,7 @@ select {
 .countDownTable {
   background-color:black;
   margin-left: 3%;
-  width: 250px;
+  min-width: 250px;
 }
 
 .timerTableNumbers {
@@ -317,27 +233,24 @@ select {
   margin-bottom: 0;
 }
 
-.timerCont {
+
+.timerContainer {
   display:flex;
-  flex-direction: column;
-  align-items: right;
-  align-content: right;
-  margin-right: 5px;
+  margin-left:auto;
+  margin-right: 18px;
 }
 
-/* result item links */
-.resultItem>a {
-  font-weight: 500;
-  color: black;
-  text-decoration: inherit;
+.clock {
+  font-family: "Seven";
+  color:rgb(104, 255, 205);
 }
 
-/* Colors names in search results when hovering */
-.resultItem>a:hover {
-  color: rgb(21, 136, 182);
-}
+/******************************************************/
+/********  END Countdown component formatting *********/
 
-/* Displays the Results Tablenames that matched the search by name or address */
+/******************************************************/
+/************ Results Table formatting ****************/
+
 .resultsTableSection {
   display: flex;
   flex-direction: column;
@@ -374,19 +287,13 @@ select {
   height: 20px;
 }
 
-/* formats the tyext of the number of matches to the name entered */
+/* formats the text of the number of matches to the name entered */
 .searchMatchText {
   font-size: 13pt;
 }
 
-/* Unordered lists */
-ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  cursor: pointer;
-}
+/********** END Results Table formatting **************/
+/******************************************************/
 
 /****************** Begin Font Section ****************/
 /* ALL Heading 1 Font size*/
@@ -413,6 +320,18 @@ p {
   font-size: 0.75em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   /* line-height: 1.1; */
+}
+
+@font-face {
+  font-family: "Clock";
+  src: local('alarmClock'), 
+    url(../Content/alarmClock.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Seven";
+  src: local('sevenSegment'), 
+    url(../Content/sevenSegment.ttf) format("truetype");
 }
 
 /****************** End Font Section ****************/
@@ -456,10 +375,6 @@ button:focus-visible {
   cursor: pointer;
 }
 
-input {
-  cursor: pointer;
-}
-
 /* Container for Back buttons - so they are centered on the page */
 .centeredButtonCont {
   display: flex;
@@ -478,33 +393,12 @@ input {
   padding: 10px;
 }
 
-/* User Edit Form Buttons*/
-.userEditButtons {
-  font-weight: bolder;
-  font-family: inherit;
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-
-/*  User Edit Form Buttons */
-.userEditButtons:hover {
-  cursor: pointer;
-}
-
-
 /****************** End Button Section ****************/
-
-/* pushes the data on single results page over from edge of page*/
-.singleDataSec {
-  margin-left: 10%;
-}
 
 /* Tabs a section over*/
 .tabSec {
   margin-left: 3%;
 }
-
 
 /* makes the search form a container and centers search button*/
 .inputCont {
@@ -519,36 +413,14 @@ input {
   margin-left: 30px;
 }
 
-.loginSection {
-  margin-top: 160px;
-  text-align: center;
-}
-
-.accountCont {
-  margin-top: 160px;
-}
-
-@font-face {
-  font-family: "Clock";
-  src: local('alarmClock'), 
-    url(../Content/alarmClock.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Seven";
-  src: local('sevenSegment'), 
-    url(../Content/sevenSegment.ttf) format("truetype");
-}
-
-.clock {
-  font-family: "Seven";
-  color:rgb(104, 255, 205);
-}
-
 .selectCont {
   height: 50px;
 }
 
 .pageCont {
   margin-bottom: 100px;
+}
+
+input {
+  cursor: pointer;
 }
