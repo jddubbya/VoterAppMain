@@ -79,7 +79,7 @@ header {
 .logoSection {
   color: rgb(9, 56, 75);
   position: relative;
-  height: 90px;
+  height: 105px;
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
@@ -97,6 +97,20 @@ header {
 .logoSection>a:active {
   text-decoration: none;
   color: inherit;
+}
+
+.countdownSection {
+  display:flex;
+  float: right;
+  align-items: right;
+  margin-right: 10px;
+}
+
+.emptyBox {
+  display: inline-block;
+  width: 2000px;
+  height: 50px;
+  display: flex;
 }
 
 /*************** End HEADER Section *****************/
@@ -269,7 +283,12 @@ select {
 .countdownCont {
   display: flex;
   justify-content: center;
-  margin-top: 7%;
+}
+
+.timerTitle {
+  font-size: 10pt;
+  color: white;
+  font-style: italic;
 }
 
 .countDownTable {
@@ -279,7 +298,7 @@ select {
 }
 
 .timerTableNumbers {
-  font-size: 25pt;
+  font-size: 20pt;
   text-align: right;
   color: red;
   font-family:'Courier New', Courier, monospace;
@@ -296,6 +315,14 @@ select {
 .timerHeader {
   margin-left: 4.5%;
   margin-bottom: 0;
+}
+
+.timerCont {
+  display:flex;
+  flex-direction: column;
+  align-items: right;
+  align-content: right;
+  margin-right: 5px;
 }
 
 /* result item links */
@@ -524,11 +551,4 @@ input {
 
 .pageCont {
   margin-bottom: 100px;
-}
-
-.timerCont {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
 }
