@@ -36,13 +36,10 @@ header {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.vocheckHeaderContainer {
+.topHeaderContainer {
   background-color: rgb(9, 56, 75);
   color: white;
   padding: 5px 0;
-  display: flex;
-  align-items: center;
-  align-content: center;
   justify-content: space-between;
 }
 
@@ -272,6 +269,7 @@ select {
 .countdownCont {
   display: flex;
   justify-content: center;
+  margin-top: 7%;
 }
 
 .countDownTable {
@@ -522,10 +520,6 @@ input {
 
 .selectCont {
   height: 50px;
-}
-
-.countdownCont{
-  margin-top: 7%;
 }
 
 .pageCont {
