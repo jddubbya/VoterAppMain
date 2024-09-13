@@ -31,14 +31,13 @@ const Header = () => {
       <header>
         <div className="topHeaderContainer">
           <section>
-            <h4 id="topHeader"> VoCheck Voter Lookup</h4>
+            <h2 id="topHeader"> VoCheck Voter Lookup</h2>
           </section>
         </div>
         <section className="logoSection">
           <Link to="/">
             <img className="logoImage" src={logo} width={90} height={90} />
           </Link>
-          <h1 className="titleH1">VoCheck</h1>
           <div className="emptyBox"></div>
           <div className="timerContainer">
             <CountdownTimer />
