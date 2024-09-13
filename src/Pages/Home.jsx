@@ -53,9 +53,6 @@ const Home = ({ selectedOption, setSelectedOption }) => {
           :
           null
         }
-        <div className="countdownCont">
-          <CountdownTimer />
-        </div>
       </section>
     </>
   )
