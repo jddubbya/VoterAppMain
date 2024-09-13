@@ -332,6 +332,12 @@ select {
   padding: 4px;
   padding-left: 15px;
 }
+/* The rows of the results table that will be right aligned*/
+.resultsTableRight {
+  align-items: right;
+  padding: 4px;
+  padding-left: 15px;
+}
 
 /* prints the number of matches to the name entered */
 .searchMatchLabel {
