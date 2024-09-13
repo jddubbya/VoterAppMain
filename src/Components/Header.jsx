@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../Redux/authSlice.cjs";
+import CountdownTimer from "../Components/CountdownTimer";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,6 +39,10 @@ const Header = () => {
             <img className="logoImage" src={logo} width={60} height={60} />
           </Link>
           <h1 className="titleH1">VoCheck</h1>
+          <div className="emptyBox"></div>
+          <div>
+            <CountdownTimer />
+          </div>
         </section>
       </header>
     </>
