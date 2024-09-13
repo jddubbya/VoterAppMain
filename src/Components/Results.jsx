@@ -32,9 +32,9 @@ const Results = () => {
               return (
                 <tr className="resultsTableRow"  key={voter.SOS_VOTERID}>
                   <td className="resultsTableLeft">  {voter.NAME}</td>
-                  <td className="resultsTableLeft">  {voter.PARTY}</td>
+                  <td className="resultsTableRight">  {voter.PARTY}</td>
                   <td className="resultsTableCenter">  {voter.AGE}</td>
-                  <td className="resultsTableCenter">{voter.VOTER_STATUS}</td>
+                  <td className="resultsTableRight">{voter.VOTER_STATUS}</td>
                   <td className="resultsTableCenter">{voter.REG_DATE}</td>
                 </tr>
               );
