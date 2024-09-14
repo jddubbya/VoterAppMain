@@ -18,9 +18,6 @@
 
 /******************************************************/
 /*************** Begin HEADER Section *****************/
-.titleH1 {
-  padding-left: 20px;
-}
 
 header {
   top: 0%;
@@ -31,8 +28,8 @@ header {
 }
 
 #topHeader {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -53,7 +50,7 @@ header {
 .logoSection {
   color: rgb(9, 56, 75);
   position: relative;
-  height: 105px;
+  height: 102px;
   width: 100%;
   white-space: normal;
   line-height: 1.5em;
@@ -73,13 +70,6 @@ header {
   color: inherit;
 }
 
-.countdownSection {
-  display:flex;
-  float: right;
-  align-items: right;
-  margin-right: 10px;
-}
-
 .emptyBox {
   display: inline-block;
   width:fit-content;
@@ -92,14 +82,14 @@ header {
 
 /******************************************************/
 /*************** Begin PAGE Section *****************/
+
 /* Positions ALL items in the center of the page */
 body {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  width: 100%;
+  width: 100vw;
 }
 
 /******************* End PAGE Section *****************/
@@ -108,15 +98,14 @@ body {
 /******************************************************/
 /********** Begin FOOTER section. *********************/
 footer{
-  position:fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
 }
 
 footer .vocheck-footer {
   background-color: rgb(9, 56, 75);
   color: ghostwhite;
-  width: 100%;
+  width: 100vw;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
@@ -147,37 +136,40 @@ select {
   height: 28px;
 }
 
-/* The State/County DROP DOWN. */
+/* The State/County DROP DOWN. 
 #countyDrop {
   margin-bottom: 70px;
-}
+} */
 
+/* Contains the dropdown and search fields */
 .searchForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 170px;
-}
+  margin-top: 200px;
+} 
 
 .tosSection {
   margin-top: 150px;
-  margin-left: 5%;
+  margin-left: 4vw;
+  margin-right: 4vw;
 }
 
 .privacySection {
   margin-top: 150px;
-  margin-left: 5%;
+  margin-left: 4vw;
+  margin-right: 4vw;
 }
 
 .statisticsSection {
   display: flex;
   margin-top: 150px;
-  margin-left: 5%;
-  margin-right: 0;
+  margin-left: 4vw;
+  margin-right: 4vw;
   flex-direction: column;
-  align-items: left;
-  width: 90%;
+  align-items: center;
+  width: 90vw;
 }
 
 .mapsSection {
