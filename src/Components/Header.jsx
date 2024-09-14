@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
           <div className="emptyBox"></div>
           <div className="timerContainer">
-            <CountdownTimer />
+            <CountdownTimer headerText = "NOV 7 ELECTION IN:"/>
           </div>
         </section>
       </header>
