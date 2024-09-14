@@ -102,11 +102,6 @@ body {
   width: 100%;
 }
 
-/* Keeps the bottom of the page from going beneath the footer */
-.bodyCont {
-  margin-bottom: 110px;
-}
-
 /******************* End PAGE Section *****************/
 /******************************************************/
 
@@ -250,6 +245,11 @@ select {
 
 /******************************************************/
 /************ Results Table formatting ****************/
+
+/* Colors the even rows light gray */
+.resultsTableBody tr:nth-child(even) {
+  background-color:gainsboro;
+}
 
 .resultsTableSection {
   display: flex;
