@@ -25,7 +25,7 @@ const Results = () => {
             <th className="resultsTableHeader">VOTER NAME</th>
             <th className="resultsTableHeader">PARTY</th>
             <th className="resultsTableHeader">AGE</th>
-            <th className="resultsTableHeader">VOTER STATUS</th>
+            <th className="resultsTableHeader">STATUS</th>
             <th className="resultsTableHeader">REG. DATE</th>
             {currentSearch.map((voter) => {
               return (
