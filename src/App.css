@@ -318,6 +318,7 @@ p {
 /* Sweetalert popup font size */
 .swal-size {
   font-size: 12px !important;
+  width: 40vw;
 }
 
 @font-face {
