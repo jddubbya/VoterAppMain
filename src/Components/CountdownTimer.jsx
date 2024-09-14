@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../Content/sevenSegment.ttf';
 
-const CountdownTimer = () => {
+const CountdownTimer = ({headerText}) => {
 
   // Get the current time in milliseconds
   const NOW_IN_MS = Date.now();
@@ -46,7 +46,7 @@ const CountdownTimer = () => {
       <section>
         <table className="countDownTable">
           <tr className="timerTitle">
-            <td colspan="7">DAYS TO ELECTION</td>
+            <td colSpan="7">{headerText}</td>
           </tr>
           <tr className="timerTableNumbers">
             <td className="clock">
