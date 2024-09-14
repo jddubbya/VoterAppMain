@@ -77,6 +77,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             <option value="texas_rockwall">TX - Rockwall</option>
             <option value="texas_collin">TX - Collin</option>
             <option value="colorado_larimer">CO - Larimer</option>
+            <option value="colorado_douglas">CO - Douglas</option>
           </select>
         <Link to={"/charts"}><input type="button" value="Stats" onClick={chartsClickHandler} /></Link>
         <Link to={"/maps"}><input type="button" value="Maps" onClick={mapsClickHandler} /></Link>
