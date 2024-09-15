@@ -248,7 +248,7 @@ select {
   align-items: center;
   margin-bottom: 25px;
   width: 100vw;
-  font-size: smaller;
+  font-size: 0.7em;
 }
 
 /* The header row of the results table*/
