@@ -99,13 +99,13 @@ body {
 /********** Begin FOOTER section. *********************/
 footer{
   bottom: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 footer .vocheck-footer {
   background-color: rgb(9, 56, 75);
   color: ghostwhite;
-  width: 100vw;
+  width: 100%;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
