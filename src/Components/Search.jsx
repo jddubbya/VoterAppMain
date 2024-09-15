@@ -25,7 +25,9 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const voterTable = document.getElementById("countyDrop").value;
+    const dropSelection = document.getElementById("countyDrop").value;
+    // convert from 'ST - COUNTY' to 'ST_COUNTY'
+    const voterTable = dropSelection.replace(/\s-\s/g, '_'); 
 
     if (address) {
       /*Clean up the address string - replace spaces with % wildcard*/
@@ -74,13 +76,13 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
         <section className="selectCont">
           <select value={selectedOption} onChange={handleOptionChange} id="countyDrop" required>
             <option value="">Select County:</option>
-            <option value="texas_rockwall">TX - Rockwall</option>
-            <option value="texas_collin">TX - Collin</option>
-            <option value="colorado_larimer">CO - Larimer</option>
-            <option value="colorado_douglas">CO - Douglas</option>
+            <option value="TX_ROCKWALL">TX - ROCKWALL</option>
+            <option value="TX_COLLIN">TX - COLLIN</option>
+            <option value="CO_LARIMER">CO - LARIMER</option>
+            <option value="CO_DOUGLAS">CO - DOUGLAS</option>
           </select>
-        <Link to={"/charts"}><input type="button" value="Stats" onClick={chartsClickHandler} /></Link>
-        <Link to={"/maps"}><input type="button" value="Maps" onClick={mapsClickHandler} /></Link>
+        <Link to={"/charts"}><input type="button" value="STATS" onClick={chartsClickHandler} /></Link>
+        <Link to={"/maps"}><input type="button" value="MAPS" onClick={mapsClickHandler} /></Link>
         </section>
         <section className="inputCont">
         <h4>--- Search by Voter Name ---</h4>
@@ -100,7 +102,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             value={address}>
           </input>
           <p> </p>
-          <input className="searchButton" type="submit" value="Search"></input>
+          <input className="searchButton" type="submit" value="SEARCH"></input>
         </section>
       </form>
       {data.length? 
