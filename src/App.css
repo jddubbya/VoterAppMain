@@ -168,8 +168,8 @@ select {
   margin-top: 150px;
   margin-left: 2vw;
   margin-right: 2vw;
-  width: 90%;
-  max-width: fit-content;
+  width: 90vw;
+  max-width: 90vw;
 }
 
 .mapsSection {
