@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { BarChart } from "@mui/x-charts/BarChart";
+import { Box } from "@mui/material";
+import { BarLabel } from '@mui/x-charts/BarChart';
 
 const Charts = ({ selectedOption }) => {
 
@@ -105,75 +107,86 @@ const Charts = ({ selectedOption }) => {
             !voterGenderCnt.length ||
             !precinctCnt.length) ? <p>Loading...</p> :
             <>
-                <section className="pageCont">
-                    <section className="statisticsSection">
-                        <h2>Statistics for {county} County, {usState} </h2>
-                        <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0, 10)}</p>
-                        <h3>Number of Precincts: {[precinctCnt[0].PCT_COUNT]}</h3>
-                        <h3>Total Registered Voters: {getTotalVoters().toLocaleString('en-US')}</h3>
-                        <h4>By Voter Status:</h4>
-                        <PieChart
-                            series={[
-                                {
-                                    arcLabel: (item) => `(${item.value})`,
-                                    arcLabelMinAngle: 0,
-                                    data: [
-                                        { id: 0, value: voterStatusCnt[0].COUNT, label: 'Active', color: 'green' },
-                                        { id: 1, value: voterStatusCnt[1].COUNT, label: 'Suspended' + ' (' + getSuspendedPct() + '%)', color: 'red' },
-                                    ],
-                                },
-                            ]}
-                            width={575}
-                            height={200}
-                        />
-                        <h4>By Gender:</h4>
-                        <PieChart
-                            series={[
-                                {
-                                    arcLabel: (item) => `(${item.value})`,
-                                    arcLabelMinAngle: 0,
-                                    data: [
-                                        { id: 0, value: voterGenderCnt[0].COUNT, label: 'Female', color: 'pink' },
-                                        { id: 1, value: voterGenderCnt[1].COUNT, label: 'Male', color: 'lightblue' },
-                                        { id: 2, value: voterGenderCnt[2].COUNT, label: 'Not Disclosed', color: 'purple' },
-                                    ],
-                                },
-                            ]}
-                            width={575}
-                            height={200}
-                        />
-                        <h4>By Party:</h4>
-                        {voterPartyCnt.length > 1 ?
-                            <BarChart
-                                width={575}
-                                height={300}
-                                barLabel="value"
-                                series={[
-                                    {
-                                        data: [voterPartyCnt[3].COUNT, voterPartyCnt[0].COUNT,
-                                        voterPartyCnt[2].COUNT, voterPartyCnt[1].COUNT,
-                                        getOtherPartyCount()]
-                                    },
-                                ]}
-                                xAxis={[{
-                                    data: [voterPartyCnt[3].PARTY, voterPartyCnt[0].PARTY,
-                                    voterPartyCnt[2].PARTY, voterPartyCnt[1].PARTY, 'OTHER'],
-                                    scaleType: 'band'
-                                }]}
-                            />
-                            : <p>No party data available</p>
-                        }
-                    </section>
-                    <div className="centeredButtonCont">
-                        <Link to="/" style={{ textDecoration: 'none' }}>
-                            <input
-                                className="backButton"
-                                type="submit"
-                                value="Home"
-                            ></input>
-                        </Link>
-                    </div>
+                <section className="statisticsSection">
+                    <h2>Statistics for {county} County, {usState} </h2>
+                    <p>Data as of: {[dataDate[0].DATA_DATE].toString().substring(0, 10)}</p>
+                    <h3>Number of Precincts: {[precinctCnt[0].PCT_COUNT]}</h3>
+                    <h3>Total Registered Voters: {getTotalVoters().toLocaleString('en-US')}</h3>
+                    <h4>By Voter Status:</h4>
+                    <Box sx={{ width: "100%", fontSize: "16px" }}>
+                    <PieChart
+                        margin={{ right: 250 }}
+                        series={[
+                            {
+                                arcLabel: (item) => `(${item.value})`,
+                                arcLabelMinAngle: 0,
+                                data: [
+                                    { id: 0, value: voterStatusCnt[0].COUNT, label: 'Active', color: 'lightgreen' },
+                                    { id: 1, value: voterStatusCnt[1].COUNT, label: 'Suspended' + ' (' + getSuspendedPct() + '%)', color: 'coral' },
+                                ],
+                            },
+                        ]}
+                        sx={{ "& .MuiChartsLegend-series text": { fontSize: "0.8em !important" }, }}
+                        width={400}
+                        height={150}
+                    />
+                    </Box>
+                    <h4>By Gender:</h4>
+                    <Box sx={{ width: "100%", fontSize: "16px" }}>
+                    <PieChart
+                        margin={{ right: 250 }}
+                        series={[
+                            {
+                                arcLabel: (item) => `(${item.value})`,
+                                arcLabelMinAngle: 0,
+                                data: [
+                                    { id: 0, value: voterGenderCnt[0].COUNT, label: 'Female', color: 'pink' },
+                                    { id: 1, value: voterGenderCnt[1].COUNT, label: 'Male', color: 'lightblue' },
+                                    { id: 2, value: voterGenderCnt[2].COUNT, label: 'Not Disclosed', color: 'purple' },
+                                ],
+                            },
+                        ]}
+                        sx={{ "& .MuiChartsLegend-series text": { fontSize: "0.8em !important" }, }}
+                        width={400}
+                        height={150}
+                    />
+                    </Box>
+                    <h4>By Party:</h4>
+                    { voterPartyCnt.length > 1 ?
+                    <Box sx={{ width: "100%" }}>
+                    <BarChart
+                        width={400}
+                        height={300}
+                        barLabel="value"
+                        
+                        series={[
+                            {
+                                data: [voterPartyCnt[3].COUNT, voterPartyCnt[0].COUNT,
+                                voterPartyCnt[2].COUNT, voterPartyCnt[1].COUNT,
+                                getOtherPartyCount()]
+                            },
+                        ]}
+                        xAxis={[{
+                            data: [voterPartyCnt[3].PARTY, voterPartyCnt[0].PARTY,
+                            voterPartyCnt[2].PARTY, voterPartyCnt[1].PARTY, 'OTHER'],
+                            scaleType: 'band'
+                        }]}
+                        sx={{ "& .MuiChartsAxis-tickLabel tspan": { fontSize: "0.8em" } }}
+                        sx={{ "& .MuiBarLabel-root": { fontSize: "0.7em", dominantBaseline: "" }}}
+                    />
+                    </Box>
+                    : <p>No party data available</p>
+                    }       
                 </section>
+                <div className="centeredButtonCont">
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <input
+                        className="backButton"
+                        type="submit"
+                        value="Home"
+                    ></input>
+                </Link>
+                </div>
             </>
     )
 }
