@@ -101,7 +101,11 @@ router.get("/getVotersByName", (req, res) => {
   // Method to get the date of the data.
   router.get("/getDataDate", (req, res) => {
     const { stateCounty } = req.query;
-    let sql = "SELECT DATA_DATE FROM DATA_CURRENCY WHERE STATE_COUNTY = " + '"' + stateCounty + '"';
+    const split = stateCounty.split("_");
+    let usState = split[0];
+    let county = split[1];
+    county = county.toUpperCase();
+    let sql = "SELECT DATA_DATE FROM STATE_COUNTY WHERE STATE = " + '"' + usState + '" AND COUNTY = ' + '"' + county + '"';
     pool.query(sql, (err, results) => {
       if (err) {
         console.error("Error executing query: " + err.stack);
