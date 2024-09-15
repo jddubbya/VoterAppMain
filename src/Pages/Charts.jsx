@@ -172,7 +172,7 @@ const Charts = ({ selectedOption }) => {
                             scaleType: 'band'
                         }]}
                         sx={{ "& .MuiChartsAxis-tickLabel tspan": { fontSize: "0.8em" } }}
-                        sx={{ "& .MuiBarLabel-root": { fontSize: "0.7em", dominantBaseline: "" }}}
+                        sx={{ "& .MuiBarLabel-root": { fontSize: "0.8em", dominantBaseline: "auto" }}}
                     />
                     </Box>
                     : <p>No party data available</p>
