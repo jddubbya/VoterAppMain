@@ -113,7 +113,7 @@ const Charts = ({ selectedOption }) => {
                     <h3>Number of Precincts: {[precinctCnt[0].PCT_COUNT]}</h3>
                     <h3>Total Registered Voters: {getTotalVoters().toLocaleString('en-US')}</h3>
                     <h4>By Voter Status:</h4>
-                    <Box sx={{ width: "100%", fontSize: "16px" }}>
+                    <Box sx={{ width: "100vw", fontSize: "16px" }}>
                     <PieChart
                         margin={{ right: 250 }}
                         series={[
@@ -132,7 +132,7 @@ const Charts = ({ selectedOption }) => {
                     />
                     </Box>
                     <h4>By Gender:</h4>
-                    <Box sx={{ width: "100%", fontSize: "16px" }}>
+                    <Box sx={{ width: "100vw", fontSize: "16px" }}>
                     <PieChart
                         margin={{ right: 250 }}
                         series={[
@@ -153,7 +153,7 @@ const Charts = ({ selectedOption }) => {
                     </Box>
                     <h4>By Party:</h4>
                     { voterPartyCnt.length > 1 ?
-                    <Box sx={{ width: "100%" }}>
+                    <Box sx={{ width: "100vw" }}>
                     <BarChart
                         width={400}
                         height={300}
