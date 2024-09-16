@@ -122,7 +122,7 @@ header {
 .logoImage {
   height: 100px;
   object-fit: contain;
-/*  margin-left: 5px; */
+/* margin-left: 5px"; */ 
 }
 
 /* Keeps the height of the timer at 100px so it doesn't overflow */
