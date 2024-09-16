@@ -29,17 +29,17 @@ const Header = () => {
   return (
     <>
       <header>
-        <div className="topHeaderContainer">
+        <div className="topHeaderCont">
           <section>
             <h2 id="topHeader"> VoCheck Voter Lookup</h2>
           </section>
         </div>
-        <section className="logoSection">
+        <section className="bottomHeaderCont">
           <Link to="/">
             <img className="logoImage" src={logo} />
           </Link>
           <div className="emptyBox"></div>
-          <div className="timerContainer">
+          <div className="timerTableDiv">
             <CountdownTimer headerText = "NOV 7 ELECTION IN:"/>
           </div>
         </section>
