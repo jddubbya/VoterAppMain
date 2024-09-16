@@ -325,7 +325,7 @@ const Privacy = () => {
           we have collected or received Personal Information from a child under
           13 without verification of parental consent, we will delete that
           information. If you believe we might have any Personal Information
-          from or about a child under 13, please contact us at info@electionstech.com.
+          from or about a child under 13, please contact us at TBD.
           <h3>Changes to Our Privacy Policy</h3>
           electionsTECH LLC reserves the right to change this Privacy Policy at any
           time to reflect changes in the law, our data collection and use

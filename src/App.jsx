@@ -14,17 +14,17 @@ function App() {
     localStorage.getItem('selectedOption') || '');
   return (
     <>
-    <div className="bodyCont">
-    <Header/>
-    <Routes>
-      <Route path="/" element={<Home selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>}></Route>
-      <Route path="/tos" element={<TOS/>}></Route>
-      <Route path="/privacy" element={<Privacy/>}></Route>
-      <Route path="/maps" element={<Maps selectedOption={selectedOption} />}></Route>
-      <Route path="/charts" element={<Charts selectedOption={selectedOption} />}></Route>
-    </Routes>
-    <Footer/>
-    </div>
+      <section className="bodyCont">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home selectedOption={selectedOption} setSelectedOption={setSelectedOption} />}></Route>
+          <Route path="/tos" element={<TOS />}></Route>
+          <Route path="/privacy" element={<Privacy />}></Route>
+          <Route path="/maps" element={<Maps selectedOption={selectedOption} />}></Route>
+          <Route path="/charts" element={<Charts selectedOption={selectedOption} />}></Route>
+        </Routes>
+        <Footer className="footerCont"/>
+      </section>
     </>
   )
 }

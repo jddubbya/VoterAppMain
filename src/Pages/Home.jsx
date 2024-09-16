@@ -9,7 +9,6 @@
 import Search from "../Components/Search";
 import { useState } from "react";
 import Swal from 'sweetalert2';
-//import CountdownTimer from "../Components/CountdownTimer";
 
 const Home = ({ selectedOption, setSelectedOption }) => {
 

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="vocheck-footer container">
+        <div className="vocheck-footer">
           <p>Copyright 2024 electionsTECH LLC. All rights reserved.</p>
           <h4>
             <Link to={`/tos`} className="footerLink">
@@ -22,4 +22,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer

@@ -11,7 +11,7 @@
 }
 
 #root {
-  min-width: 100%;
+
 }
 
 /*************** End ROOT Section *********************/
@@ -21,7 +21,7 @@
 
 header {
   top: 0%;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   background-color: white;
   z-index: 1000;
@@ -37,26 +37,24 @@ header {
 .topHeaderContainer {
   background-color: rgb(9, 56, 75);
   color: white;
-  padding: 5px 0;
+ 
 }
 
 .logoImage {
-  display: flex;
-  padding-left: 2%;
-  width: 100px;
+  width: 105px;
 }
 
 /* The VoCheck logo and Text at the top of the page*/
 .logoSection {
   color: rgb(9, 56, 75);
   position: relative;
-  height: 102px;
-  width: 100%;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  align-content: center;
   border-bottom: solid;
   border-bottom-color: rgb(245, 242, 242);
   border-bottom-width: 5px;
@@ -68,6 +66,7 @@ header {
 .logoSection>a:active {
   text-decoration: none;
   color: inherit;
+  height:100px;
 }
 
 .emptyBox {
@@ -89,7 +88,6 @@ body {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  width: 100vw;
 }
 
 /******************* End PAGE Section *****************/
@@ -99,13 +97,13 @@ body {
 /********** Begin FOOTER section. *********************/
 footer{
   bottom: 0;
-  width: 100%;
+  width:100vw;
 }
 
 footer .vocheck-footer {
   background-color: rgb(9, 56, 75);
   color: ghostwhite;
-  width: 100%;
+  width:100vw;
   white-space: normal;
   line-height: 1.5em;
   text-align: center;
@@ -162,14 +160,15 @@ select {
   margin-right: 4vw;
 }
 
+
 .statisticsSection {
   display: flex;
   flex-direction: column;
-  margin-top: 150px;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  width: 90vw;
-  max-width: 90vw;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-top: 175px;
+  margin-left: 25px;
+  max-width:fit-content;
 } 
 
 .bodyCont {
@@ -201,18 +200,17 @@ select {
 
 .countDownTable {
   background-color:black;
-  margin-left: 3%;
   min-width: 190px;
 }
 
 .timerTableNumbers {
-  font-size: 18pt;
+  font-size: 16pt;
   text-align: center;
   color: red;
 }
 
 .timerTableHeaders {
-  font-size: 9pt;
+  font-size: 8pt;
   margin-left: 2pt;
   text-align: center;
   color: white;
@@ -222,13 +220,13 @@ select {
 .timerHeader {
   margin-left: 4.5%;
   margin-bottom: 0;
+  font-size: 8pt;
 }
 
 
 .timerContainer {
   display:flex;
-  margin-left:auto;
-  margin-right: 15px;
+  max-height: 100px;
 }
 
 .clock {
@@ -253,7 +251,7 @@ select {
   align-items: center;
   margin-bottom: 25px;
   width: 100vw;
-  font-size: 0.7em;
+  font-size: 0.7em
 }
 
 /* The header row of the results table*/
@@ -317,12 +315,11 @@ h4 {
 p {
   font-size: 0.75em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* line-height: 1.1; */
 }
 
 /* Sweetalert popup font size */
 .swal-size {
-  font-size: 0.6em !important;
+  font-size: 0.7em !important;
   width: 60% !important;
 }
 

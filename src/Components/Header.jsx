@@ -36,7 +36,7 @@ const Header = () => {
         </div>
         <section className="logoSection">
           <Link to="/">
-            <img className="logoImage" src={logo} width={90} height={90} />
+            <img className="logoImage" src={logo} />
           </Link>
           <div className="emptyBox"></div>
           <div className="timerContainer">

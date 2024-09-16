@@ -42,7 +42,6 @@ const CountdownTimer = ({headerText}) => {
   let formattedDays = (days.toString().padStart(2, '0'));
 
   return (
-    <div className="timerCont">
       <section>
         <table className="countDownTable">
           <tr className="timerTitle">
@@ -94,7 +93,6 @@ const CountdownTimer = ({headerText}) => {
           </tr>
         </table>
       </section>
-    </div>
   );
 };
 

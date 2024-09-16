@@ -301,3 +301,4 @@ const TOS = () => {
 };
 
 export default TOS;
+

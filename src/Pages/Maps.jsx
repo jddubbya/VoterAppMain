@@ -35,21 +35,19 @@ const Maps = ({ selectedOption }) => {
     /* Builds the Maps page*/
     return (
         <>
-            <section className="pageCont">
-                <section className="mapsSection">
-                    <iframe src={mapURL} width="640" height="480">
-                    </iframe>
-                </section>
-                <div className="centeredButtonCont">
-                    <Link to="/" style={{ textDecoration: 'none' }}>
-                        <input
-                            className="backButton"
-                            type="submit"
-                            value="Home"
-                        ></input>
-                    </Link>
-                </div>
+            <section className="mapsSection">
+                <iframe src={mapURL} width="640" height="480">
+                </iframe>
             </section>
+            <div className="centeredButtonCont">
+            <Link to="/" style={{ textDecoration: 'none' }}>
+                <input
+                    className="backButton"
+                    type="submit"
+                    value="Home"
+                ></input>
+            </Link>
+            </div>
         </>
     )
 }
