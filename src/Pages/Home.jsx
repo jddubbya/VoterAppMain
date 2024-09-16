@@ -29,10 +29,10 @@ const Home = ({ selectedOption, setSelectedOption }) => {
     Swal.fire({
       title: "Before you start...",
       text: disclaimer,
-      icon: "info",
       confirmButtonText: "I Agree",
       allowOutsideClick: false,
       allowEscapeKey: false,
+      customClass: 'swal-size'
     })
       .then(() => {
         sessionStorage.setItem('agreed', 'clicked');
