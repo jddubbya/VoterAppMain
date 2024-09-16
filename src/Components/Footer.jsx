@@ -4,8 +4,9 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="vocheck-footer">
-          <p>Copyright 2024 electionsTECH LLC. All rights reserved.</p>
+        <div className="footerCont">
+          <p>© 2024 electionsTECH LLC. All rights reserved.</p>
+          <section className="footerLinksCont">
           <h4>
             <Link to={`/tos`} className="footerLink">
               Terms of Service
@@ -16,6 +17,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
           </h4>
+          </section>
         </div>
       </footer>
     </>
