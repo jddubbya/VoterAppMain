@@ -188,6 +188,8 @@ header {
 .bodyCont {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 /* All page contect is kept outside of the header and footer */
