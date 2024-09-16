@@ -171,8 +171,8 @@ const Charts = ({ selectedOption }) => {
                             voterPartyCnt[2].PARTY, voterPartyCnt[1].PARTY, 'OTHER'],
                             scaleType: 'band'
                         }]}
-                        sx={{ "& .MuiChartsAxis-tickLabel tspan": { fontSize: "0.8em" } }}
-                        sx={{ "& .MuiBarLabel-root": { fontSize: "0.8em", dominantBaseline: "auto" }}}
+                        sx={{ "& .MuiChartsAxis-tickLabel tspan": { fontSize: "0.8em" },
+                         "& .MuiBarLabel-root": { fontSize: "0.8em", dominantBaseline: "auto" }}}
                     />
                     </Box>
                     : <p>No party data available</p>
