@@ -91,7 +91,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
   return (
     <>
       <form className="searchForm" onSubmit={submitHandler}>
-        <section className="selectCont">
+        <section className="stateCountySelectCont">
           <select value={selectedOption} onChange={handleOptionChange} id="countyDrop" required>
             {stCntyList.map((stCounty) => {
               return (<option>{stCounty.ST_CNTY}</option>)
@@ -100,7 +100,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
           <Link to={"/charts"}><input type="button" value="STATS" onClick={chartsClickHandler} /></Link>
           <Link to={"/maps"}><input type="button" value="MAPS" onClick={mapsClickHandler} /></Link>
         </section>
-        <section className="inputCont">
+        <section className="searchInputCont">
           <h4>--- Search by Voter Name ---</h4>
           <input
             placeholder="First Name"
