@@ -16,10 +16,10 @@ const Results = () => {
   }
   return (
     <>
-      <section className="searchTextCont">
+      <section className="resultsTextCont">
         <p className="searchMatchText"> {numMatches} {matchText}</p>
       </section>
-      <section className="resultsTableSection">
+      <section className="resultsTableCont">
         {!currentSearch.length ? null : (
           <tbody className="resultsTableBody">
             <th className="resultsTableHeader">VOTER NAME</th>
