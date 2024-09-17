@@ -260,10 +260,6 @@ footer h4 {
   height: 50px;
 }
 
-/* Colors the even rows light gray */
-.resultsTableBody tr:nth-child(even) {
-  background-color: gainsboro;
-}
 
 /**** RESULTS table formatting *********************/
 
@@ -275,6 +271,12 @@ footer h4 {
   margin-bottom: 25px;
   font-size: 0.7em;
   margin-left: 5px;
+  width: 100vw;
+}
+
+/* Colors the even rows light gray */
+.resultsTableBody tr:nth-child(even) {
+  background-color: gainsboro;
 }
 
 /* The header row of the results table*/
