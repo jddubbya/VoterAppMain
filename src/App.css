@@ -278,7 +278,6 @@ footer h4 {
 /* Colors the even rows light gray */
 .resultsTableBody tr:nth-child(even) {
   background-color: gainsboro;
-  width: 100vw;
 }
 
 /* The header row of the results table*/
