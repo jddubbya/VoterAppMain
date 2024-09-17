@@ -269,7 +269,7 @@ footer h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95vw;
+  width: 100vw;
   margin-bottom: 25px;
   font-size: 0.7em;
   margin-left: 5px;
@@ -278,6 +278,7 @@ footer h4 {
 /* Colors the even rows light gray */
 .resultsTableBody tr:nth-child(even) {
   background-color: gainsboro;
+  width: 100vw;
 }
 
 /* The header row of the results table*/
