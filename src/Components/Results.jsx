@@ -16,7 +16,7 @@ const Results = () => {
   }
   return (
     <>
-      <section className="searchMatchLabel">
+      <section className="searchTextCont">
         <p className="searchMatchText"> {numMatches} {matchText}</p>
       </section>
       <section className="resultsTableSection">
