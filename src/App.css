@@ -148,7 +148,7 @@ header {
 .timerTable {
   background-color: black;
   min-width: 190px;
-  padding-right: 5px
+  padding-right: 5px;
 }
 
 /* The top title that displays in the clock */
@@ -274,7 +274,9 @@ footer h4 {
   align-items: center;
   margin-bottom: 25px;
   width: 100vw;
-  font-size: 0.7em
+  font-size: 0.7em;
+  margin-left: 25px;
+  max-width: fit-content;
 }
 
 /* The header row of the results table*/
