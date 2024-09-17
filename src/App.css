@@ -275,8 +275,7 @@ footer h4 {
   margin-bottom: 25px;
   width: 100vw;
   font-size: 0.7em;
-  margin-left: 25px;
-  max-width: fit-content;
+  margin-left: 20px;
 }
 
 /* The header row of the results table*/
