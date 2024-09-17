@@ -29,7 +29,7 @@ const Maps = ({ selectedOption }) => {
             mapURL = "https://www.google.com/maps/d/embed?mid=1c6RQuw-VtphI0vLa1hzNYLn90ehB4mE&ehbc=2E312FF&noprof=1&zoom=9&ll=33.202878837648285%2C-96.63653854260464&z=10";
             break;
         default:
-            mapURL = "https://www.google.com/maps/d/embed?mid=1RTnQRNjJON8TIIQ20ULpTCrmUBQK5X8&ehbc=2E312F&noprof=1&zoom=9&ll=30.965265042544072%2C-99.96208002204622&z=6.5"
+            mapURL = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14615635.028178228!2d-101.4869735317338!3d39.77896683227025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1726531438762!5m2!1sen!2sus"
     }
 
     /* Builds the Maps page*/
