@@ -196,6 +196,7 @@ header {
 /* All page contect is kept outside of the header and footer */
 .pageCont {
   margin-bottom: 100px;
+  width: 100vw;
 }
 
 /******************* End PAGE Section *****************/
