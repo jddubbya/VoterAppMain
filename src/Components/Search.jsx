@@ -97,8 +97,8 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
               return (<option>{stCounty.ST_CNTY}</option>)
               })}
           </select>
-          <Link to={"/charts"}><input type="button" value="STATS" onClick={chartsClickHandler} /></Link>
-          <Link to={"/maps"}><input type="button" value="MAPS" onClick={mapsClickHandler} /></Link>
+          <Link to={"/charts"}><input className="statsButton" type="button" value="STATS" onClick={chartsClickHandler} /></Link>
+          <Link to={"/maps"}><input className="mapsButton" type="button" value="MAPS" onClick={mapsClickHandler} /></Link>
         </section>
         <section className="searchInputCont">
           <h4>--- Search by Voter Name ---</h4>
