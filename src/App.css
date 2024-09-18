@@ -259,6 +259,8 @@ footer h4 {
 /* Keeps the Search stuff below the state/county drop */
 .stateCountySelectCont {
   height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -382,26 +384,92 @@ footer h4 {
 
 /*Search button */
 .searchButton {
-  color: black;
-  cursor: pointer;
-  background-color: lightgray;
+  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
   display: flex;
-  align-items: center;
-  margin-top: 20px;
-  height: 40px;
-  padding: 10px;
+  font-size: 16px;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.searchButton:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+/*Stats Button*/
+
+.statsButton {
+  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
+  border-radius: .5rem;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: .25rem;
+  margin-left: .5rem;
+}
+
+.statsButton:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+/*Maps Button*/
+
+.mapsButton {
+  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
+  border-radius: .5rem;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: .25rem;
+}
+
+.mapsButton:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
 }
 
 /* HOME button */
 .backButton {
-  color: black;
-  cursor: pointer;
-  background-color: lightgray;
+  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
+  border-radius: .5rem;
+  color: #FFFFFF;
   display: flex;
-  align-items: center;
-  margin-top: 20px;
-  height: 40px;
-  padding: 10px;
+  font-size: 16px;
+  justify-content: center;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: .25rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.backButton:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
 }
 
 /****************** End Button Section ****************/
@@ -416,4 +484,9 @@ footer h4 {
 .tab {
   display: inline-block;
   margin-left: 30px;
+}
+
+/*All Links text decoration*/
+a { 
+  text-decoration: none;
 }
