@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // MUI imports
 import Button from '@mui/material/Button';
-import { Input } from '@material-ui/core';
+import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import { Select } from '@material-ui/core';
+import  Select   from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -160,24 +160,27 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
         </section>
         <section className="searchInputCont">
           <h3>--- Search by Voter Name ---</h3>
-          <Input
+          <TextField
+            variant="standard"
             placeholder="First Name"
             className="searchInput"
             onChange={(e) => { setFirstName(e.target.value) }}
             value={firstName}>
-          </Input>
+          </TextField>
           <p> </p>
-          <Input placeholder="Last Name"
+          <TextField placeholder="Last Name"
+            variant="standard"
             className="searchInput"
             onChange={(e) => { setLastName(e.target.value) }}
             value={lastName}>
-          </Input>
+          </TextField>
           <h3>--- Or Address ---</h3>
-          <Input placeholder="1234 Main St"
+          <TextField placeholder="1234 Main St"
+            variant="standard"
             className="searchInput"
             onChange={(e) => { setAddress(e.target.value) }}
             value={address}>
-          </Input>
+          </TextField>
           <p> </p>
           <section className="searchButtonsCont">
             <Button
