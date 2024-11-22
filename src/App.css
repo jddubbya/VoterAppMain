@@ -1,7 +1,15 @@
+/* 
+* Name: App.css
+* Type: Cascading Style Sheet
+* Arguments: none
+* Description: Sets the look and feel of all components
+*/
+
 /*
 * CSS the BASE DOCUMENT, will affect everything
 */
 /*************** Begin ROOT Section *********************/
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,202 +17,297 @@
   text-rendering: optimizeLegibility;
 }
 
-#root {
-  min-width: 100%;
-}
-/*************** End ROOT Section *********************/
-
-/*************** Begin HEADER Section *****************/
-.titleH1 {
-  padding-left: 20px;
-}
-
-header {
-  top: 0%;
-  width: 100%;
-  position: fixed;
-  background-color: white;
-  z-index: 1000;
-}
-
-#topHeader {
- margin-top: 0px;
- margin-bottom: 0px;
- text-align: center;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.vocheckHeaderContainer {
-  background-color: rgb(9, 56, 75);
-  color: white;
-  padding: 5px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.loginButtonCont {
-  display: flex;
-  justify-content: right;
-  padding-right: 10px;
-} 
-
-.logoImage {
-  display: flex;
-  padding-left: 75px;
-}
-
-/* The VoCheck logo and Text at the top of the page*/
-.logoSection {
-  color:rgb(9, 56, 75);
-  position: relative;
-  height: 90px;
-  width: 100%;
-  white-space: normal;
-  line-height: 1.5em;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  border-bottom: solid;
-  border-bottom-color:rgb(245, 242, 242);
-  border-bottom-width: 2px;
-  border-bottom-style:ridge;
-}
-
-.logoSection > a, .logoSection > a:visited, .logoSection > a:active {
-  text-decoration: none;
-  color: inherit;
-}
-/*************** End HEADER Section *****************/
-
-/*************** Begin PAGE Section *****************/
-/* Positions ALL items in the center of the page */
+/* Affects all pages - do not alter */
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
 }
 
-/*Single Results page data section */
-.singleDataSec {
-  display: flex;flex-direction: column;
-  justify-content: left;
+/* All <input> fields */
+/*
+input {
+  height: 28px;
+  margin: 2px;
+  cursor: pointer;
+} */
+
+/* ALL Heading 1 */
+h1 {
+  font-size: 2.2em;
+  line-height: 1.1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*Single Results page data section */
-.editUserInfo {
-  display: flex;
-  text-align: right;
+/* ALL Heading 2 */
+h2 {
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*************** End PAGE Section *****************/
+/* ALL Heading 3 */
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-/********** Begin FOOTER section. ****************/
-footer .vocheck-footer {
-  background-color:rgb(9, 56, 75);
-  color:ghostwhite;
-  width: 100%;
-  white-space: normal;
-  line-height: 1.5em;
+/* ALL Heading 4 */
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ALL Paragraph */
+p {
+  font-size: 0.75em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*All Links text decoration*/
+a { 
+  text-decoration: none;
+}
+
+/*************** End ROOT Section *********************/
+/******************************************************/
+
+/******************************************************/
+/*************** Begin HEADER Section *****************/
+
+/* The container for the entire header */
+header {
+  top: 0%;
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+}
+
+/* The container for the top part of the header */
+.topHeaderCont {
+  background-color: rgb(9, 56, 75);
+  color: white;
+}
+
+/* The contents of the top part of the header */
+#topHeader {
+  margin-top: 0px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
-footer h4 {
-  display: inline;
-  margin-right: 2em;
+/* The container for the bottom part of the header */
+.bottomHeaderCont {
+  height: 100px;
+  color: rgb(9, 56, 75);
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  border-bottom: solid;
+  border-bottom-color: rgb(245, 242, 242);
+  border-bottom-width: 4px;
+  border-bottom-style: groove;
 }
 
-/* Links in footer */
+/* The VoCheck logo */
+.logoImage {
+  height: 100px;
+  object-fit: contain;
+  margin-left: 25px;
+}
+
+/* Keeps the height of the timer at 100px so it doesn't overflow */
+.timerTableDiv {
+  height: 100px;
+  margin-right: 25px;
+}
+
+/* Provides dynamic spacing between the logo and the clock */
+.emptyBox {
+  display: inline-block;
+  width: fit-content;
+  display: flex;
+}
+
+/*************** End HEADER Section *******************/
+/******************************************************/
+
+/******************************************************/
+/********* Timer component formatting *************/
+
+/* The table itself */
+.timerTable {
+  background-color: black;
+  min-width: 190px;
+  padding-right: 5px;
+}
+
+/* The top title that displays in the clock */
+.timerTitle {
+  font-size: 10pt;
+  color: white;
+}
+
+/* The clock numbers*/
+.timerTableNumbers {
+  font-size: 16pt;
+  text-align: center;
+}
+
+/* The Days, Hrs, Mins, Secs headers */
+.timerTableHeaders {
+  font-size: 8pt;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* The font and color of the timer numbers */
+.clock {
+  font-family: "Seven";
+  color: rgb(104, 255, 205);
+}
+
+/******************************************************/
+/********  END Timer component formatting *********/
+
+/******************************************************/
+/**************** Begin PAGE Section ******************/
+
+/* Positions ALL items in the center of the page */
+
+.bodyCont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+/* All page contect is kept outside of the header and footer */
+.pageCont {
+  margin-bottom: 100px;
+  width: 100vw;
+}
+
+/******************* End PAGE Section *****************/
+/******************************************************/
+
+/******************************************************/
+/********** Begin FOOTER section. *********************/
+
+/* Footer container formatting*/
+.footerCont {
+  background-color: rgb(9, 56, 75);
+  color: ghostwhite;
+  width: 100vw;
+  white-space: normal;
+  line-height: 1.5em;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  bottom: 0;
+}
+
+/* Footer links container */
+.footerLinksCont {
+  display: flex;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+/* Footer links text color */
 .footerLink {
   color: ghostwhite;
 }
 
-/********** End FOOTER section. ****************/
-
-/* ALL ul's
-* Will include a scroll bar and limits displayed items to 5
-*/
-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  background-color: rgb(256, 256, 256);
-  border-radius: 5px;
-  border-color: #888;
-  border-width: 1px;
-  border-style: solid; /* jdw adds below here */
-  margin: 10;
-  padding: 10px;
-  max-height: 150px;
-  min-width: 250px;
-  overflow: scroll;
-  overflow-y: auto;
-  overflow-x: hidden;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* Footer H4 positioning */
+footer h4 {
+  display: inline;
 }
 
-/* All <input> fields */
-input {
-    height: 28px;
-    margin:2px;
-  }
+/***************** End FOOTER section. ****************/
+/******************************************************/
 
-select {
-    height: 28px;
-  }
+/******************************************************/
+/********** Begin HOME PAGE section. ******************/
 
-/* The State/County DROP DOWN. */
-#countyDrop {
-  margin-bottom:70px;
-}
-
+/* Contains the dropdown and search fields */
 .searchForm {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 200px;
 }
 
-/* Form to edit user info*/
-.editFormContainer {
-  display:flex;
+/* makes the search form a container and centers search button*/
+.searchInputCont {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-/* Form button container*/
-.formButtonContainer {
-  display:flex;
-  justify-content: center;
+/* Keeps the Search stuff below the state/county drop */
+.stateCountySelectCont {
+  height: 42px;
+  display: flex;
   align-items: center;
 }
 
-.userEditForm {
-  text-align: right;
+.MuiBoxRoot {
+  height: "62px";
 }
 
-.userEditFormField {
-  height: 28px;
-  margin:2px;
+.countyDrop {
+  height: 50px;
 }
+
+/**** RESULTS Text formatting *********************/
+
+/* prints the number of matches to the name entered */
+.resultsTextCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  height: 20px;
+}
+
+/* formats the text of the number of matches to the name entered */
+.searchMatchText {
+  font-size: 15pt;
+}
+
+/************ End RESULTS Text formatting **********************/
+
+/****** TOS, Maps, Stats, and Privacy Pages ********************/
 
 .tosSection {
   margin-top: 150px;
-  margin-left: 5%;
+  margin-left: 4vw;
+  margin-right: 4vw;
 }
 
 .privacySection {
   margin-top: 150px;
-  margin-left: 5%;
+  margin-left: 4vw;
+  margin-right: 4vw;
 }
 
 .statisticsSection {
-  margin-top: 150px;
-  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-top: 175px;
+  margin-left: 25px;
+  max-width: fit-content;
 }
 
 .mapsSection {
@@ -212,159 +315,76 @@ select {
   margin-top: 150px;
   margin-bottom: 25px;
   justify-content: center;
+  width: 100vw;
 }
 
-.singleResultSection {
-  margin-top: 150px;
-}
-
-/* result item links */
-.resultItem > a {
-  font-weight: 500;
-  color: black;
-  text-decoration: inherit;
-}
-
-/* Colors names in search results when hovering */
-.resultItem > a:hover {
-  color:rgb(21, 136, 182);
-}
-
-.resultsSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
-  margin-top: 25px;
-}
-/* Unordered lists */
-ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  cursor:pointer;
-}
-
+/****** END TOS, Maps, Stats, and Privacy Pages ****************/
 
 /****************** Begin Font Section ****************/
-/* ALL Heading 1 Font size*/
-h1 {
-  font-size: 2.2em;
-  line-height: 1.1;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+/* Sweetalert popup font size */
+.swal-size {
+  font-size: 0.7em !important;
+  width: 60% !important;
 }
 
-h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+@font-face {
+  font-family: "Clock";
+  src: local('alarmClock'),
+    url(../Content/alarmClock.ttf) format("truetype");
 }
 
-h3 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+@font-face {
+  font-family: "Seven";
+  src: local('sevenSegment'),
+    url(../Content/sevenSegment.ttf) format("truetype");
 }
 
-h4 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+/****************** End Font Section ******************/
 
-/* ALL Paragraph Font size*/
-p {
-  font-size: 0.75em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
- /* line-height: 1.1; */
-}
-/****************** End Font Section ****************/
-
-/****************** Begin Button Section ****************/
-/*ALL buttons*/
-button {
-  padding: 0.6em 1.2em;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-button:hover {
-  border-color: darkgray;
-  cursor:pointer;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/*Search button */
-.searchButton {
-  color: black;
-  cursor: pointer;
-  background-color: lightgray;
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-  height: 40px;
-  padding: 10px;
-}
-
-.searchButton:hover {
-   cursor: pointer; 
-}
-
-/*Statistics button */
-.statsButton:hover {
-  cursor: pointer;
-}
+/**************** Begin Button Section ****************/
 
 /* Container for Back buttons - so they are centered on the page */
 .centeredButtonCont {
   display: flex;
   justify-content: center;
+  
+  margin-bottom: .5rem;
 }
 
-/* Back button */
-.backButton {
-  color: black;
-  cursor: pointer;
-  background-color: lightgray;
+.linkButton {
+  margin-left: 10px;
+  background-color: rgb(11, 65, 87) !important;
+}
+
+.homeButton {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  background-color: rgb(11, 65, 87) !important;
+}
+
+.searchButtonsCont {
   display: flex;
-  align-items: center;
-  margin-top: 20px;
-  height: 40px;
-  padding: 10px;
+}
+.searchButton  {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  background-color: rgb(11, 65, 87) !important;
 }
 
-/* User Edit Form Buttons*/
-.userEditButtons {
-  font-weight: bolder;
-  font-family: inherit;
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+.topButton  {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  background-color: rgb(11, 65, 87) !important;
 }
-
-/*  User Edit Form Buttons */
-.userEditButtons:hover {
-  cursor: pointer;
-}
-
 
 /****************** End Button Section ****************/
 
-/* pushes the data on single results page over from edge of page*/
-.singleDataSec {
-  margin-left: 10%;
-}
+/************* Misc ***********************************/
 
 /* Tabs a section over*/
 .tabSec {
   margin-left: 3%;
-}
-
-
-/* makes the search form a container and centers search button*/
-.inputCont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* tab over */
@@ -373,11 +393,6 @@ button:focus-visible {
   margin-left: 30px;
 }
 
-.loginSection {
-  margin-top: 160px;
-  text-align: center;
-}
-
-.accountCont {
-  margin-top:160px;
+.searchInput {
+  width: 300px;
 }
