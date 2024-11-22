@@ -127,7 +127,7 @@ router.get("/getVotersByName", (req, res) => {
     // Method to get the list of States and Counties for the dropdown.
     router.get("/getStCountyList", (req, res) => {
       let sql = 'SELECT CONCAT(STATE,"_",COUNTY) AS ST_CNTY FROM STATE_COUNTY ORDER BY STATE, COUNTY ASC';
-      console.log(sql);
+     // console.log(sql);
       pool.query(sql, (err, results) => {
         if (err) {
           console.error("Error executing query: " + err.stack);
