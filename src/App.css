@@ -397,3 +397,9 @@ footer h4 {
   width: 300px;
 }
 
+.mapChartIcon {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  color: rgb(11, 65, 87);
+}
