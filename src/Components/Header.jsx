@@ -14,16 +14,6 @@ import logo from "../../Content/vocheck.jpeg";
 import CountdownTimer from "../Components/CountdownTimer";
 
 const Header = () => {
-  let token = useSelector(state => state.authorization.token);
-
-  // reloads the page
-  const reload = () => {
-    window.location.reload();
-  };
-
-  if (sessionStorage.getItem('token')) {
-    token = sessionStorage.getItem('token')
-  };
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
