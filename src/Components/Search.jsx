@@ -13,9 +13,10 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // MUI imports
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import  Select   from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -31,7 +32,7 @@ import Results from "./Results";
 
 
 const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAddress, data, setData, selectedOption, setSelectedOption }) => {
-  
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [stCntyList, setStCntyList] = useState([]);
@@ -112,7 +113,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
   };
 
   ////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
   return (
     <>
       <form className="searchForm" onSubmit={handleSubmit}>
@@ -139,23 +140,11 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
               </Select>
             </FormControl>
           </Box>
-          <Link to={"/charts"} className="linkButton">
-            <Button
-              className="topButton"
-              variant="contained"
-              startIcon={<GoGraph />}
-              onClick={handleChartsClicked}>
-              Stats
-            </Button>
+          <Link to={"/charts"} onClick={handleChartsClicked}>
+            <GoGraph className="mapChartIcon"/>
           </Link>
-          <Link to={"/maps"} className="linkButton">
-            <Button
-              className="topButton"
-              variant="contained"
-              startIcon={<FaMapMarkedAlt />}
-              onClick={handleMapsClicked}>
-              Maps
-            </Button>
+          <Link to={"/maps"} onClick={handleMapsClicked}>
+            <FaMapMarkedAlt className="mapChartIcon"/>
           </Link>
         </section>
         <section className="searchInputCont">
