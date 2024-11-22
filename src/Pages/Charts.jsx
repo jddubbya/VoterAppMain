@@ -1,24 +1,28 @@
-/*
-*  Charts.jsx
-*
-*  Purpose: Charts page
-*  Exports: none.
-*  HTML:    Builds the page used to display political chartsfor a county
+/* 
+* Name: Charts.jsx
+* Type: Page
+* Arguments: selectedOption
+* Description: Builds the page used to display political charts for a county
 */
+
+// Imports ///////////////////////////////////////////////////
+// React imports
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+// MUI imports
 import { PieChart } from "@mui/x-charts/PieChart";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { Box } from "@mui/material";
+import Button from '@mui/material/Button';
+// Icons
+import { HiHome } from "react-icons/hi";
 
 const Charts = ({ selectedOption }) => {
 
     const stateCounty = selectedOption;
     const split = stateCounty.split("_");
-    let usState = split[0];
-    usState = usState.toUpperCase();
-    let county = split[1];
-    county = county.toUpperCase();
+    const usState = split[0].toUpperCase();
+    const county = split[1].toUpperCase();
 
     /* Create state variables for each function*/
     const [voterStatusCnt, setVoterStatusCnt] = useState([]);
@@ -27,42 +31,42 @@ const Charts = ({ selectedOption }) => {
     const [precinctCnt, setPrecinctCnt] = useState([]);
     const [dataDate, setDataDate] = useState([]);
 
-    /* Get the Voter Status*/
+    // Get the Voter Status counts
     const getVoterStatusCnt = async () => {
         const response = await fetch(`/db/getVoterStatus/?stateCounty=${stateCounty}`);
         const result = await response.json();
         setVoterStatusCnt(result);
-    }
+    };
 
-    /* Get the Gender Counts*/
+    // Get the Gender counts
     const getVoterGenderCnt = async () => {
         const response = await fetch(`/db/getVoterGender/?stateCounty=${stateCounty}`);
         const result = await response.json();
         setVoterGenderCnt(result);
-    }
+    };
 
-    /* Get the Party Counts*/
+    // Get the Party counts
     const getVoterPartyCnt = async () => {
         const response = await fetch(`/db/getVoterParty/?stateCounty=${stateCounty}`);
         const result = await response.json();
         setVoterPartyCnt(result);
-    }
+    };
 
-    /* Get the Precinct count */
+    // Get the Precincts count 
     const getPrecinctCnt = async () => {
         const response = await fetch(`/db/getPrecinct/?stateCounty=${stateCounty}`);
         const result = await response.json();
         setPrecinctCnt(result);
-    }
+    };
 
-    /* Get the date for the data source */
+    // Get the date for the data source
     const getDataDate = async () => {
         const response = await fetch(`/db/getDataDate/?stateCounty=${stateCounty}`);
         const result = await response.json();
         setDataDate(result);
-    }
+    };
 
-    /* Runs the queries when the page loads */
+    // Runs the queries when the page loads
     useEffect(() => {
         const allQueries = async () => {
             await getVoterStatusCnt();
@@ -74,30 +78,33 @@ const Charts = ({ selectedOption }) => {
         allQueries();
     }, []);
 
-    /* Get the total number of voters by adding the Active and Suspended Voters*/
-    /* parseInt is needed because the values are returned as strings */
+    // Get the total number of voters by adding the Active and Suspended Voters
+    // parseInt is needed because the values are returned as strings
     const getTotalVoters = () => {
         return parseInt([voterStatusCnt[0].COUNT]) + parseInt([voterStatusCnt[1].COUNT]);
-    }
+    };
 
-    /* Get the total number of voters by adding the Active and Suspended Voters*/
-    /* parseInt is needed because the values are returned as strings */
+    // Get the total number of voters by adding the Active and Suspended Voters
+    // parseInt is needed because the values are returned as strings
     const getSuspendedPct = () => {
         const suspPct = (parseInt([voterStatusCnt[1].COUNT]) / getTotalVoters()) * 100;
         return suspPct.toFixed(1);
-    }
+    };
 
-    /* Calculate the count() of the smaller Parties. Add DEM, REP, UAF, LBR and subtract from total voters*/
-    /* and handle the case where no Party info is available*/
+    // Calculate the count() of the smaller Parties.
+    // Add DEM, REP, UAF, LBR and subtract from total voters
+    // and handle the case where no Party info is available
     const getOtherPartyCount = () => {
         const totalVoters = getTotalVoters();
         return totalVoters - (parseInt([voterPartyCnt[0].COUNT]) +
             parseInt([voterPartyCnt[1].COUNT]) +
             parseInt([voterPartyCnt[2].COUNT]) +
             parseInt([voterPartyCnt[3].COUNT]));
-    }
+    };
 
-    /* Builds the Statistics page*/
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
     return (
         (!voterStatusCnt.length ||
             !voterPartyCnt.length ||
@@ -185,14 +192,17 @@ const Charts = ({ selectedOption }) => {
                 </section>
                 <div className="centeredButtonCont">
                     <Link to="/" style={{ textDecoration: 'none' }}>
-                        <input
-                            className="backButton"
+                        <Button
+                            className="homeButton"
+                            startIcon={<HiHome />}
+                            variant="contained"
                             type="submit"
-                            value="Home"
-                        ></input>
+                        >
+                            Home
+                        </Button>
                     </Link>
                 </div>
             </>
     )
-}
+};
 export default Charts;

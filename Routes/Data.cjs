@@ -1,9 +1,15 @@
+/* 
+* Name: Data.cjs
+* Type: server side code
+* Arguments: none
+* Description: Handles all the data queries.
+*/
+
 const express = require("express");
 const router = express.Router();
 const pool = require('./dbConnetionPool.cjs');  // JDW
 
-// Method to get voter data based on voter's FIRST and LAST NAME.
-
+// Method to find voter data based on voter's FIRST and LAST NAME.
 router.get("/getVotersByName", (req, res) => {
     const { firstName, lastName, voterTable } = req.query;
     let sql = 'SELECT * FROM ' + voterTable +
@@ -19,7 +25,7 @@ router.get("/getVotersByName", (req, res) => {
     });
   });
 
-  /*Method to get/search voters by address*/ 
+  // Method to find voters by address
   router.get("/getVoterByAddress", (req, res) => {
     const { address, voterTable } = req.query;
     let sql = 'SELECT * FROM ' + voterTable +
@@ -52,7 +58,7 @@ router.get("/getVotersByName", (req, res) => {
     });
   });
 
-  /*method to get voters gender */
+  // method to get count of voters by gender
   router.get("/getVoterGender", (req, res) => {
     const { stateCounty } = req.query;
   
@@ -112,8 +118,8 @@ router.get("/getVotersByName", (req, res) => {
         res.status(500).send("Error fetching Precinct Count");
         return;
       }
-      str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
-      /* console.log(str); */
+     // str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
+      // console.log(str);
       res.json(results);
     });
   });
@@ -121,13 +127,14 @@ router.get("/getVotersByName", (req, res) => {
     // Method to get the list of States and Counties for the dropdown.
     router.get("/getStCountyList", (req, res) => {
       let sql = 'SELECT CONCAT(STATE,"_",COUNTY) AS ST_CNTY FROM STATE_COUNTY ORDER BY STATE, COUNTY ASC';
+      console.log(sql);
       pool.query(sql, (err, results) => {
         if (err) {
           console.error("Error executing query: " + err.stack);
           res.status(500).send("Error fetching Precinct Count");
           return;
         }
-        /*  str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output. */
+        //  str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
         res.json(results);
       });
     });

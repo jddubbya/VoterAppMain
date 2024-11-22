@@ -1,3 +1,11 @@
+/* 
+* Name: CountdownTimer.jsx
+* Type: component
+* Arguments: headerText - the text to display in the clock header
+* Description: The page used to filter and search the Voter Database
+*/
+
+// Imports ///////////////////////////////////////////////////
 import React, { useState, useEffect } from 'react';
 import '../../Content/sevenSegment.ttf';
 
