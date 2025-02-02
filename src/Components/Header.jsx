@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
           <div className="emptyBox"></div>
           <div className="timerTableDiv">
-            <CountdownTimer headerText = "Trump Inauguration In:"/>
+            <CountdownTimer headerText = "May 3 Uniform Election:"/>
           </div>
         </section>
       </header>
