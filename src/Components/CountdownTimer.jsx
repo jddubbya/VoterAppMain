@@ -14,7 +14,7 @@ const CountdownTimer = ({headerText}) => {
   // Get the current time in milliseconds
   const NOW_IN_MS = Date.now();
   // Get the target date in milliseconds
-  const TARGET_DATE_IN_MS = new Date(2025, 0, 20, 0, 0, 0, 0); // Jan 20, 2025 0 hour
+  const TARGET_DATE_IN_MS = new Date(2025, 4, 3, 0, 0, 0, 0); // Jan 20, 2025 0 hour
 
   // Initial time in SECONDS
   const initialTime = (TARGET_DATE_IN_MS - NOW_IN_MS) / 1000;
