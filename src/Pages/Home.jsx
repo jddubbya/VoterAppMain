@@ -1,14 +1,17 @@
-/*
-*  Home.jsx
-*
-*  Purpose: Home page - displays the State/County selector, the Stats and Maps buttons
-* and the name and address search options
-*  Exports: Home
-* 
+/* 
+* Name: Home.jsx
+* Type: page
+* Arguments: selectedOption
+* Description: The page that serves up the search components
 */
-import Search from "../Components/Search";
+
+// Imports ///////////////////////////////////////////////////
+// React
 import { useState } from "react";
+// Sweetalert
 import Swal from 'sweetalert2';
+// Vocheck
+import Search from "../Components/Search";
 
 const Home = ({ selectedOption, setSelectedOption }) => {
 
@@ -24,6 +27,7 @@ const Home = ({ selectedOption, setSelectedOption }) => {
 
   const agreeClicked = sessionStorage.getItem('agreed');
 
+  // The popup with the disclaimer
   if (!agreeClicked) {
     Swal.fire({
       title: "Before you start...",
@@ -36,8 +40,9 @@ const Home = ({ selectedOption, setSelectedOption }) => {
       .then(() => {
         sessionStorage.setItem('agreed', 'clicked');
       });
-  }
+  };
 
+  ////////////////////////////////////////////////////////////////////////////////
   return (
     <>
       <section className="pageCont">
@@ -49,6 +54,6 @@ const Home = ({ selectedOption, setSelectedOption }) => {
       </section>
     </>
   )
-}
+};
 
 export default Home;

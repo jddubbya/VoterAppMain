@@ -1,30 +1,22 @@
+/* 
+* Name: Header.jsx
+* Type: component
+* Arguments: none
+* Description: The header that appears on all pages
+*/
+
+// Imports ///////////////////////////////////////////////////
+// React imports
 import { Link } from "react-router-dom";
-import logo from "../../Content/vocheck.jpeg";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setToken } from "../../Redux/authSlice.cjs";
+// Vocheck Imports
+import logo from "../../Content/vocheck.jpeg";
 import CountdownTimer from "../Components/CountdownTimer";
 
 const Header = () => {
-  const navigate = useNavigate();
-  let token = useSelector(state => state.authorization.token);
-  const dispatch = useDispatch();
 
-  const reload = () => {
-    window.location.reload();
-  }
-
-  const logoutHandler = () => {
-    dispatch(setToken(''));
-    sessionStorage.removeItem("token");
-    navigate('/');
-    reload();
-  };
-
-  if (sessionStorage.getItem('token')) {
-    token = sessionStorage.getItem('token')
-  };
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
   return (
     <>
@@ -40,7 +32,7 @@ const Header = () => {
           </Link>
           <div className="emptyBox"></div>
           <div className="timerTableDiv">
-            <CountdownTimer headerText = "Trump Inauguration In:"/>
+            <CountdownTimer headerText = "May 3 Uniform Election:"/>
           </div>
         </section>
       </header>

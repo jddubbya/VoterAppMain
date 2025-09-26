@@ -1,21 +1,25 @@
-/*
-*  Maps.jsx
-*
-*  Purpose: Maps page
-*  Exports: none.
-*  HTML:    Builds the page used to display political maps for a county
+/* 
+* Name: Maps.jsx
+* Type: Page
+* Arguments: selectedOption
+* Description: Builds the page used to display precinct maps for a county
 */
-import { useState, useEffect } from "react";
+
+// Imports ///////////////////////////////////////////////////
+// React
 import { Link } from "react-router-dom";
+// MUI
+import Button from '@mui/material/Button';
+// Icons
+import { HiHome } from "react-icons/hi";
 
 const Maps = ({ selectedOption }) => {
 
     const stateCounty = selectedOption;
     const split = stateCounty.split("_");
-    let usState = split[0];
-    usState = usState.toUpperCase();
-    let county = split[1];
-    county = county.toUpperCase();
+    const usState = split[0].toUpperCase();
+    const county = split[1].toUpperCase();
+
     let mapURL = '';
 
     switch (county) {
@@ -30,9 +34,11 @@ const Maps = ({ selectedOption }) => {
             break;
         default:
             mapURL = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14615635.028178228!2d-101.4869735317338!3d39.77896683227025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1726531438762!5m2!1sen!2sus"
-    }
+    };
 
-    /* Builds the Maps page*/
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
     return (
         <>
             <section className="mapsSection">
@@ -40,15 +46,19 @@ const Maps = ({ selectedOption }) => {
                 </iframe>
             </section>
             <div className="centeredButtonCont">
-            <Link to="/" style={{ textDecoration: 'none' }}>
-                <input
-                    className="backButton"
-                    type="submit"
-                    value="Home"
-                ></input>
-            </Link>
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <Button
+                        className="homeButton"
+                        startIcon={<HiHome />}
+                        variant="contained"
+                        type="submit"
+                    >
+                        Home
+                    </Button>
+                </Link>
             </div>
         </>
     )
-}
+};
+
 export default Maps;

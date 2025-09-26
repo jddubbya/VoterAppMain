@@ -1,8 +1,17 @@
-/**
- * Terms of Service Page
- */
+/* 
+* Name: TOS.jsx
+* Type: page
+* Arguments: none
+* Description: The page used to display the Terms of Service
+*/
 
+// Imports ///////////////////////////////////////////////////
+// React
 import { Link } from "react-router-dom";
+// MUI
+import Button from '@mui/material/Button';
+// Icons
+import { HiHome } from "react-icons/hi";
 
 const TOS = () => {
   return (
@@ -291,7 +300,14 @@ const TOS = () => {
         <section>
           <div className="centeredButtonCont">
             <Link to="/">
-              <input className="backButton" type="submit" value="Home"></input>
+              <Button
+                className="homeButton"
+                startIcon={<HiHome />}
+                variant="contained"
+                type="submit"
+              >
+                Home
+              </Button>
             </Link>
           </div>
         </section>
@@ -301,4 +317,3 @@ const TOS = () => {
 };
 
 export default TOS;
-

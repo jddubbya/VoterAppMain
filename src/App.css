@@ -1,3 +1,10 @@
+/* 
+* Name: App.css
+* Type: Cascading Style Sheet
+* Arguments: none
+* Description: Sets the look and feel of all components
+*/
+
 /*
 * CSS the BASE DOCUMENT, will affect everything
 */
@@ -18,17 +25,13 @@ body {
   align-content: center;
 }
 
-/* Formats all dropdown select components */
-select {
-  height: 28px;
-}
-
 /* All <input> fields */
+/*
 input {
   height: 28px;
   margin: 2px;
   cursor: pointer;
-}
+} */
 
 /* ALL Heading 1 */
 h1 {
@@ -39,6 +42,7 @@ h1 {
 
 /* ALL Heading 2 */
 h2 {
+  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -58,16 +62,9 @@ p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*ALL buttons*/
-button {
-  padding: 0.6em 1.2em;
-  font-family: inherit;
-}
-
-/* behavior of all buttons on hover */
-button:hover {
-  border-color: darkgray;
-  cursor: pointer;
+/*All Links text decoration*/
+a { 
+  text-decoration: none;
 }
 
 /*************** End ROOT Section *********************/
@@ -95,7 +92,6 @@ header {
   margin-top: 0px;
   margin-bottom: 0px;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* The container for the bottom part of the header */
@@ -122,13 +118,13 @@ header {
 .logoImage {
   height: 100px;
   object-fit: contain;
-  margin-left: 10px;
+  margin-left: 25px;
 }
 
 /* Keeps the height of the timer at 100px so it doesn't overflow */
 .timerTableDiv {
   height: 100px;
-  margin-right: 10px;
+  margin-right: 25px;
 }
 
 /* Provides dynamic spacing between the logo and the clock */
@@ -155,7 +151,6 @@ header {
 .timerTitle {
   font-size: 10pt;
   color: white;
-  font-style: italic;
 }
 
 /* The clock numbers*/
@@ -215,6 +210,7 @@ header {
   text-align: center;
   padding-top: 5px;
   padding-bottom: 15px;
+  bottom: 0;
 }
 
 /* Footer links container */
@@ -258,48 +254,20 @@ footer h4 {
 
 /* Keeps the Search stuff below the state/county drop */
 .stateCountySelectCont {
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.MuiBoxRoot {
+  height: "62px";
+}
+
+.countyDrop {
   height: 50px;
-  display: flex;
-  align-items: center;
 }
 
-
-/**** RESULTS table formatting *********************/
-
-/* RESULTS table container */
-.resultsTableCont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
-  font-size: 0.7em;
-  margin-left: 5px;
-}
-
-/* Colors the even rows light gray */
-.resultsTableBody tr:nth-child(even) {
-  background-color: gainsboro;
-}
-
-/* The header row of the results table*/
-.resultsTableHeader {
-  text-align: left;
-  padding-right: 15px;
-}
-
-/* The rows of the results table that will be center aligned*/
-.resultsTableCenter {
-  align-items: center;
-  padding: 4px;
-  padding-left: 15px;
-}
-
-/* The rows of the results table that will be right aligned*/
-.resultsTableRight {
-  align-items: right;
-  padding: 4px;
-  padding-left: 15px;
-}
+/**** RESULTS Text formatting *********************/
 
 /* prints the number of matches to the name entered */
 .resultsTextCont {
@@ -313,11 +281,12 @@ footer h4 {
 
 /* formats the text of the number of matches to the name entered */
 .searchMatchText {
-  font-size: 13pt;
+  font-size: 15pt;
 }
 
-/************** End HOME PAGE section. ****************/
-/******************************************************/
+/************ End RESULTS Text formatting **********************/
+
+/****** TOS, Maps, Stats, and Privacy Pages ********************/
 
 .tosSection {
   margin-top: 150px;
@@ -349,7 +318,8 @@ footer h4 {
   width: 100vw;
 }
 
-/******************************************************/
+/****** END TOS, Maps, Stats, and Privacy Pages ****************/
+
 /****************** Begin Font Section ****************/
 
 /* Sweetalert popup font size */
@@ -371,109 +341,46 @@ footer h4 {
 }
 
 /****************** End Font Section ******************/
-/******************************************************/
 
-/******************************************************/
 /**************** Begin Button Section ****************/
 
 /* Container for Back buttons - so they are centered on the page */
 .centeredButtonCont {
   display: flex;
   justify-content: center;
-}
-
-/*Search button */
-.searchButton {
-  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
-  border-radius: .5rem;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  text-decoration: none;
-  width: 100%;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.searchButton:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
-}
-
-/*Stats Button*/
-
-.statsButton {
-  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
-  border-radius: .5rem;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-right: .25rem;
-  margin-left: .5rem;
-}
-
-.statsButton:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
-}
-
-/*Maps Button*/
-
-.mapsButton {
-  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
-  border-radius: .5rem;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-left: .25rem;
-}
-
-.mapsButton:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
-}
-
-/* HOME button */
-.backButton {
-  background-image: linear-gradient(-180deg, #2881a7 0%, rgb(9, 56, 75) 100%);
-  border-radius: .5rem;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-left: .25rem;
-  margin-top: .5rem;
+  
   margin-bottom: .5rem;
 }
 
-.backButton:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+.linkButton {
+  margin-left: 10px;
+  background-color: rgb(11, 65, 87) !important;
+}
+
+.homeButton {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  background-color: rgb(11, 65, 87) !important;
+}
+
+.searchButtonsCont {
+  display: flex;
+}
+.searchButton  {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  background-color: rgb(11, 65, 87) !important;
+}
+
+.topButton  {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  background-color: rgb(11, 65, 87) !important;
 }
 
 /****************** End Button Section ****************/
-/******************************************************/
+
+/************* Misc ***********************************/
 
 /* Tabs a section over*/
 .tabSec {
@@ -486,7 +393,13 @@ footer h4 {
   margin-left: 30px;
 }
 
-/*All Links text decoration*/
-a { 
-  text-decoration: none;
+.searchInput {
+  width: 300px;
+}
+
+.mapChartIcon {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  color: rgb(11, 65, 87);
 }

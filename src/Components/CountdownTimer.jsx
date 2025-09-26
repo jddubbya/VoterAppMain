@@ -1,3 +1,11 @@
+/* 
+* Name: CountdownTimer.jsx
+* Type: component
+* Arguments: headerText - the text to display in the clock header
+* Description: The page used to filter and search the Voter Database
+*/
+
+// Imports ///////////////////////////////////////////////////
 import React, { useState, useEffect } from 'react';
 import '../../Content/sevenSegment.ttf';
 
@@ -6,7 +14,8 @@ const CountdownTimer = ({headerText}) => {
   // Get the current time in milliseconds
   const NOW_IN_MS = Date.now();
   // Get the target date in milliseconds
-  const TARGET_DATE_IN_MS = new Date(2025, 0, 20, 0, 0, 0, 0); // Jan 20, 2025 0 hour
+  //const TARGET_DATE_IN_MS = new Date(2025, 0, 20, 0, 0, 0, 0); // Jan 20, 2025 0 hour
+  const TARGET_DATE_IN_MS = new Date(2025, 4, 3, 0, 0, 0, 0); // May 3, 2025 0 hour
 
   // Initial time in SECONDS
   const initialTime = (TARGET_DATE_IN_MS - NOW_IN_MS) / 1000;

@@ -1,3 +1,11 @@
+/* 
+* Name: Footer.jsx
+* Type: component
+* Arguments: none
+* Description: The footer that appears on all pages
+*/
+
+// Imports ///////////////////////////////////////////////////
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -24,4 +32,4 @@ const Footer = () => {
   );
 };
 
-export default Footer
+export default Footer;

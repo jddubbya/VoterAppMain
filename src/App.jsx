@@ -1,13 +1,27 @@
-import './App.css'
-import { Routes, Route } from "react-router-dom"
-import Home from './Pages/Home'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-import TOS from './Pages/TOS'
-import Privacy from './Pages/Privacy'
-import Maps from './Pages/Maps'
-import Charts from './Pages/Charts'
-import { useState } from 'react'
+/* 
+* Name: App.jsx
+* Type: 
+* Arguments: none
+* Description: The entry point for the RPM application that renders the
+*              entire application. Provides a container for child components.
+*              Imports all pages and components, and is the wrapper component
+*              for the router.
+*/
+
+// Imports ///////////////////////////////////////////////////
+// React
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+// VoCheck
+import './App.css';
+import Home from './Pages/Home';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import TOS from './Pages/TOS';
+import Privacy from './Pages/Privacy';
+import Maps from './Pages/Maps';
+import Charts from './Pages/Charts';
+
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(
@@ -27,6 +41,6 @@ function App() {
       </section>
     </>
   )
-}
+};
 
 export default App;
