@@ -124,45 +124,6 @@ router.get("/getDataDate", (req, res) => {
   });
 });
 
-// Method to get the list of States and Counties for the dropdown.
-// router.get("/getStCountyList", (req, res) => {
-//   console.log("In getStCountyList...");
-
-//   let sql = 'SELECT CONCAT(STATE,"_",COUNTY) AS ST_CNTY FROM STATE_COUNTY ORDER BY STATE, COUNTY ASC';
-//  console.log(sql);
-//   pool.query(sql, (err, results) => {
-//     if (err) {
-//       console.error("Error executing query: " + err);
-//       res.status(500).send("Error fetching Precinct Count");
-//       return;
-//     }
-//     //  str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
-//     console.log("results = " + results);
-//     res.json(results);
-//   }); 
-// });
-
-// router.get("/getStCountyList", (req, res) => { 
-//   //const sql = 'SELECT CONCAT(STATE,"_",COUNTY) AS ST_CNTY FROM STATE_COUNTY ORDER BY STATE, COUNTY ASC';
-//   const sql = 'SELECT User, Host, Select_priv, Insert_priv, Update_priv, Delete_priv FROM mysql.user';
-//   console.log(sql);
-//   try {
-//     pool.query(sql, (err, results) => {
-//       if (err) {
-//         console.error("Error executing query:", err);
-//         res.status(500).send("Error fetching Precinct Count");
-//         return;
-//       }
-
-//       console.log("results =", results);
-//       res.json(results);
-//     });
-//   } catch (error) {
-//     // This will catch synchronous errors in the route (not inside the query callback)
-//     console.error("Unexpected error in /getStCountyList route:", error);
-//     res.status(500).send("Internal server error");
-//   }
-// });
 
 // Method to get the list of States and Counties for the dropdown.
 router.get("/getStCountyList", (req, res) => {
@@ -177,13 +138,14 @@ router.get("/getStCountyList", (req, res) => {
       return res.status(500).json("Error getting database connection");;
     }
     // Run the query
-    connection.query(sql, (err, results) => {
+    connection.query((err, results) => {
       // Always release the connection after the query
       connection.release();
       if (err) {
         console.error('Database query error:', err);
         return res.status(500).json({ message: 'Database query failed' });
       } else {
+
         res.json(results);
       }
     });

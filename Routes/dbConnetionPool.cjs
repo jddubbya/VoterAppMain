@@ -8,15 +8,6 @@
 var mysql = require('mysql')
 
 // Database connection parameters
-// var pool = mysql.createPool({
-//     connectionLimit: 10,
-//     host: '107.180.114.231',
-//     user: 'vocheck_user',
-//     password: 'Your217With#',
-//     database: 'voterdata'
-// });
-
-
 const pool = mysql.createPool({
     connectionLimit: 100,
     host: 'rpm-master.ckt226mgqu6e.us-east-1.rds.amazonaws.com',
@@ -49,5 +40,4 @@ pool.getConnection((err, connection) => {
     if (connection) connection.release()
     return;
 });
-
 module.exports = pool;

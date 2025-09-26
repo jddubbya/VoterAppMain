@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
 // The Routes used for the various query .cjs files
 app.use("/db", dataRoute);
 
-
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/../dist/index.html'));
   });
