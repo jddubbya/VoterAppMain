@@ -15,7 +15,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const dataRoute=require("./Data.cjs");
+const dataRoute = require("./Data.cjs");
 
 app.use(express.static(__dirname + '/../dist'));
 app.use(bodyParser.json());
@@ -25,9 +25,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/../dist/index.html');
   });
 
-
+// The Routes used for the various query .cjs files
 app.use("/db", dataRoute);
-
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/../dist/index.html'));

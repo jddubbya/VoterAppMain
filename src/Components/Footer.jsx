@@ -13,7 +13,7 @@ const Footer = () => {
     <>
       <footer>
         <div className="footerCont">
-          <p>© 2024 electionsTECH LLC. All rights reserved.</p>
+          <p>© 2025 electionsTECH LLC. All rights reserved.</p>
           <section className="footerLinksCont">
           <h4>
             <Link to={`/tos`} className="footerLink">

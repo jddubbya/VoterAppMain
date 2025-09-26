@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // MUI imports
 import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Select from '@mui/material/Select';
@@ -72,6 +71,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
 
   // Get the list of state - counties for the dropdown
   const getStatesCounties = async () => {
+    console.log("Calling getStCountyList");
     const response = await fetch(`/db/getStCountyList`);
     const result = await response.json();
     setStCntyList(result);
@@ -141,10 +141,10 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             </FormControl>
           </Box>
           <Link to={"/charts"} onClick={handleChartsClicked}>
-            <GoGraph className="mapChartIcon"/>
+            <GoGraph className="mapChartIcon" />
           </Link>
           <Link to={"/maps"} onClick={handleMapsClicked}>
-            <FaMapMarkedAlt className="mapChartIcon"/>
+            <FaMapMarkedAlt className="mapChartIcon" />
           </Link>
         </section>
         <section className="searchInputCont">
