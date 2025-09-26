@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
           <div className="emptyBox"></div>
           <div className="timerTableDiv">
-            <CountdownTimer headerText = "May 3 Uniform Election:"/>
+            <CountdownTimer headerText = "Nov 4 Uniform Election:"/>
           </div>
         </section>
       </header>
@@ -41,3 +41,4 @@ const Header = () => {
 };
 
 export default Header;
+
