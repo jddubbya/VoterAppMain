@@ -29,7 +29,7 @@ const Results = () => {
       return (
         {
           id: item.SOS_VOTERID,
-          NAME: item.NAME,
+          FULL_NAME: item.FULL_NAME,
           PARTY: item.PARTY,
           AGE: item.AGE,
           VOTER_STATUS: item.VOTER_STATUS,
@@ -57,7 +57,7 @@ const Results = () => {
           scrollable
         >
           <Column
-            field="NAME"
+            field="FULL_NAME"
             header="Name"
             sortable
             style={{ width: '40%'}}
@@ -96,5 +96,6 @@ const Results = () => {
     </>
   );
 };
+
 
 export default Results;
