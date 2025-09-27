@@ -76,7 +76,7 @@ a {
 /* The container for the entire header */
 header {
   top: 0%;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   z-index: 1000;
 }
@@ -191,7 +191,9 @@ header {
 /* All page contect is kept outside of the header and footer */
 .pageCont {
   margin-bottom: 100px;
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%; /* Uses the actual content width instead of forcing full viewport */
+  box-sizing: border-box;
 }
 
 /******************* End PAGE Section *****************/
@@ -279,9 +281,18 @@ footer h4 {
   height: 20px;
 }
 
+.resultsTableCont {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /* formats the text of the number of matches to the name entered */
 .searchMatchText {
   font-size: 15pt;
+}
+
+.p-datatable {
+  font-size: 12pt;
 }
 
 /************ End RESULTS Text formatting **********************/
