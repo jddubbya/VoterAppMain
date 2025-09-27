@@ -76,7 +76,7 @@ a {
 /* The container for the entire header */
 header {
   top: 0%;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   z-index: 1000;
 }
@@ -85,7 +85,7 @@ header {
 .topHeaderCont {
   background-color: rgb(9, 56, 75);
   color: white;
-  width: 1200px;
+  /* width: 1200px; */
 }
 
 /* The contents of the top part of the header */
@@ -246,7 +246,7 @@ footer h4 {
   align-items: center;
   justify-content: center;
   margin-top: 200px;
-  width: 1200px;
+  /* width: 1200px; */
 }
 
 /* makes the search form a container and centers search button*/
@@ -254,7 +254,7 @@ footer h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1200px;
+  /* width: 1200px; */
 }
 
 /* Keeps the Search stuff below the state/county drop */
@@ -282,13 +282,13 @@ footer h4 {
   margin-top: 25px;
   margin-bottom: 50px;
   height: 20px;
-  width: 1200px;
+  /* width: 1200px; */
 }
 
 .resultsTableCont {
   display: flex;
   justify-content: center;
-   width: 1200px; 
+   /* width: 1200px;  */
 
 }
 
