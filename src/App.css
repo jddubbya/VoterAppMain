@@ -85,6 +85,7 @@ header {
 .topHeaderCont {
   background-color: rgb(9, 56, 75);
   color: white;
+  width: 1200px;
 }
 
 /* The contents of the top part of the header */
@@ -245,6 +246,7 @@ footer h4 {
   align-items: center;
   justify-content: center;
   margin-top: 200px;
+  width: 1200px;
 }
 
 /* makes the search form a container and centers search button*/
@@ -252,6 +254,7 @@ footer h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1200px;
 }
 
 /* Keeps the Search stuff below the state/county drop */
@@ -279,11 +282,14 @@ footer h4 {
   margin-top: 25px;
   margin-bottom: 50px;
   height: 20px;
+  width: 1200px;
 }
 
 .resultsTableCont {
-  margin-left: 5px;
-  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+   width: 1200px; 
+
 }
 
 /* formats the text of the number of matches to the name entered */
@@ -293,8 +299,17 @@ footer h4 {
 
 .p-datatable {
   font-size: 12pt;
+  /* width: 100vw; */
 }
 
+.tableDetailsIcon {
+  color: black;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 20pt;
+}
 /************ End RESULTS Text formatting **********************/
 
 /****** TOS, Maps, Stats, and Privacy Pages ********************/
