@@ -14,6 +14,8 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
+// Icons
+import { FaInfoCircle } from "react-icons/fa";
 
 const Results = () => {
 
@@ -46,6 +48,23 @@ const Results = () => {
     })
   ];
 
+  // Handler for the Delete Official editor
+  const handleVoterDetails = async (rowData) => {
+    console.log("clicked details.....");
+    console.log(rowData);
+  }
+
+  // ActionTemplate for the Details icon
+  const detailsIcon = (rowData) => {
+    return (<svg
+      className="tableDetailsIcon"
+      onClick={(e) => { handleVoterDetails(rowData) }}
+    >
+      <FaInfoCircle />
+    </svg>
+    );
+  };
+
   // Executes when a row is selected
   const handleRowSelect = async (rowData) => {
     setRowSelected(true);
@@ -65,10 +84,12 @@ const Results = () => {
         <DataTable
           onSelectionChange={(e) => handleRowSelect(e.value)}
           value={voters}
+          selectionMode="single"
           dataKey="id"
           showGridlines
           stripedRows
-          selectionMode="single"
+          size="small"
+          tableStyle={{ minWidth: '50rem' }}
           scrollable
         >
           <Column
@@ -82,37 +103,29 @@ const Results = () => {
             field="AGE"
             header="Age"
             sortable
-            style={{ width: '10%' }}
+            style={{ width: '5%' }}
           >
           </Column>
           <Column
             field="PARTY"
             header="Party"
             sortable
-            style={{ width: '10%' }}
+            style={{ width: '5%' }}
           >
           </Column>
           <Column
             field="VOTER_STATUS"
-            header="Status"
+            header="Voter Status"
             sortable
-            style={{ width: '10%' }}
-          >
-          </Column>
-          {/* <Column
-            field="VOTERID"
-            header="VoterID"
-            sortable
-            style={{ width: '10%' }}
+            style={{ width: '7%' }}
           >
           </Column>
           <Column
-            field="REG_DATE"
-            header="Reg Date"
-            sortable
-            style={{ width: '10%' }}
-          >
-          </Column> */}
+            header="Details"
+            body={detailsIcon.bind(this)}
+            onClick={handleVoterDetails}
+            style={{ textAlign: "center", width: '5%' }}
+          />
         </DataTable>
       </section>
     </>
