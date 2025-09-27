@@ -79,8 +79,8 @@ const Results = () => {
           >
           </Column>
           <Column
-            field="VOTERID"
-            header="VoterID"
+            field="AGE"
+            header="Age"
             sortable
             style={{ width: '10%' }}
           >
@@ -93,15 +93,15 @@ const Results = () => {
           >
           </Column>
           <Column
-            field="AGE"
-            header="Age"
+            field="VOTER_STATUS"
+            header="Status"
             sortable
             style={{ width: '10%' }}
           >
           </Column>
-          <Column
-            field="VOTER_STATUS"
-            header="Status"
+          {/* <Column
+            field="VOTERID"
+            header="VoterID"
             sortable
             style={{ width: '10%' }}
           >
@@ -112,7 +112,7 @@ const Results = () => {
             sortable
             style={{ width: '10%' }}
           >
-          </Column>
+          </Column> */}
         </DataTable>
       </section>
     </>
