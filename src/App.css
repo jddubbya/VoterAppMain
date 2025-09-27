@@ -85,7 +85,6 @@ header {
 .topHeaderCont {
   background-color: rgb(9, 56, 75);
   color: white;
-  /* width: 1200px; */
 }
 
 /* The contents of the top part of the header */
@@ -192,9 +191,7 @@ header {
 /* All page contect is kept outside of the header and footer */
 .pageCont {
   margin-bottom: 100px;
-  /* width: 100vw; */
-  width: 100%; /* Uses the actual content width instead of forcing full viewport */
-  box-sizing: border-box;
+  width: 100vw; 
 }
 
 /******************* End PAGE Section *****************/
@@ -246,7 +243,6 @@ footer h4 {
   align-items: center;
   justify-content: center;
   margin-top: 200px;
-  /* width: 1200px; */
 }
 
 /* makes the search form a container and centers search button*/
@@ -254,7 +250,6 @@ footer h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 1200px; */
 }
 
 /* Keeps the Search stuff below the state/county drop */
@@ -282,14 +277,6 @@ footer h4 {
   margin-top: 25px;
   margin-bottom: 50px;
   height: 20px;
-  /* width: 1200px; */
-}
-
-.resultsTableCont {
-  display: flex;
-  justify-content: center;
-   /* width: 1200px;  */
-
 }
 
 /* formats the text of the number of matches to the name entered */
@@ -297,19 +284,6 @@ footer h4 {
   font-size: 15pt;
 }
 
-.p-datatable {
-  font-size: 12pt;
-  /* width: 100vw; */
-}
-
-.tableDetailsIcon {
-  color: black;
-  height: 30px;
-  width: 30px;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 20pt;
-}
 /************ End RESULTS Text formatting **********************/
 
 /****** TOS, Maps, Stats, and Privacy Pages ********************/
@@ -373,8 +347,7 @@ footer h4 {
 /* Container for Back buttons - so they are centered on the page */
 .centeredButtonCont {
   display: flex;
-  justify-content: center;
-  
+  justify-content: center; 
   margin-bottom: .5rem;
 }
 
@@ -428,4 +401,23 @@ footer h4 {
   width: 40px;
   margin-left: 20px;
   color: rgb(11, 65, 87);
+}
+
+/* Sept 2025 adds */
+/* .resultsTableCont {
+  display: flex;
+  justify-content: center;
+} */
+
+.p-datatable {
+  font-size: 12pt;
+}
+
+.tableDetailsIcon {
+  color: black;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 20pt;
 }
