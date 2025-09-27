@@ -163,7 +163,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             onChange={(e) => { setLastName(e.target.value) }}
             value={lastName}>
           </TextField>
-          <h3>--- Or Address ---</h3>
+          <h3>--- Search by Address ---</h3>
           <TextField placeholder="1234 Main St"
             variant="standard"
             className="searchInput"
