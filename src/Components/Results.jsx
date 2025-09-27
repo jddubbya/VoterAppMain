@@ -33,7 +33,7 @@ const Results = () => {
           PARTY: item.PARTY,
           AGE: item.AGE,
           VOTER_STATUS: item.VOTER_STATUS,
-          REG_DATE: item.REG_DATE,
+          REG_DATE: item.REG_DATE.substring(0, 10),
         }
       )
     })
@@ -99,3 +99,4 @@ const Results = () => {
 
 
 export default Results;
+
