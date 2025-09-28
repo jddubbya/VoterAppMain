@@ -123,7 +123,6 @@ const Results = () => {
             field="FULL_NAME"
             header="Name"
             sortable
-            style={{ width: '25%' }}
           >
           </Column>
           <Column
@@ -140,4 +139,3 @@ const Results = () => {
 };
 
 export default Results;
-
