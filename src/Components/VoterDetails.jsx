@@ -76,169 +76,157 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
     return (
         <>
             <section className="voterDetailsContainer">
-                <section className="officialDetailsCont">
-                    <form className="officialForm">
-                        <section className="formInputCont">
-                            <section className="holder">
-                                <div className="officialTitleWithIcon">
-                                    <h3>Voter Details:</h3>
-                                </div>
-                                <section className="contactCardName">
-                                    <div className="labelFormat">
-                                        <label>Name</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputXLong"
-                                            placeholder="Name"
-                                            value={selectedVoter['FULL_NAME']}
-                                            required
-                                            name="FULL_NAME"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Age</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputShort"
-                                            placeholder="Age"
-                                            value={selectedVoter.AGE}
-                                            name="AGE"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Generation</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputMedium"
-                                            placeholder="Generation"
-                                            value={selectedVoter.GENERATION}
-                                            name="GENERATION"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Address</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputXXLong"
-                                            placeholder="Address"
-                                            value={fullAddress}
-                                            required
-                                            name="FULL_ADDRESS"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Municipality</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputXLong"
-                                            placeholder="Municipality"
-                                            value={selectedVoter.MUNICIPALITY}
-                                            required
-                                            name="MUNICIPALITY"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Precinct</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputMedium"
-                                            placeholder="Precinct"
-                                            value={selectedVoter.PRECINCT}
-                                            required
-                                            name="PRECINCT"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Commissioner Dist.</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputShort"
-                                            placeholder="Commissioner District"
-                                            value={selectedVoter.CNTY_COMMISS_DIST}
-                                            required
-                                            name="CNTY_COMMISS_DIST"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>School Dist.</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputLong"
-                                            placeholder="School District"
-                                            value={selectedVoter.SCHOOL_DIST}
-                                            required
-                                            name="SCHOOL_DIST"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Voter ID</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputMedium"
-                                            placeholder="Voter ID"
-                                            value={selectedVoter.VOTERID}
-                                            required
-                                            name="VOTERID"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Voter Status</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputMedium"
-                                            placeholder="Last"
-                                            value={selectedVoter.VOTER_STATUS}
-                                            required
-                                            name="LAST_NAME"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Party</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputMedium"
-                                            placeholder="Party"
-                                            value={selectedVoter.PARTY}
-                                            name="PARTY"
-                                        />
-                                    </div>
-                                    <div className="labelFormat">
-                                        <label>Reg. Date</label>
-                                        <InputText
-                                            disabled
-                                            variant="standard"
-                                            className="personInputMedium"
-                                            placeholder="Registration date"
-                                            value={selectedVoter.REG_DATE}
-                                            required
-                                            name="REG_DATE"
-                                        />
-                                    </div>
-                                </section>
-                            </section>
-                        </section>
-                        <section>
-                            <section className="centeredButtonCont">
-                                <Button
-                                    className="searchButton"
-                                    icon={<MdCancel />}
-                                    onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </section>
-                        </section>
-                    </form>
+                <h3>Voter Details:</h3>
+                <section>
+                    <div className="labelFormat">
+                        <label>Name</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputLong"
+                            placeholder="Name"
+                            value={selectedVoter['FULL_NAME']}
+                            required
+                            name="FULL_NAME"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Age</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputShort"
+                            placeholder="Age"
+                            value={selectedVoter.AGE}
+                            name="AGE"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Generation</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Generation"
+                            value={selectedVoter.GENERATION}
+                            name="GENERATION"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Address</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputLong"
+                            placeholder="Address"
+                            value={fullAddress}
+                            required
+                            name="FULL_ADDRESS"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Municipality</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Municipality"
+                            value={selectedVoter.MUNICIPALITY}
+                            required
+                            name="MUNICIPALITY"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Precinct</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Precinct"
+                            value={selectedVoter.PRECINCT}
+                            required
+                            name="PRECINCT"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Commissioner Dist.</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputShort"
+                            placeholder="Commissioner District"
+                            value={selectedVoter.CNTY_COMMISS_DIST}
+                            required
+                            name="CNTY_COMMISS_DIST"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>School Dist.</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="School District"
+                            value={selectedVoter.SCHOOL_DIST}
+                            required
+                            name="SCHOOL_DIST"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Voter ID</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Voter ID"
+                            value={selectedVoter.VOTERID}
+                            required
+                            name="VOTERID"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Voter Status</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Last"
+                            value={selectedVoter.VOTER_STATUS}
+                            required
+                            name="LAST_NAME"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Party</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Party"
+                            value={selectedVoter.PARTY}
+                            name="PARTY"
+                        />
+                    </div>
+                    <div className="labelFormat">
+                        <label>Reg. Date</label>
+                        <InputText
+                            disabled
+                            variant="standard"
+                            className="personInputMedium"
+                            placeholder="Registration date"
+                            value={selectedVoter.REG_DATE}
+                            required
+                            name="REG_DATE"
+                        />
+                    </div>
+                </section>
+                <section className="centeredButtonCont">
+                    <Button
+                        className="searchButton"
+                        icon={<MdCancel />}
+                        onClick={handleClose}>
+                        Close
+                    </Button>
                 </section>
             </section>
         </>
