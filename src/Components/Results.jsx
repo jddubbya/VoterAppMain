@@ -101,7 +101,7 @@ const Results = () => {
       {selectedVoter &&
         <VoterDetails
           selectedVoter={selectedVoter}
-          setselectedVoter={setSelectedVoter}
+          setSelectedVoter={setSelectedVoter}
           rowSelected={rowSelected}
           setRowSelected={setRowSelected}
         />
@@ -138,5 +138,3 @@ const Results = () => {
 };
 
 export default Results;
-
-
