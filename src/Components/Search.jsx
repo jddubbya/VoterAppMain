@@ -36,6 +36,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [stCntyList, setStCntyList] = useState([]);
+  const [fullName, setFullName] = useState('');
 
   const handleOptionChange = (event) => {
     const newValue = event.target.value;
@@ -60,7 +61,12 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       setData(result);
       dispatch(setVoterData(result));
     } else {
-      const response = await fetch(`/db/getVotersByName/?firstName=${firstName}&lastName=${lastName}&voterTable=${voterTable}`);
+      // Get first and last names from the full name
+      const split = fullName.split(" ");
+      const first = (split[0]);
+      const last = (split[1]);
+     
+      const response = await fetch(`/db/getVotersByName/?firstName=${first}&lastName=${last}&voterTable=${voterTable}`);
       const result = await response.json();
       if (!result) {
         return;
@@ -109,6 +115,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
   const handleClearForm = (e) => {
     setFirstName("");
     setLastName("");
+    setFullName("");
     setAddress("");
   };
 
@@ -141,15 +148,22 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             </FormControl>
           </Box>
           <Link to={"/charts"} onClick={handleChartsClicked}>
-            <GoGraph className="mapChartIcon"/>
+            <GoGraph className="mapChartIcon" />
           </Link>
           <Link to={"/maps"} onClick={handleMapsClicked}>
-            <FaMapMarkedAlt className="mapChartIcon"/>
+            <FaMapMarkedAlt className="mapChartIcon" />
           </Link>
         </section>
         <section className="searchInputCont">
           <h3>--- Search by Voter Name ---</h3>
           <TextField
+            variant="standard"
+            placeholder="John Smith"
+            className="searchInput"
+            onChange={(e) => { setFullName(e.target.value) }}
+            value={fullName}>
+          </TextField>
+          {/* <TextField
             variant="standard"
             placeholder="First Name"
             className="searchInput"
@@ -162,7 +176,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             className="searchInput"
             onChange={(e) => { setLastName(e.target.value) }}
             value={lastName}>
-          </TextField>
+          </TextField> */}
           <h3>--- Search by Address ---</h3>
           <TextField placeholder="1234 Main St"
             variant="standard"
