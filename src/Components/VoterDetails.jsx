@@ -39,7 +39,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
     useEffect(() => {
         if (selectedVoter) {
             console.log("selectedVoter: " + JSON.stringify(selectedVoter, null, 4));
-            console.log(selectedVoter.FIRST_NAME);
+            //    console.log(selectedVoter.FULL_NAME);
             setFullAddress(selectedVoter.ADDRESS + ' ' + selectedVoter.CITY + ', ' + selectedVoter.STATE + ' ' + selectedVoter.ZIP);
             setFormData({
                 "VOTERID": `${selectedVoter.VOTERID}`,
@@ -50,17 +50,6 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
             console.log("formData: " + JSON.stringify(formData, null, 4));
         };
     }, [selectedVoter]);
-
-    const clearForm = () => {
-        setFormData({
-            "VOTERID": '',
-            "FULL_NAME": '',
-            "FIRST_NAME": '',
-            "MIDDLE_NAME": '',
-            "LAST_NAME": '',
-            "REG_DATE": '',
-        });
-    };
 
     // Handles press of the Close button
     const handleClose = (e) => {
@@ -221,10 +210,15 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     </div>
                 </section>
                 <section className="centeredButtonCont">
-                    <Button
+                    {/* <Button
                         className="searchButton"
+                        onClick={handleClose}
                         icon={<MdCancel />}
-                        onClick={handleClose}>
+                        >
+                        Close
+                    </Button> */}
+                    <Button className="searchButton" onClick={handleClose}>
+                        <MdCancel style={{ marginRight: '0.5rem' }} />
                         Close
                     </Button>
                 </section>
