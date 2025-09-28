@@ -8,7 +8,7 @@
 // Imports ///////////////////////////////////////////////////
 // React
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 // Primereact DataTable
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -24,6 +24,8 @@ const Results = () => {
 
   const currentSearch = useSelector((state) => state.voterData.voterData);
   const numMatches = currentSearch.length;
+
+  const bottomRef = useRef(null);
 
   // console.log("currentSearch = " + JSON.stringify(currentSearch, null, 4));
   let matchText = "Matches:"
@@ -48,9 +50,14 @@ const Results = () => {
     })
   ];
 
+  // This causes the page to scroll down when Search Results are displayed
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [numMatches]); // Will scroll to the bottom every time numMatches state changes
+
   // Handler for the Delete Official editor
   const handleVoterDetails = async (rowData) => {
-    console.log("clicked details.....");
+    //  console.log("clicked details.....");
     console.log(rowData);
   }
 
@@ -127,6 +134,7 @@ const Results = () => {
             style={{ textAlign: "center", width: '5%' }}
           />
         </DataTable>
+        <div ref={bottomRef} />
       </section>
     </>
   );
