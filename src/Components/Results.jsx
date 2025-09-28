@@ -116,7 +116,7 @@ const Results = () => {
           showGridlines
           stripedRows
           size="small"
-          tableStyle={{ minWidth: '25rem' }}
+          {/* tableStyle={{ minWidth: '25rem' }} */}
           scrollable
         >
           <Column
@@ -139,3 +139,4 @@ const Results = () => {
 };
 
 export default Results;
+
