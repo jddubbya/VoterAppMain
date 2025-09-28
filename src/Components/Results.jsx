@@ -9,6 +9,8 @@
 // React
 import { useSelector } from "react-redux";
 import { useState, useEffect, useRef } from "react";
+// Vocheck Components
+import VoterDetails from "./VoterDetails";
 // Primereact DataTable
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -41,9 +43,18 @@ const Results = () => {
           id: item.VOTERID,
           VOTERID: item.VOTERID,
           FULL_NAME: item.FULL_NAME,
+          ADDRESS: item.ADDRESS,
+          CITY: item.CITY,
+          STATE: item.STATE,
+          ZIP: item.ZIP,
           PARTY: item.PARTY,
           AGE: item.AGE,
+          GENERATION: item.GENERATION,
           VOTER_STATUS: item.VOTER_STATUS,
+          MUNICIPALITY: item.MUNICIPALITY,
+          PRECINCT: item.PRECINCT,
+          CNTY_COMMISS_DIST: item.CNTY_COMMISS_DIST,
+          SCHOOL_DIST: item.SCHOOL_DIST,
           REG_DATE: item.REG_DATE.substring(0, 10),
         }
       )
@@ -87,6 +98,15 @@ const Results = () => {
         <h4 className="searchMatchText"> {numMatches} {matchText}</h4>
       </section>
 
+      {selectedVoter &&
+        <VoterDetails
+          selectedVoter={selectedVoter}
+          setselectedVoter={setSelectedVoter}
+          rowSelected={rowSelected}
+          setRowSelected={setRowSelected}
+        />
+      }
+
       <section className="resultsTableCont">
         <DataTable
           onSelectionChange={(e) => handleRowSelect(e.value)}
@@ -104,27 +124,6 @@ const Results = () => {
             header="Name"
             sortable
             style={{ width: '25%' }}
-          >
-          </Column>
-          <Column
-            field="AGE"
-            header="Age"
-            sortable
-            style={{ width: '5%' }}
-          >
-          </Column>
-          <Column
-            field="PARTY"
-            header="Party"
-            sortable
-            style={{ width: '5%' }}
-          >
-          </Column>
-          <Column
-            field="VOTER_STATUS"
-            header="Voter Status"
-            sortable
-            style={{ width: '7%' }}
           >
           </Column>
           <Column
