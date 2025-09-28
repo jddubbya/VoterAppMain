@@ -242,6 +242,7 @@ footer h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 /* Keeps the Search stuff below the state/county drop */
@@ -276,6 +277,7 @@ footer h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 /* formats the text of the number of matches to the name entered */
@@ -409,7 +411,7 @@ footer h4 {
 
 
 .p-datatable {
-  font-size: 12pt;
+  font-size: 11pt;
   margin-left: 15px;
 }
 
@@ -484,4 +486,10 @@ footer h4 {
 
 .labelFormat {
   font-family: Arial, sans-serif;
+}
+
+.contactCardName {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20vw;
 }
