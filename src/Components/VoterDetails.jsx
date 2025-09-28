@@ -45,7 +45,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                 "VOTERID": `${selectedVoter.VOTERID}`,
                 "FULL_NAME": `${selectedVoter.FULL_NAME}`,
                 "PARTY": `${selectedVoter.PARTY}`,
-                "VOTERID": `${selectedVoter.VOTER_STATUS}`,
+                "VOTER_STATUS": `${selectedVoter.VOTER_STATUS}`,
             });
             console.log("formData: " + JSON.stringify(formData, null, 4));
         };
