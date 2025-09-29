@@ -431,7 +431,7 @@ footer h4 {
   outline: none !important; */
   background-color: transparent !important;
   color: black !important;
-  font-size: 11pt;
+  font-size: 10pt;
 }
 
 .personInputShort {
@@ -452,7 +452,7 @@ footer h4 {
 
 .personInputLong {
   height: 43px;
-  width: 275px;
+  width: 250px;
   margin: 5px;
   text-align: left;
   margin-left: 20px;
@@ -488,7 +488,18 @@ footer h4 {
 }
 
 .labelFormat {
+  display: flex;
   font-family: Arial, sans-serif;
-  font-size: 11pt;
+  font-size: 9pt;
+  align-items: center;
 }
 
+/* Required for the stacked text in the InputTextarea */
+.my-textarea {
+  white-space: pre-line;
+  height: 65px;
+  width: 250px;
+  margin: 5px;
+  text-align: left;
+  margin-left: 20px;
+}
