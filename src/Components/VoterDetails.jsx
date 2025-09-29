@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 //import secureLocalStorage from "react-secure-storage";
 // Primereact
 import { InputText } from 'primereact/inputtext';
+import { InputTextarea } from 'primereact/inputtextarea';
 //import { Dropdown } from 'primereact/dropdown';
 import { Button } from 'primereact/button';
 // Icons
@@ -34,20 +35,14 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
         "END_YEAR": ""
     });
 
-    const [fullAddress, setFullAddress] = useState('');
-
     useEffect(() => {
         if (selectedVoter) {
-            console.log("selectedVoter: " + JSON.stringify(selectedVoter, null, 4));
-            //    console.log(selectedVoter.FULL_NAME);
-            setFullAddress(selectedVoter.ADDRESS + ' ' + selectedVoter.CITY + ', ' + selectedVoter.STATE + ' ' + selectedVoter.ZIP);
             setFormData({
                 "VOTERID": `${selectedVoter.VOTERID}`,
                 "FULL_NAME": `${selectedVoter.FULL_NAME}`,
                 "PARTY": `${selectedVoter.PARTY}`,
                 "VOTER_STATUS": `${selectedVoter.VOTER_STATUS}`,
             });
-            console.log("formData: " + JSON.stringify(formData, null, 4));
         };
     }, [selectedVoter]);
 
@@ -93,7 +88,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Generation</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputMedium"
                             placeholder="Generation"
@@ -103,22 +98,23 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     </div>
                     <div className="labelFormat">
                         <label>Address</label>
-                        <InputText
-                            disabled
+                        <InputTextarea
+                            readOnly
+                            rows={2}
+                            value={`${selectedVoter.ADDRESS}\n${selectedVoter.CITY + ', ' + selectedVoter.STATE + ' ' + selectedVoter.ZIP}`}
                             variant="standard"
-                            className="personInputLong"
+                             className="my-textarea"
                             placeholder="Address"
-                            value={fullAddress}
                             required
-                            name="FULL_ADDRESS"
+                            name="stackedAddress"
                         />
                     </div>
                     <div className="labelFormat">
                         <label>Municipality</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
-                            className="personInputMedium"
+                            className="personInputLong"
                             placeholder="Municipality"
                             value={selectedVoter.MUNICIPALITY}
                             required
@@ -128,7 +124,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Precinct</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputMedium"
                             placeholder="Precinct"
@@ -140,7 +136,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Commissioner Dist.</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputShort"
                             placeholder="Commissioner District"
@@ -152,9 +148,9 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>School Dist.</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
-                            className="personInputMedium"
+                            className="personInputLong"
                             placeholder="School District"
                             value={selectedVoter.SCHOOL_DIST}
                             required
@@ -164,7 +160,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Voter ID</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputMedium"
                             placeholder="Voter ID"
@@ -176,7 +172,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Voter Status</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputMedium"
                             placeholder="Last"
@@ -188,7 +184,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Party</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputMedium"
                             placeholder="Party"
@@ -199,7 +195,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     <div className="labelFormat">
                         <label>Reg. Date</label>
                         <InputText
-                            disabled
+                            readOnly
                             variant="standard"
                             className="personInputMedium"
                             placeholder="Registration date"
@@ -210,13 +206,6 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                     </div>
                 </section>
                 <section className="centeredButtonCont">
-                    {/* <Button
-                        className="searchButton"
-                        onClick={handleClose}
-                        icon={<MdCancel />}
-                        >
-                        Close
-                    </Button> */}
                     <Button className="searchButton" onClick={handleClose}>
                         <MdCancel style={{ marginRight: '0.5rem' }} />
                         Close
