@@ -29,7 +29,6 @@ const Results = () => {
 
   const bottomRef = useRef(null);
 
-  // console.log("currentSearch = " + JSON.stringify(currentSearch, null, 4));
   let matchText = "Matches:"
   if (numMatches === 1) {
     matchText = "Match:"
@@ -69,7 +68,7 @@ const Results = () => {
   // Handler for the Delete Official editor
   const handleVoterDetails = async (rowData) => {
     //  console.log("clicked details.....");
-    console.log(rowData);
+ //   console.log(rowData);
   }
 
   // ActionTemplate for the Details icon
