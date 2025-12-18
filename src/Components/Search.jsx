@@ -40,7 +40,6 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
 
   const handleOptionChange = (event) => {
     const newValue = event.target.value;
-    console.log("newValue = " + newValue);
     setSelectedOption(newValue);
     localStorage.setItem('selectedOption', newValue);
   };
@@ -51,8 +50,6 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
     const voterTable = selectedOption;
 
     if (address) {
-      // Clean up the address string - replace spaces with % wildcard
-      address = address.replace(/\s+/g, '%');
       const response = await fetch(`/db/getVoterByAddress/?address=${address}&voterTable=${voterTable}`);
       const result = await response.json();
       if (!result) {
@@ -163,20 +160,6 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             onChange={(e) => { setFullName(e.target.value) }}
             value={fullName}>
           </TextField>
-          {/* <TextField
-            variant="standard"
-            placeholder="First Name"
-            className="searchInput"
-            onChange={(e) => { setFirstName(e.target.value) }}
-            value={firstName}>
-          </TextField>
-          <p> </p>
-          <TextField placeholder="Last Name"
-            variant="standard"
-            className="searchInput"
-            onChange={(e) => { setLastName(e.target.value) }}
-            value={lastName}>
-          </TextField> */}
           <h3>--- Search by Address ---</h3>
           <TextField placeholder="1234 Main St"
             variant="standard"
@@ -203,14 +186,14 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             >
               CLEAR
             </Button>
+            
           </section>
-        </section>
-      </form>
-      {data.length ?
+          {data.length ?
         <Results data={data} setData={setData} />
         :
         null}
-
+        </section>
+      </form>
     </>
   )
 };
