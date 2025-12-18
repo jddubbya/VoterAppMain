@@ -5,16 +5,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "concurrently \"node ./Routes/index.cjs\" \"vite\"",
-  "build": "vite build",
-  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-  "preview": "vite preview",
-  "start": "node ./Routes/index.cjs"
-},
+    "dev": "concurrently \"node ./Routes/index.cjs\" \"vite\"",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "start": "node ./Routes/index.cjs"
+  },
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
-    "@mui/material": "^6.1.8",
+    "@mui/material": "^6.5.0",
+    "@mui/system": "^6.5.0",
     "@mui/x-charts": "^7.22.3",
     "@reduxjs/toolkit": "^2.2.6",
     "body-parser": "^1.20.2",
