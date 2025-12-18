@@ -7,136 +7,118 @@
 
 const express = require("express");
 const router = express.Router();
-const pool = require('./dbConnetionPool.cjs');  // JDW
+
+// Reusable helper module to run the database query
+const { runQuery } = require("./runDbQuery.cjs");
+
+///////////////// BEGIN HELPER FUNCTIONS ///////////////////////////////
+
+// Get the query pool
+const getPool = async (req) => {
+  if (!req.getDbPool) {
+    throw new Error("Database pool not initialized in request.");
+  }
+  return await req.getDbPool();
+};
+
+// Reusable code to execute a query
+async function executeQuery(req, res, sql, params = []) {
+  try {
+    const pool = await getPool(req);
+    const results = await runQuery(pool, sql, params);
+    res.json(Array.isArray(results) ? results : []);
+  } catch (err) {
+    console.error("Database query error:", err);
+    res.status(500).json({ message: "Database query failed" });
+  }
+}
+
+// Method to get the list of States and Counties for the dropdown.
+router.get("/getStCountyList", async (req, res) => {
+  const sql = 'SELECT CONCAT(STATE,"_",COUNTY) AS ST_CNTY FROM STATE_COUNTY ORDER BY STATE, COUNTY ASC';
+
+  await executeQuery(req, res, sql);
+});
+
 
 // Method to find voter data based on voter's FIRST and LAST NAME.
-router.get("/getVotersByName", (req, res) => {
-    const { firstName, lastName, voterTable } = req.query;
-    let sql = 'SELECT * FROM ' + voterTable +
-      ' WHERE FIRST_NAME = "' + firstName + '" AND LAST_NAME = "' + lastName +
-      '" ORDER BY MIDDLE_NAME ASC';
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching users");
-        return;
-      }
-      res.json(results);
-    });
-  });
+router.get("/getVotersByName", async (req, res) => {
+  const { firstName, lastName, voterTable } = req.query;
 
-  // Method to find voters by address
-  router.get("/getVoterByAddress", (req, res) => {
-    const { address, voterTable } = req.query;
-    let sql = 'SELECT * FROM ' + voterTable +
-      ' WHERE ADDRESS LIKE "' + address + '%" ORDER BY LAST_NAME, FIRST_NAME, MIDDLE_NAME ASC';
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching users");
-        return;
-      }
-      /* str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
-       console.log(str); */
-      res.json(results);
-    });
-  });
+  const sql = `SELECT * FROM ?? WHERE FIRST_NAME = ? AND LAST_NAME = ? ORDER BY MIDDLE_NAME ASC`;
+  const params = [voterTable, firstName, lastName];
 
-  // Method to get counts of voters by VOTER STATUS.
-  router.get("/getVoterStatus", (req, res) => {
-    const { stateCounty } = req.query;
-  
-    let sql = 'SELECT count(*) AS "COUNT", voter_status FROM ' +
-      stateCounty + ' GROUP BY VOTER_STATUS ORDER BY VOTER_STATUS ASC';
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching users");
-        return;
-      }
-      res.json(results);
-    });
-  });
+  await executeQuery(req, res, sql, params);
+});
 
-  // method to get count of voters by gender
-  router.get("/getVoterGender", (req, res) => {
-    const { stateCounty } = req.query;
-  
-    let sql = 'SELECT count(*) AS "COUNT", GENDER FROM ' +
-      stateCounty + ' GROUP BY GENDER ORDER BY GENDER ASC';
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching users");
-        return;
-      }
-      res.json(results);
-    });
-  });
+// Method to find voter data based on voter's ADDRESS.
+router.get("/getVoterByAddress", async (req, res) => {
+  const { address, voterTable } = req.query;
 
-  // Method to get count of voters by PARTY.
-  router.get("/getVoterParty", (req, res) => {
-    const { stateCounty } = req.query;
-    let sql = 'SELECT count(*) AS "COUNT", PARTY FROM '
-      + stateCounty + ' WHERE PARTY IN ("DEM","REP","UAF","LBR","XX") GROUP BY PARTY ORDER BY PARTY ASC';
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching users");
-        return;
-      }
-      res.json(results);
-    });
-  });
+  const addressPattern = `%` + address + `%`;
 
-  // Method to get count of PRECINCTS.
-  router.get("/getPrecinct", (req, res) => {
-    const { stateCounty } = req.query;
-    let sql = 'SELECT COUNT(DISTINCT PRECINCT) as PCT_COUNT FROM ' + stateCounty;
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching Precinct Count");
-        return;
-      }
-      /*  str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output. */
-      res.json(results);
-    });
-  });
+  const sql = `SELECT * FROM ?? WHERE ADDRESS LIKE ? ORDER BY LAST_NAME, FIRST_NAME ASC`;
 
-  // Method to get the date of the data.
-  router.get("/getDataDate", (req, res) => {
-    const { stateCounty } = req.query;
-    const split = stateCounty.split("_");
-    let usState = split[0];
-    let county = split[1];
-    county = county.toUpperCase();
-    let sql = "SELECT DATA_DATE FROM STATE_COUNTY WHERE STATE = " + '"' + usState + '" AND COUNTY = ' + '"' + county + '"';
-    pool.query(sql, (err, results) => {
-      if (err) {
-        console.error("Error executing query: " + err.stack);
-        res.status(500).send("Error fetching Precinct Count");
-        return;
-      }
-     // str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
-      // console.log(str);
-      res.json(results);
-    });
-  });
+  const params = [voterTable, addressPattern];
 
-    // Method to get the list of States and Counties for the dropdown.
-    router.get("/getStCountyList", (req, res) => {
-      let sql = 'SELECT CONCAT(STATE,"_",COUNTY) AS ST_CNTY FROM STATE_COUNTY ORDER BY STATE, COUNTY ASC';
-     // console.log(sql);
-      pool.query(sql, (err, results) => {
-        if (err) {
-          console.error("Error executing query: " + err.stack);
-          res.status(500).send("Error fetching Precinct Count");
-          return;
-        }
-        //  str = JSON.stringify(results, null, 4); // (Optional) beautiful indented output.
-        res.json(results);
-      });
-    });
+  await executeQuery(req, res, sql, params);
+});
+
+// Method to get counts of voters by VOTER STATUS.
+router.get("/getVoterStatus", async (req, res) => {
+  const { stateCounty } = req.query;
+
+  const sql = `SELECT COUNT(*) AS "COUNT", VOTER_STATUS FROM ?? 
+                GROUP BY VOTER_STATUS ORDER BY VOTER_STATUS ASC`;
+  const params = [stateCounty];
+
+  await executeQuery(req, res, sql, params);
+});
+
+// method to get count of voters by gender
+router.get("/getVoterGender", async (req, res) => {
+  const { stateCounty } = req.query;
+
+  const sql = `SELECT COUNT(*) AS "COUNT", GENDER FROM ??
+              GROUP BY GENDER ORDER BY GENDER ASC`;
+  const params = [stateCounty];
+
+  await executeQuery(req, res, sql, params);
+});
+
+// Method to get count of voters by PARTY.
+router.get("/getVoterParty", async (req, res) => {
+  const { stateCounty } = req.query;
+  const sql = `SELECT COUNT(*) AS "COUNT", PARTY FROM ??
+              WHERE PARTY IN ("DEM","REP","UAF","LBR","XX") GROUP BY PARTY ORDER BY PARTY ASC`;
+  const params = [stateCounty];
+
+  await executeQuery(req, res, sql, params);
+});
+
+// Method to get count of PRECINCTS.
+router.get("/getPrecinct", async (req, res) => {
+  const { stateCounty } = req.query;
+  const sql = `SELECT COUNT(DISTINCT PRECINCT) AS PCT_COUNT FROM ??`;
+
+  const params = [stateCounty];
+
+  await executeQuery(req, res, sql, params);
+});
+
+
+// Method to get the date of the data.
+router.get("/getDataDate", async (req, res) => {
+  const { stateCounty } = req.query;
+  const split = stateCounty.split("_");
+  const usState = split[0].toUpperCase();
+  const county = split[1].toUpperCase();
+
+  const sql = `SELECT DATA_DATE FROM STATE_COUNTY WHERE STATE = ? AND COUNTY = ?`;
+
+  const params = [usState, county];
+
+  await executeQuery(req, res, sql, params); 
+});
 
 module.exports = router;
