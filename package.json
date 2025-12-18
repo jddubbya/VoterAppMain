@@ -5,12 +5,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "concurrently \"node ./Routes/index.cjs\" \"npm run dev\""
-  },
+  "dev": "concurrently \"node ./Routes/index.cjs\" \"vite\"",
+  "build": "vite build",
+  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+  "preview": "vite preview",
+  "start": "node ./Routes/index.cjs"
+},
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
@@ -27,6 +27,7 @@
     "input-material-ui": "^3.1.1",
     "jsonwebtoken": "^9.0.2",
     "mysql": "^2.18.1",
+    "mysql2": "^3.16.0",
     "path": "^0.12.7",
     "primereact": "^10.8.4",
     "react": "^18.3.1",
