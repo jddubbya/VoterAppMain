@@ -10,31 +10,36 @@
 */
 
 const express = require('express');
-const PORT = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const dataRoute=require("./Data.cjs");
+const PORT = process.env.PORT || 3000;
+
+const dataRoute = require("./Data.cjs");
+const dbPool = require('./dbConnectionPool.cjs');
 
 app.use(express.static(__dirname + '/../dist'));
 app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/../dist/index.html');
-  });
+  res.sendFile(__dirname + '/../dist/index.html');
+});
 
+// Middleware to attach DB pool to request
+app.use((req, res, next) => {
+  req.getDbPool = async () => dbPool;
+  next();
+});
 
 app.use("/db", dataRoute);
 
-
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../dist/index.html'));
-  });
+  res.sendFile(path.join(__dirname + '/../dist/index.html'));
+});
 
 app.listen(PORT, () => {
-    console.log("Server running on port 3000");
     console.log(`Server is running at: http://localhost:${PORT}`);
   });
-  
+
