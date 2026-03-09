@@ -1,4 +1,5 @@
-resultswidth/* 
+resultswidth
+/* 
 * Name: App.css
 * Type: Cascading Style Sheet
 * Arguments: none
@@ -34,8 +35,9 @@ h1 {
 
 /* ALL Heading 2 */
 h2 {
-
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:rgb(78, 60, 185)
+  
 }
 
 /* ALL Heading 3 */
@@ -73,17 +75,19 @@ header {
   z-index: 1000;
 }
 
+.headerIconCont {
+  margin-right: 10px;
+}
+
 /* The container for the top part of the header */
 .topHeaderCont {
   background-color: rgb(9, 56, 75);
   color: white;
-}
-
-/* The contents of the top part of the header */
-#topHeader {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  display: flex;
   text-align: center;
+  justify-content: space-between;
+  /* horizontal */
+  align-items: center;
 }
 
 /* The container for the bottom part of the header */
@@ -119,10 +123,10 @@ header {
   margin-right: 25px;
 }
 
-/* Provides dynamic spacing between the logo and the clock */
+Provides dynamic spacing between the logo and the clock
 .emptyBox {
   display: inline-block;
-  width: fit-content;
+  width: 20px;
   display: flex;
 }
 
@@ -502,4 +506,68 @@ footer h4 {
   margin: 5px;
   text-align: left;
   margin-left: 20px;
+}
+
+/* Login screen */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 80vw
+}
+
+.logoCont {
+  margin-bottom: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.logoCont>img {
+  width: 100%;
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  margin: 0 auto 100px;
+  border-radius: 10px 10px;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* login fields */
+
+.usernameInput {
+  height: 50px;
+  width: 250px;
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vcButton {
+  width: 150px;
+}
+
+.loginButtonCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
