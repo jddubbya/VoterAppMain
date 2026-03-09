@@ -1,5 +1,5 @@
 /* 
-* Name: runDbQuery.cjs.cjs
+* Name: runDbQuery.cjs
 * Type: server side database code
 * Arguments: none
 * Description: Reusable code to run a query - minimize coderedundancy
@@ -16,5 +16,6 @@ async function runQuery(pool, sql, params = []) {
         connection.release();
     }
 }
+
 
 module.exports = { runQuery };
