@@ -15,7 +15,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+//require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -49,3 +49,4 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running at: http://localhost:${PORT}`);
   });
+
