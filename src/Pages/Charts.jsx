@@ -191,7 +191,7 @@ const Charts = ({ selectedOption }) => {
                     }
                 </section>
                 <div className="centeredButtonCont">
-                    <Link to="/" style={{ textDecoration: 'none' }}>
+                    <Link to="/home" style={{ textDecoration: 'none' }}>
                         <Button
                             className="homeButton"
                             startIcon={<HiHome />}
@@ -206,3 +206,4 @@ const Charts = ({ selectedOption }) => {
     )
 };
 export default Charts;
+
