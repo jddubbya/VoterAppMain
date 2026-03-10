@@ -7,38 +7,45 @@
 
 // Imports ///////////////////////////////////////////////////
 // React imports
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 // Vocheck Imports
 import logo from "../../Content/vocheck.jpeg";
-import CountdownTimer from "../Components/CountdownTimer";
+// Icons
+import { LuLogOut } from "react-icons/lu";
 
 const Header = () => {
+  const navigate = useNavigate();
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+  // Logs the user out and clears Session Storage when the logout icon is clicked
+  const handleLogoutClick = (e) => {
+    e.preventDefault();
+    sessionStorage.clear();
+    navigate('/login', { replace: true });
+  };
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   return (
     <>
       <header>
         <div className="topHeaderCont">
-          <section>
-            <h2 id="topHeader"> VoCheck Voter Lookup</h2>
-          </section>
-        </div>
-        <section className="bottomHeaderCont">
           <Link to="/">
             <img className="logoImage" src={logo} />
           </Link>
-          <div className="emptyBox"></div>
-          <div className="timerTableDiv">
-            <CountdownTimer headerText = "Nov 4 Uniform Election:"/>
-          </div>
-        </section>
+          <section>
+            <h3 id="topHeader"> VoCheck</h3>
+          </section>
+          <section className="headerIconCont">
+            <LuLogOut
+              onClick={handleLogoutClick}
+            />
+          </section>
+        </div>
       </header>
     </>
   );
 };
 
 export default Header;
-
