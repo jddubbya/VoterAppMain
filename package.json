@@ -18,6 +18,7 @@
     "@mui/system": "^6.5.0",
     "@mui/x-charts": "^7.22.3",
     "@reduxjs/toolkit": "^2.2.6",
+    "bcrypt": "^6.0.0",
     "body-parser": "^1.20.2",
     "chart.js": "^4.4.3",
     "cors": "^2.8.5",
