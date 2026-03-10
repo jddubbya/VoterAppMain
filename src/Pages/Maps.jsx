@@ -46,7 +46,7 @@ const Maps = ({ selectedOption }) => {
                 </iframe>
             </section>
             <div className="centeredButtonCont">
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/home" style={{ textDecoration: 'none' }}>
                     <Button
                         className="homeButton"
                         startIcon={<HiHome />}
@@ -60,5 +60,6 @@ const Maps = ({ selectedOption }) => {
         </>
     )
 };
+
 
 export default Maps;
