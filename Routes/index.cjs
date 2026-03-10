@@ -9,12 +9,17 @@
 *   support ESM by default.
 */
 
+require("dotenv").config();
+
 const express = require('express');
 const bodyParser = require("body-parser");
 const cors = require('cors');
-const path = require('path');
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+const authRoute = require("./auth.cjs");
 
 const dataRoute = require("./Data.cjs");
 const dbPool = require('./dbConnectionPool.cjs');
@@ -33,13 +38,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/db", authRoute);
 app.use("/db", dataRoute);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../dist/index.html'));
+// React fallback (must be last)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
 app.listen(PORT, () => {
     console.log(`Server is running at: http://localhost:${PORT}`);
   });
-
