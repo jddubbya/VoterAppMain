@@ -32,35 +32,75 @@ import LoginPage from './Pages/LoginPage';
 function App() {
   const [selectedOption, setSelectedOption] = useState(
     localStorage.getItem('selectedOption') || '');
-  return (
 
+return (
     <AuthProvider>
-      <Routes>
-        {/* PUBLIC ROUTE */}
-        <Route path="/login" element={<LoginPage />} />
 
-        {/* PROTECTED APP */}
-        <Route
-          path="/*"
-          element={
-            <ProtectedRoute>
-              <section className="bodyCont">
-                <Header />
-                <Routes>
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/tos" element={<TOS />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/maps" element={<Maps />} />
-                  <Route path="/charts" element={<Charts />} />
-                </Routes>
-                <Footer className="footerCont" />
-              </section>
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <section className="bodyCont">
+        <Header />
+
+        <Routes>
+
+          {/* PUBLIC ROUTE */}
+          <Route path="/login" element={<LoginPage />} />
+
+          {/* PROTECTED ROUTES */}
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home
+                  selectedOption={selectedOption}
+                  setSelectedOption={setSelectedOption}
+                />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/maps"
+            element={
+              <ProtectedRoute>
+                <Maps selectedOption={selectedOption} />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/charts"
+            element={
+              <ProtectedRoute>
+                <Charts selectedOption={selectedOption} />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/tos"
+            element={
+              <ProtectedRoute>
+                <TOS />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/privacy"
+            element={
+              <ProtectedRoute>
+                <Privacy />
+              </ProtectedRoute>
+            }
+          />
+
+        </Routes>
+
+        <Footer />
+
+      </section>
+
     </AuthProvider>
-  )
-};
+  );
+}
 
 export default App;
