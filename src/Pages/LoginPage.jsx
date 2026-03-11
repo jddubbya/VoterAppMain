@@ -5,6 +5,7 @@ import { InputText } from "primereact/inputtext";
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { MdOutlineLogin } from "react-icons/md";
+import secureLocalStorage from 'react-secure-storage';
 import logo from '../../Content/vocheck.jpeg';
 
 export default function Login() {
@@ -27,6 +28,11 @@ export default function Login() {
 
         if (res.ok) {
             const data = await res.json();
+            console.log(JSON.stringify(data,4,null));
+            secureLocalStorage.setItem("usState",data.usState);
+            secureLocalStorage.setItem("usCounty",data.usCounty);
+            secureLocalStorage.setItem("LoggedUser",data.username);
+            console.log("usCounty in LoginPage: ", secureLocalStorage.getItem("usCounty"))
             auth.login(data.token);
             navigate("/home");   // go to main screen
         } else {
