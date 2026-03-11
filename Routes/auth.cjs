@@ -13,28 +13,28 @@ const getPool = async (req) => {
 router.post("/login", async (req, res) => {
   try {
     const pool = await getPool(req);
-    const { username, pin } = req.body;
+    const { username, password } = req.body;
 
     const results = await runQuery(
       pool,
-      "SELECT USERID, USERNAME, PIN_HASH FROM VOCHECK_USERS WHERE USERNAME=?",
+      "SELECT USERID, USERNAME, PASSWORD_HASH FROM VOCHECK_USERS WHERE USERNAME=?",
       [username]
     );
 
     if (!results || results.length === 0) {
-      return res.status(401).json({ message: "Invalid username or PIN" });
+      return res.status(401).json({ message: "Invalid username or password" });
     }
 
     const user = results[0];
-    const valid = await bcrypt.compare(pin, user.PIN_HASH);
+    const valid = await bcrypt.compare(password, user.PASSWORD_HASH);
 
     if (!valid) {
-      return res.status(401).json({ message: "Invalid username or PIN" });
+      return res.status(401).json({ message: "Invalid username or password" });
     }
 
     const token = jwt.sign(
       { id: user.ID },
-      process.env.JWT,
+       process.env.JWT,
       { expiresIn: "8h" }
     );
 
