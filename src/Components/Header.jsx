@@ -31,7 +31,7 @@ const Header = () => {
     <>
       <header>
         <div className="topHeaderCont">
-          <Link to="/">
+          <Link to="/home">
             <img className="logoImage" src={logo} />
           </Link>
           <section>
@@ -49,3 +49,4 @@ const Header = () => {
 };
 
 export default Header;
+
