@@ -299,7 +299,7 @@ const TOS = () => {
         </section>
         <section>
           <div className="centeredButtonCont">
-            <Link to="/">
+            <Link to="/home">
               <Button
                 className="homeButton"
                 startIcon={<HiHome />}
@@ -315,5 +315,6 @@ const TOS = () => {
     </>
   );
 };
+
 
 export default TOS;
