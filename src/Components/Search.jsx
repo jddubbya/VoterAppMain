@@ -11,16 +11,10 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import secureLocalStorage from 'react-secure-storage';
 // MUI imports
 import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
 // icons
 import { MdPersonSearch } from "react-icons/md";
 import { GoGraph } from "react-icons/go";
@@ -35,19 +29,16 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [stCntyList, setStCntyList] = useState([]);
   const [fullName, setFullName] = useState('');
 
-  const handleOptionChange = (event) => {
-    const newValue = event.target.value;
-    setSelectedOption(newValue);
-    localStorage.setItem('selectedOption', newValue);
-  };
+  const LoggedUser = secureLocalStorage.getItem("LoggedUser");
+  const usState = secureLocalStorage.getItem("usState");
+  const usCounty = secureLocalStorage.getItem("usCounty");
+  const voterTable = usState + "_" + usCounty;
 
   // Handles the Submit button press
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const voterTable = selectedOption;
 
     if (address) {
       const response = await fetch(`/db/getVoterByAddress/?address=${address}&voterTable=${voterTable}`);
@@ -62,7 +53,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
       const split = fullName.split(" ");
       const first = (split[0]);
       const last = (split[1]);
-     
+
       const response = await fetch(`/db/getVotersByName/?firstName=${first}&lastName=${last}&voterTable=${voterTable}`);
       const result = await response.json();
       if (!result) {
@@ -73,39 +64,20 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
     }
   };
 
-  // Get the list of state - counties for the dropdown
-  const getStatesCounties = async () => {
-    const response = await fetch(`/db/getStCountyList`);
-    const result = await response.json();
-    setStCntyList(result);
-  }
-
   // Runs the queries when the page loads - populate the dropdown
   useEffect(() => {
-    const allQueries = async () => {
-      await getStatesCounties();
-    }
-    allQueries();
   }, []);
 
   // Make sure a state and county are selected before going to Maps page
   const handleMapsClicked = (e) => {
     e.preventDefault();
-    if (!selectedOption) {
-      alert("You must select a state and county.")
-    } else {
-      navigate("/maps")
-    }
+      navigate("/maps");
   }
 
   // Make sure a state and county are selected before going to Charts page
   const handleChartsClicked = (e) => {
     e.preventDefault();
-    if (!selectedOption) {
-      alert("You must select a state and county.")
-    } else {
-      navigate("/charts")
-    }
+      navigate("/charts");
   };
 
   // Clears the form when the CLEAR button is pressed
@@ -121,29 +93,8 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
   return (
     <>
       <form className="searchForm" onSubmit={handleSubmit}>
+        <h2>{usCounty}, {usState}</h2>
         <section className="stateCountySelectCont">
-          <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
-              <InputLabel >COUNTY</InputLabel>
-              <Select
-                className="stCountySelect"
-                id="countyDrop"
-                value={selectedOption}
-                label="COUNTY"
-                input={<OutlinedInput label="COUNTY" />}
-                onChange={handleOptionChange}
-              >
-                {stCntyList.map((stCounty) => (
-                  <MenuItem
-                    key={stCounty.ST_CNTY}
-                    value={stCounty.ST_CNTY}
-                  >
-                    {stCounty.ST_CNTY}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Box>
           <Link to={"/charts"} onClick={handleChartsClicked}>
             <GoGraph className="mapChartIcon" />
           </Link>
@@ -152,6 +103,7 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
           </Link>
         </section>
         <section className="searchInputCont">
+
           <h3>--- Search by Voter Name ---</h3>
           <TextField
             variant="standard"
@@ -186,12 +138,12 @@ const Search = ({ firstName, setFirstName, lastName, setLastName, address, setAd
             >
               CLEAR
             </Button>
-            
+
           </section>
           {data.length ?
-        <Results data={data} setData={setData} />
-        :
-        null}
+            <Results data={data} setData={setData} />
+            :
+            null}
         </section>
       </form>
     </>
