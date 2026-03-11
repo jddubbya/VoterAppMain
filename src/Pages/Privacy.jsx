@@ -348,7 +348,7 @@ const Privacy = () => {
         </section>
         <section>
           <div className="centeredButtonCont">
-            <Link to="/">
+            <Link to="/home">
               <Button
                 className="homeButton"
                 startIcon={<HiHome />}
@@ -364,5 +364,6 @@ const Privacy = () => {
     </>
   );
 };
+
 
 export default Privacy;
