@@ -9,7 +9,7 @@ import logo from '../../Content/vocheck.jpeg';
 
 export default function Login() {
 
-    const [pin, setPin] = useState("");
+    const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     const auth = useAuth();
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function Login() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 username: username,
-                pin: pin
+                password: password
             })
         });
 
@@ -30,7 +30,7 @@ export default function Login() {
             auth.login(data.token);
             navigate("/home");   // go to main screen
         } else {
-            alert("Invalid Username or PIN");
+            alert("Invalid Username or password");
         }
     };
 
@@ -57,8 +57,8 @@ export default function Login() {
                             className="loginInput"
                             id="password"
                             placeholder="password"
-                            value={pin}
-                            onChange={(e) => setPin(e.target.value)}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             toggleMask
                             feedback={false}   // disables strength meter if you don't want it
                         />
