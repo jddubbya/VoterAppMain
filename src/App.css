@@ -187,6 +187,7 @@ Provides dynamic spacing between the logo and the clock
 /* All page contect is kept outside of the header and footer */
 .pageCont {
   margin-bottom: 100px;
+
   width: 100vw;
 }
 
@@ -238,7 +239,7 @@ footer h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 100px;
   width: 100vw;
 }
 
