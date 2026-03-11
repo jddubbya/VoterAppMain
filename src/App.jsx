@@ -33,72 +33,44 @@ function App() {
   const [selectedOption, setSelectedOption] = useState(
     localStorage.getItem('selectedOption') || '');
 
-return (
+  return (
     <AuthProvider>
+      <Routes>
 
-      <section className="bodyCont">
-        <Header />
+        {/* LOGIN PAGE */}
+        <Route path="/login" element={<LoginPage />} />
 
-        <Routes>
+        {/* PROTECTED APP */}
+        <Route
+          path="/*"
+          element={
+            <ProtectedRoute>
+              <section className="bodyCont">
+                <Header />
 
-          {/* PUBLIC ROUTE */}
-          <Route path="/login" element={<LoginPage />} />
+                <Routes>
+                  <Route
+                    path="/home"
+                    element={
+                      <Home
+                        selectedOption={selectedOption}
+                        setSelectedOption={setSelectedOption}
+                      />
+                    }
+                  />
+                  <Route path="/maps" element={<Maps selectedOption={selectedOption} />} />
+                  <Route path="/charts" element={<Charts selectedOption={selectedOption} />} />
+                  <Route path="/tos" element={<TOS />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                </Routes>
 
-          {/* PROTECTED ROUTES */}
-          <Route
-            path="/home"
-            element={
-              <ProtectedRoute>
-                <Home
-                  selectedOption={selectedOption}
-                  setSelectedOption={setSelectedOption}
-                />
-              </ProtectedRoute>
-            }
-          />
+                <Footer />
+              </section>
+            </ProtectedRoute>
+          }
+        />
 
-          <Route
-            path="/maps"
-            element={
-              <ProtectedRoute>
-                <Maps selectedOption={selectedOption} />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/charts"
-            element={
-              <ProtectedRoute>
-                <Charts selectedOption={selectedOption} />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/tos"
-            element={
-              <ProtectedRoute>
-                <TOS />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/privacy"
-            element={
-              <ProtectedRoute>
-                <Privacy />
-              </ProtectedRoute>
-            }
-          />
-
-        </Routes>
-
-        <Footer />
-
-      </section>
-
+      </Routes>
     </AuthProvider>
   );
 }
