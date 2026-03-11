@@ -7,16 +7,12 @@
 
 // React
 import { useState, useEffect } from "react";
-//import secureLocalStorage from "react-secure-storage";
 // Primereact
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
-//import { Dropdown } from 'primereact/dropdown';
 import { Button } from 'primereact/button';
 // Icons
-//import { FaSave } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-//import { IoPerson } from "react-icons/io5";
 
 // Code ///////////////////////////////////////////////////////////////////////////////
 
@@ -46,6 +42,10 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
 
     // Handles press of the Close button
     const handleClose = (e) => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
         if (rowSelected) {
             setRowSelected(false);
             setSelectedVoter(null);
@@ -101,7 +101,7 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
                             rows={2}
                             value={`${selectedVoter.ADDRESS}\n${selectedVoter.CITY + ', ' + selectedVoter.STATE + ' ' + selectedVoter.ZIP}`}
                             variant="standard"
-                             className="my-textarea"
+                            className="my-textarea"
                             placeholder="Address"
                             required
                             name="stackedAddress"
