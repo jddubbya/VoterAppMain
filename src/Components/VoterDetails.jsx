@@ -58,156 +58,158 @@ const VoterDetails = ({ selectedVoter, setSelectedVoter, rowSelected, setRowSele
     return (
         <>
             <section className="voterDetailsContainer">
-                <h3>Voter Details:</h3>
-                <section>
-                    <div className="labelFormat">
-                        <label>Name</label>
-                        <InputText
-                            disabled
-                            variant="standard"
-                            className="personInputLong"
-                            placeholder="Name"
-                            value={selectedVoter['FULL_NAME']}
-                            required
-                            name="FULL_NAME"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Age</label>
-                        <InputText
-                            disabled
-                            variant="standard"
-                            className="personInputShort"
-                            placeholder="Age"
-                            value={selectedVoter.AGE}
-                            name="AGE"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Generation</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputMedium"
-                            placeholder="Generation"
-                            value={selectedVoter.GENERATION}
-                            name="GENERATION"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Address</label>
-                        <InputTextarea
-                            readOnly
-                            rows={2}
-                            value={`${selectedVoter.ADDRESS}\n${selectedVoter.CITY + ', ' + selectedVoter.STATE + ' ' + selectedVoter.ZIP}`}
-                            variant="standard"
-                            className="my-textarea"
-                            placeholder="Address"
-                            required
-                            name="stackedAddress"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Municipality</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputLong"
-                            placeholder="Municipality"
-                            value={selectedVoter.MUNICIPALITY}
-                            required
-                            name="MUNICIPALITY"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Precinct</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputMedium"
-                            placeholder="Precinct"
-                            value={selectedVoter.PRECINCT}
-                            required
-                            name="PRECINCT"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Commissioner Dist.</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputShort"
-                            placeholder="Commissioner District"
-                            value={selectedVoter.CNTY_COMMISS_DIST}
-                            required
-                            name="CNTY_COMMISS_DIST"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>School Dist.</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputLong"
-                            placeholder="School District"
-                            value={selectedVoter.SCHOOL_DIST}
-                            required
-                            name="SCHOOL_DIST"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Voter ID</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputMedium"
-                            placeholder="Voter ID"
-                            value={selectedVoter.VOTERID}
-                            required
-                            name="VOTERID"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Voter Status</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputMedium"
-                            placeholder="Last"
-                            value={selectedVoter.VOTER_STATUS}
-                            required
-                            name="LAST_NAME"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Party</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputMedium"
-                            placeholder="Party"
-                            value={selectedVoter.PARTY}
-                            name="PARTY"
-                        />
-                    </div>
-                    <div className="labelFormat">
-                        <label>Reg. Date</label>
-                        <InputText
-                            readOnly
-                            variant="standard"
-                            className="personInputMedium"
-                            placeholder="Registration date"
-                            value={selectedVoter.REG_DATE}
-                            required
-                            name="REG_DATE"
-                        />
-                    </div>
-                </section>
-                <section className="centeredButtonCont">
-                    <Button className="searchButton" onClick={handleClose}>
-                        <MdCancel style={{ marginRight: '0.5rem' }} />
-                        Close
-                    </Button>
+                <section className="mainDetailsCont">
+                    <h3>Voter Details:</h3>
+                    <section className="borderSection">
+                        <div className="labelFormat">
+                            <label>Name:</label>
+                            <InputText
+                                disabled
+                                variant="standard"
+                                className="personInputLong"
+                                placeholder="Name"
+                                value={selectedVoter['FULL_NAME']}
+                                required
+                                name="FULL_NAME"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Age:</label>
+                            <InputText
+                                disabled
+                                variant="standard"
+                                className="personInputShort"
+                                placeholder="Age"
+                                value={selectedVoter.AGE}
+                                name="AGE"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Generation:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputMedium"
+                                placeholder="Generation"
+                                value={selectedVoter.GENERATION}
+                                name="GENERATION"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Address:</label>
+                            <InputTextarea
+                                readOnly
+                                rows={2}
+                                value={`${selectedVoter.ADDRESS}\n${selectedVoter.CITY + ', ' + selectedVoter.STATE + ' ' + selectedVoter.ZIP}`}
+                                variant="standard"
+                                className="my-textarea"
+                                placeholder="Address"
+                                required
+                                name="stackedAddress"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Municipality:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputLong"
+                                placeholder="Municipality"
+                                value={selectedVoter.MUNICIPALITY}
+                                required
+                                name="MUNICIPALITY"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Precinct:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputMedium"
+                                placeholder="Precinct"
+                                value={selectedVoter.PRECINCT}
+                                required
+                                name="PRECINCT"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Commissioner Dist.:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputShort"
+                                placeholder="Commissioner District"
+                                value={selectedVoter.CNTY_COMMISS_DIST}
+                                required
+                                name="CNTY_COMMISS_DIST"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>School Dist.:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputLong"
+                                placeholder="School District"
+                                value={selectedVoter.SCHOOL_DIST}
+                                required
+                                name="SCHOOL_DIST"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Voter ID:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputMedium"
+                                placeholder="Voter ID"
+                                value={selectedVoter.VOTERID}
+                                required
+                                name="VOTERID"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Voter Status:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputMedium"
+                                placeholder="Last"
+                                value={selectedVoter.VOTER_STATUS}
+                                required
+                                name="LAST_NAME"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Party:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputMedium"
+                                placeholder="Party"
+                                value={selectedVoter.PARTY}
+                                name="PARTY"
+                            />
+                        </div>
+                        <div className="labelFormat">
+                            <label>Reg. Date:</label>
+                            <InputText
+                                readOnly
+                                variant="standard"
+                                className="personInputMedium"
+                                placeholder="Registration date"
+                                value={selectedVoter.REG_DATE}
+                                required
+                                name="REG_DATE"
+                            />
+                        </div>
+                        <section className="centeredButtonCont">
+                        <Button className="searchButton" onClick={handleClose}>
+                            <MdCancel style={{ marginRight: '0.5rem' }} />
+                            Close
+                        </Button>
+                    </section>
+                    </section>
                 </section>
             </section>
         </>
