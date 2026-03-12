@@ -576,6 +576,8 @@ footer h4 {
 
 .vcButton {
   width: 150px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .loginButtonCont {
@@ -601,3 +603,4 @@ footer h4 {
   flex-direction: column;
   align-items: center;
 }
+
