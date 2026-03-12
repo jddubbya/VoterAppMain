@@ -497,6 +497,7 @@ footer h4 {
   font-family: Arial, sans-serif;
   font-size: 9pt;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* Required for the stacked text in the InputTextarea */
@@ -569,6 +570,24 @@ footer h4 {
 }
 
 .loginButtonCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.borderSection {
+  border: solid;
+  border-color: rgb(245, 242, 242);
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 3px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
+}
+
+.mainDetailsCont {
   display: flex;
   flex-direction: column;
   align-items: center;
