@@ -76,7 +76,16 @@ header {
 }
 
 .headerIconCont {
-  margin-right: 10px;
+  margin-right: 2rem;
+}
+
+.headerIconCont > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.headerIconCont > svg:hover {
+  cursor: pointer;
 }
 
 /* The container for the top part of the header */
